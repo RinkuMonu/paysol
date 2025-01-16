@@ -1,15 +1,16 @@
 import React from 'react'
-
 import { Outlet } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import BillPayUI from '../../pages/services/BillPayUI'
 
 const AppLayout = () => {
   return (
     <div>
       <Header />
-      <Outlet/>
-      <Footer/>
+      <Outlet />
+      <BillPayUI />
+      <Footer />
     </div>
   )
 }
