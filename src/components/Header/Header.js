@@ -23,7 +23,8 @@ export default function Header() {
                                                 <Link class="nav-link active" to={"/"}>Home</Link>
                                             </li>
                                             <li class="nav-item">
-                                                <a aria-current="page" class="nav-link" to={"/AboutUs"}>About Us</a>
+                                              
+                                                <Link class="nav-link" to={"/AboutUs"}>About Us</Link>
                                             </li>
                                             <li class="nav-item">
                                                 <Link class="nav-link" to={"/Services"}>Our Services</Link>
