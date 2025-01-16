@@ -8,6 +8,7 @@ import AppLayout from "./components/AppLayout/AppLayout";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import OurService from "./pages/OurService/OurService.js";
 import WhyUs from "./pages/WhyUs";
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
           element: <ContactUs />,
         },
         {
+          path: "/Services",
+          element: <OurService />,
+        },
+    {
           path: "/WhyUs",
           element: <WhyUs />,
         }

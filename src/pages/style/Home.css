@@ -1531,10 +1531,10 @@ p {
     font-size: 0.875rem;
 }
 .mask-img {
-    -webkit-mask-image: url(../../../public/assests/Home/download.png);
+    -webkit-mask-image: url(../../../public/assets/Home/download.png);
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
-    mask-image: url(../../../public/assests/Home/download.png);
+    mask-image: url(../../../public/assets/Home/download.png);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     width: 100%;
@@ -1814,7 +1814,7 @@ p {
     opacity: 0.04;
     width: 100%;
     z-index: -1;
-    background: url(../../../public/assests/Home/02.png) no-repeat 0 0;
+    background: url(../../../public/assets/Home/02.png) no-repeat 0 0;
     background-size: cover;
 }
 
@@ -1890,7 +1890,7 @@ p {
     opacity: 0.04;
     width: 100%;
     z-index: -1;
-    background: url(../../../public/assests/Home/02.png) no-repeat 0 0;
+    background: url(../../../public/assets/Home/02.png) no-repeat 0 0;
     background-size: cover;
 }
 
@@ -1979,7 +1979,7 @@ p {
     opacity: 0.04;
     width: 100%;
     z-index: -1;
-    background: url(../../../public/assests/Home/02.png) no-repeat 0 0;
+    background: url(../../../public/assets/Home/02.png) no-repeat 0 0;
     background-size: cover;
 }
 
