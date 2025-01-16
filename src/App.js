@@ -10,6 +10,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import OurService from "./pages/OurService/OurService.js";
 import WhyUs from "./pages/WhyUs";
+import BillPayUI from '../src/pages/services/BillPayUI.js'
 import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
 
@@ -39,6 +40,10 @@ function App() {
           path: "/WhyUs",
           element: <WhyUs />,
         },
+       
+        {
+          path: "/Services",
+          element: <BillPayUI />,
         {
           path: "/OurPartner",
           element: <OurPartner />,
