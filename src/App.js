@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import WhyUs from "./pages/WhyUs";
+import OurPartner from "./pages/OurPartner";
+import BBPS from "./pages/BBPS";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +31,14 @@ function App() {
         {
           path: "/WhyUs",
           element: <WhyUs />,
+        },
+        {
+          path: "/OurPartner",
+          element: <OurPartner />,
+        },
+        {
+          path: "/BBPS",
+          element: <BBPS />,
         }
       ],
     },
