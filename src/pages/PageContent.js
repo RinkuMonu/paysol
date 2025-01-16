@@ -10,7 +10,7 @@ function PageContent() {
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-md-12">
                             <div className="shape-img-bg">
-                                <img className="mask-img" src="/assests/Home/01.jpg" alt="About" />
+                                <img className="mask-img" src="/assets/Home/01.jpg" alt="About" />
                                 <div className="img-bg-shape">
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288"><linearGradient id="imagewave" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop class="stop-color2" offset="0%" stop-opacity="1"></stop><stop class="stop-color1" offset="100%" stop-opacity="1"></stop></linearGradient><path fill="url(#imagewave)"><animate repeatCount="indefinite" attributeName="d" dur="5s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45
                                     c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2
@@ -93,7 +93,7 @@ function PageContent() {
                         <div className="col-lg-3 col-md-6 mt-6 mt-lg-0 mb-4">
                             <div className="step-item style-1 text-white">
                                 <div className="step-icon">
-                                    <img src="/assests/Home/identity.png" alt="IDENTITY CARD" />
+                                    <img src="/assets/Home/identity.png" alt="IDENTITY CARD" />
                                 </div>
                                 <h4>IDENTITY CARD</h4>
                                 <span>1st Step</span>
@@ -102,7 +102,7 @@ function PageContent() {
                         <div className="col-lg-3 col-md-6 mt-6 mt-lg-0 mb-4">
                             <div className="step-item style-1 text-white step-bg">
                                 <div className="step-icon">
-                                    <img src="/assests/Home/pancard.png" alt="VALID PAN CARD" />
+                                    <img src="/assets/Home/pancard.png" alt="VALID PAN CARD" />
                                 </div>
                                 <h4>VALID PAN CARD</h4>
                                 <span>2nd Step</span>
@@ -111,7 +111,7 @@ function PageContent() {
                         <div className="col-lg-3 col-md-6 mt-6 mt-lg-0 mb-4">
                             <div className="step-item style-1 text-white">
                                 <div className="step-icon">
-                                    <img src="/assests/Home/secure.png" alt="SECURE PAYMENT" />
+                                    <img src="/assets/Home/secure.png" alt="SECURE PAYMENT" />
                                 </div>
                                 <h4>SECURE PAYMENT</h4>
                                 <span>3rd Step</span>
@@ -120,7 +120,7 @@ function PageContent() {
                         <div className="col-lg-3 col-md-6 mt-6 mt-lg-0 mb-4">
                             <div className="step-item style-1 text-white step-bg">
                                 <div className="step-icon">
-                                    <img src="/assests/Home/quality.png" alt="100% QUALITY ASSURANCE" />
+                                    <img src="/assets/Home/quality.png" alt="100% QUALITY ASSURANCE" />
                                 </div>
                                 <h4>100% QUALITY ASSURANCE</h4>
                                 <span>4th Step</span>
@@ -142,13 +142,13 @@ function PageContent() {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-md-12 order-lg-1">
-                            <img className="img-fluid" src="/assests/Home/06.png" alt="" />
+                            <img className="img-fluid" src="/assets/Home/06.png" alt="" />
                         </div>
                         <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">
                             {/* First Featured Item */}
                             <div className="featured-item style-3 mb-5 ms-lg-7">
                                 <div className="featured-icon grediant-bg3">
-                                    <img src="/assests/Home/moniter.png" width={33} className="img-fluid flaticon flaticon-social-media-marketing" />
+                                    <img src="/assets/Home/moniter.png" width={33} className="img-fluid flaticon flaticon-social-media-marketing" />
                                 </div>
                                 <div className="featured-desc">
                                     <div className="featured-title">
@@ -165,7 +165,7 @@ function PageContent() {
                             {/* Second Featured Item */}
                             <div className="featured-item style-3 mb-5 me-lg-7">
                                 <div className="featured-icon grediant-bg2">
-                                    <img src="/assests/Home/advertisements.png" width={33} className="img-fluid flaticon flaticon-social-media-marketing" />
+                                    <img src="/assets/Home/advertisements.png" width={33} className="img-fluid flaticon flaticon-social-media-marketing" />
                                 </div>
                                 <div className="featured-desc">
                                     <div className="featured-title">
@@ -191,7 +191,7 @@ function PageContent() {
                                     Services that we offer to our clients at a glance. We have earned 3+ years of expertise in fintech services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Paysguru fintech services and provide Recharge and Bill Payment (BBPS) to your customers.
                                 </p>
                             </div>
-                            <img className="img-fluid" src="/assests/Home/03.png" alt="about" />
+                            <img className="img-fluid" src="/assets/Home/03.png" alt="about" />
                         </div>
                         <div className="col-lg-7 ps-lg-8">
                             <div className="row">
@@ -200,7 +200,7 @@ function PageContent() {
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assests/Home/electricity.png" width="100" alt="electricity" />
+                                                <img src="/assets/Home/electricity.png" width="100" alt="electricity" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
@@ -222,7 +222,7 @@ function PageContent() {
                                     <div className="service-item style-1 service-active">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assests/Home/pay-utility.png" width="100" alt="pay-utility" />
+                                                <img src="/assets/Home/pay-utility.png" width="100" alt="pay-utility" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
@@ -244,7 +244,7 @@ function PageContent() {
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assests/Home/bbps1.png" width="100" alt="bbps1" />
+                                                <img src="/assets/Home/bbps1.png" width="100" alt="bbps1" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
@@ -266,7 +266,7 @@ function PageContent() {
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assests/Home/recharge.png" width="100" alt="recharge" />
+                                                <img src="/assets/Home/recharge.png" width="100" alt="recharge" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">

@@ -14,19 +14,19 @@ function Footer() {
               <h5>Connect With Us</h5>
               <ul className="media-icon list-unstyled">
                 <li className="d-flex">
-                <img src="/assests/Home/world.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
+                <img src="/assets/Home/world.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
                   <p className="mb-0" style={{color:"#fff"}}>
                     Madhapur Village, Gafoor Nagar, Hyderabad, Telangana - 500081
                   </p>
                 </li>
                 <li>
-                <img src="/assests/Home/send-mail.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
+                <img src="/assets/Home/send-mail.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
                   <a href="mailto:info@paysguru.com">info@paysguru.com</a>
                 </li>
                 <li>
-                <img src="/assests/Home/phone-call.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
+                <img src="/assets/Home/phone-call.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
                   <a href="tel:+9059400261">9059400261</a>
                 </li>

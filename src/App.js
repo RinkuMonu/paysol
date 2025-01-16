@@ -8,8 +8,11 @@ import AppLayout from "./components/AppLayout/AppLayout";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import OurService from "./pages/OurService/OurService.js";
 import WhyUs from "./pages/WhyUs";
 import BillPayUI from '../src/pages/services/BillPayUI.js'
+import OurPartner from "./pages/OurPartner";
+import BBPS from "./pages/BBPS";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,6 +33,10 @@ function App() {
           element: <ContactUs />,
         },
         {
+          path: "/Services",
+          element: <OurService />,
+        },
+    {
           path: "/WhyUs",
           element: <WhyUs />,
         },
@@ -37,6 +44,13 @@ function App() {
         {
           path: "/Services",
           element: <BillPayUI />,
+        {
+          path: "/OurPartner",
+          element: <OurPartner />,
+        },
+        {
+          path: "/BBPS",
+          element: <BBPS />,
         }
       ],
     },
