@@ -1,5 +1,6 @@
 
-import AboutUs from "./pages/AboutUs";
+import Header from "./components/Header/Header.js";
+import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -16,7 +17,7 @@ function App() {
       element: <AppLayout />,
       children: [
         {
-          path: "/Home",
+          path: "/",
           element: <Home />,
         },
         {

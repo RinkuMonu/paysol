@@ -1,0 +1,155 @@
+.page-wrapper {
+    overflow-x: hidden;
+}
+@media (max-width: 992px) {
+    .page-title {
+        padding: 160px 0;
+    }
+}
+
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .page-title {
+        padding: 75px 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+.page-title {
+    padding: 0px;
+    padding-top: 75px;
+    border-bottom: 1px solid #eee;
+}
+section {
+    padding: 50px 0;
+    position: relative;
+}
+.page-title img {
+    width: 100%;
+}
+.theme-title {
+    margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+    .theme-title h2 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .theme-title h2 {
+        font-size: 18px !important;
+        line-height: 25px !important;
+    }
+}
+.theme-title h2 {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 28px;
+}
+@media (max-width: 992px) {
+    .service-item.style-2 {
+        padding: 40px 30px 70px;
+    }
+}
+
+.service-item.style-2 {
+    padding: 20px !important;
+}
+.service-item.style-2 {
+    text-align: left;
+    position: relative;
+    z-index: 9;
+    padding: 40px 40px 70px;
+    background: #f2f2f2;
+    border-radius: 20px;
+    margin-bottom: 25px
+}
+.box-shadow, #header-wrap.fixed-header, .navbar-nav ul, .scroll-top, #mc-form input[type="email"], .service-item.style-1, .featured-item.featured-active, .featured-item.style-2, .featured-item.style-3, .contact-media, .testimonial.style-1, .price-table, .service-item.style-1 .service-icon, .service-item.style-2, .service-item.style-3, .portfolio-img, .product-link a, .tab .nav-tabs .nav-link, .tab.style-2 .nav-tabs, .main-timeline .timeline-icon, .post-card, .contact-box, .counter, .testimonial.style-3 .testimonial-content {
+    -webkit-box-shadow: 0px 25px 70px rgba(8, 10, 55, 0.08);
+    -moz-box-shadow: 0px 25px 70px rgba(8, 10, 55, 0.08);
+    box-shadow: 0px 25px 70px rgba(8, 10, 55, 0.08);
+}
+.service-item.style-2 .service-icon {
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 0px;
+}
+.service-item.style-2 .service-desc p {
+    margin: 20px 0 0;
+}
+
+
+.service-item.style-2:after {
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    opacity: 0.04;
+    width: 100%;
+    z-index: -1;
+    background: url(/public/assets/02.png) no-repeat 0 0;
+    background-size: cover;
+}
+
+a, i, .themeht-btn, button, img, span, .nav-link, .dropdown-item, #ht-main-nav, .social-icons li:hover a, .testimonial-carousel .controls li, .service-item, .service-item.style-1 svg, .service-item.style-1::before, .service-item.style-1:after, .service-item.style-2:after, .service-item.style-3::before, .service-item.style-3:after, .clients-logo, .service-item.style-3, .featured-item, .featured-icon, .featured-item .featured-icon i, .portfolio-item, .price-table, .post .post-desc, .service-menu li a:before, .team-social-icon, .step-icon-bg, .accordion .accordion-button:before, .accordion .accordion-button:after {
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+.zoom-fade, .service-item.style-1:after, .service-item.style-2:after {
+    animation-name: zoom-fade;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.text-col{
+    color: #67757c;
+    background-color: #f4f6f9;;
+}
+.service-item.style-1:hover:after, .service-active.service-item.style-1:after {
+    opacity: 0.2;
+}
+@-webkit-keyframes zoom-fade {
+    0% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    50% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    100% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  @keyframes zoom-fade {
+    0% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    50% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    100% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+
+
+  
