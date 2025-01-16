@@ -1,0 +1,147 @@
+.footer {
+    padding: 40px 0 40px;
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 170px
+}
+a{
+    text-decoration: none !important;
+}
+.primary-footer {
+    position: relative;
+    z-index: 99;
+    font-size: 16px;
+}
+
+.secondary-footer {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.copyright {
+    margin-top: 40px;
+    padding-top: 40px;
+    position: relative;
+}
+
+.footer-logo img {
+    height: 70px;
+}
+
+.primary-footer,
+.primary-footer a {
+    color: #ffffff;
+}
+
+.primary-footer h5 {
+    margin-bottom: 20px;
+    background: linear-gradient(115deg, #ff6004, #fe9e30);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.media-icon.list-inline li {
+    display: inline-block;
+}
+
+.media-icon li {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    padding-left: 50px;
+}
+
+.media-icon li:last-child {
+    margin-bottom: 0;
+}
+
+.media-icon li h6 {
+    margin: 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400
+}
+
+.media-icon li img {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 30px;
+}
+
+.media-icon li a {
+    color: #ffffff;
+}
+
+.media-icon li a:hover {
+    color: #ff6004;
+}
+
+.footer-menu li {
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.footer-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.footer-menu li a {
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff
+}
+
+.footer-menu li a:hover {
+    color: #ff6004
+}
+
+.footer-menu .list-inline li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-social li a {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: var(--themeht-text-color);
+    background: #ffffff;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.footer-social li a:hover {
+    color: #ffffff;
+    background: #ff6004;
+}
+
+.copyright::after {
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff 48.44%, hsla(0, 0%, 100%, .152) 99.99%, hsla(0, 0%, 100%, 0));
+    top: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    right: 0;
+    opacity: .2;
+    position: absolute;
+}
+.ht-bg-move {
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+.dark-bg {
+    background-color: #000229;
+}

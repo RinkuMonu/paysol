@@ -1,0 +1,59 @@
+.page-title img {
+    width: 100%;
+}
+
+.mask-img1 {
+    width: 100%;
+}
+
+.theme-title h2 {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 28px;
+}
+p {
+    line-height: 1.7;
+}
+section {
+    padding: 50px 0;
+    position: relative;
+}
+.abt h4 {
+    margin-top: 20px;
+}
+@media (max-width: 992px) {
+    .service-item.style-2 {
+        padding: 40px 30px 70px;
+    }
+}
+
+.service-item.style-2:after {
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    opacity: 0.04;
+    width: 100%;
+    z-index: -1;
+    background: url(../../../public/assests/Home/02.png) no-repeat 0 0;
+    background-size: cover;
+}
+
+a, i, .themeht-btn, button, img, span, .nav-link, .dropdown-item, #ht-main-nav, .social-icons li:hover a, .testimonial-carousel .controls li, .service-item, .service-item.style-1 svg, .service-item.style-1::before, .service-item.style-1:after, .service-item.style-2:after, .service-item.style-3::before, .service-item.style-3:after, .clients-logo, .service-item.style-3, .featured-item, .featured-icon, .featured-item .featured-icon i, .portfolio-item, .price-table, .post .post-desc, .service-menu li a:before, .team-social-icon, .step-icon-bg, .accordion .accordion-button:before, .accordion .accordion-button:after {
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+.zoom-fade, .service-item.style-1:after, .service-item.style-2:after {
+    animation-name: zoom-fade;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
