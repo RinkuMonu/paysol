@@ -1,3 +1,4 @@
+
 import Header from "./components/Header/Header.js";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
@@ -7,7 +8,7 @@ import AppLayout from "./components/AppLayout/AppLayout";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import WhyUs from "./pages/WhyUs";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ function App() {
           path: "/ContactUs",
           element: <ContactUs />,
         },
+        {
+          path: "/WhyUs",
+          element: <WhyUs />,
+        }
       ],
     },
   ]);

@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Footer.css"; // Create a CSS file for the styles or inline styles if preferred
 
@@ -125,3 +126,6 @@ function Footer() {
 }
 
 export default Footer;
+
+
+
