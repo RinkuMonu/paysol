@@ -1,5 +1,14 @@
 body {
+
   background-color: #f5f9ff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: gray;
+
 }
 
 .navbar-item {
@@ -10,3 +19,10 @@ body {
 button {
   border-radius: 4px;
 }
+
+
+:root {
+  --themeht-primary-color: #3498db; /* Example color */
+  /* You can replace #3498db with any color code of your choice */
+}
+

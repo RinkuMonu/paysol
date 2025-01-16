@@ -1,17 +1,16 @@
 import React from 'react'
-// import Header from '../Header'
+import { Outlet } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import { Outlet } from 'react-router-dom'
 import BillPayUI from '../../pages/services/BillPayUI'
 
 const AppLayout = () => {
   return (
     <div>
-      <Header/>
-      <Outlet/>
-      <BillPayUI/>
-      <Footer/>
+      <Header />
+      <Outlet />
+      <BillPayUI />
+      <Footer />
     </div>
   )
 }
