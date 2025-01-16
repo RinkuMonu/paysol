@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 body {
+
+  background-color: #f5f9ff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat",sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f3f3f3;
 }
 *, :after, :before {
   box-sizing: border-box;
@@ -14,4 +15,23 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
+  color: gray;
+
 }
+
+.navbar-item {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+button {
+  border-radius: 4px;
+}
+
+
+:root {
+  --themeht-primary-color: #3498db; /* Example color */
+  /* You can replace #3498db with any color code of your choice */
+}
+
