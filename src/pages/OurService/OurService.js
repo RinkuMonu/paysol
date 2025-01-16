@@ -2,41 +2,42 @@ import React from 'react'
 import ServiceItem from "./ServiceItem"
 import "./OurService.css"
 
+
 function OurService() {
   
     const services = [
         {
-          imgSrc: "images/DTH-Recharge.png",
+          imgSrc: "/assets/DTH.png",
           title: "DTH Recharge",
           description:
             "Credit cards offer convenience and a long list of benefits that cash doesn't provide, but we provide instant cash on all credit cards any time and any cities.",
         },
         {
-          imgSrc: "images/Electricity-Bill.png",
+          imgSrc: "/assets/Electricity.png",
           title: "Electricity Bill",
           description:
             "Pay your Electricity bill online using the Pay Skriptonic Softech Private Limited app. We use best in industry technology to make it fast and reliable.",
         },
         {
-          imgSrc: "images/Pay-Utility-Bill.png",
+          imgSrc: "/assets/Utility.png",
           title: "Pay Utility Bill",
           description:
             "How difficult to make payment for your utility bills at marchand outlet that does not accept credit card but we make it easy for you with our credit card payment system.",
         },
         {
-          imgSrc: "images/Mobile-Recharge.png",
+          imgSrc: "/assets/Mobile.png",
           title: "Mobile Recharge",
           description:
             "Mobile Recharge Services are the fastest and reliable as everything happen in seconds with ninety nine percent of success ratio in prepaid recharges.",
         },
         {
-          imgSrc: "images/BBPS-icon.png",
+          imgSrc: "/assets/BBPS.png",
           title: "BBPS",
           description:
             "Skriptonic Softech Private Limited offers its customers to pay their bills with just a click. No need to stand in queue at operator’s office anymore.",
         },
         {
-          imgSrc: "images/recharge-ser.png",
+          imgSrc: "/assets/Recharge.png",
           title: "Recharge Services",
           description:
             "Skriptonic Softech Private Limited recharge service covers all major service providers of Mobile, And you can earn best commission on each recharge.",
@@ -46,7 +47,7 @@ function OurService() {
   return (
     <>
        <section className="page-title ">
-      <img src="images/our-serve.png" alt="services" />
+      <img src="/assets/ourService.png" alt="services" />
     </section>
    
 
@@ -55,7 +56,7 @@ function OurService() {
         <div className="row justify-content-center text-center">
           <div className="col-lg-8 col-md-12">
             <div className="theme-title">
-              <h2 >
+              <h2 className='fw-400'>
                 Services that we offer to our clients at a glance. We have
                 earned 3+ years expertise in fintech services. You just need to
                 tell us about your requirements, we will strictly take care of

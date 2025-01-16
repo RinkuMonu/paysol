@@ -4,17 +4,17 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return <>
   
-    <div>
+    <div style={{marginTop:"50px"}}>
       <section className="page-title">
-        {/* <img src="images/about-us.png" alt="about" /> */}
+        <img src="/assets/about-us.png" alt="about" />
       </section>
       <div className="page-content">
-        <section className="pb0">
+        <section className="pb-0">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-12">
                 <div className="shape-img-bg">
-                  {/* <img className="mask-img1" src="images/about-us1.png" alt="" /> */}
+                  <img className="mask-img1" src="/assets/about-us1.png" alt="" />
                 </div>
               </div>
               <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10 text-secondary">
