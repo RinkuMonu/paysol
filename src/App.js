@@ -33,7 +33,7 @@ function App() {
           path: "/Services",
           element: <OurService />,
         },
-    {
+        {
           path: "/WhyUs",
           element: <WhyUs />,
         }

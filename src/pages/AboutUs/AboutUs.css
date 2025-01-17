@@ -1,6 +1,4 @@
-.page-title img {
-    width: 100%;
-}
+
 
 .mask-img1 {
     width: 100%;
@@ -17,10 +15,6 @@ p {
 p {
     margin-bottom: 1rem;
     margin-top: 0;
-}
-section {
-    padding: 50px 0;
-    position: relative;
 }
 .abt h4 {
     margin-top: 20px;
