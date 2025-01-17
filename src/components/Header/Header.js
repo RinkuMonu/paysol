@@ -38,7 +38,7 @@ export default function Header() {
                                                 <Link class="nav-link" to={"/WhyUs"}>Why Us?</Link>
                                             </li>
                                             <li class="nav-item">
-                                                <Link class="nav-link" to={"/Contact"}>Contact Us</Link>
+                                                <Link class="nav-link" to={"/ContactUs"}>Contact Us</Link>
                                             </li>
                                             <li class="nav-item xs">
                                                 <Link class="nav-link" to={"/Login"}>Login</Link>
