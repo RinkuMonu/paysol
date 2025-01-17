@@ -44,6 +44,7 @@ function App() {
         {
           path: "/Services",
           element: <BillPayUI />,
+        },
         {
           path: "/OurPartner",
           element: <OurPartner />,
