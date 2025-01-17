@@ -4,7 +4,7 @@ import FAQMobileRecharge from "./FAQMobileRecharge";
 const MobileRechargeUI=()=>{
     return(
         <>
-          {/* Main Content */}
+        
       <Container className="py-5">
         <Row>
           {/* Left Side Content */}

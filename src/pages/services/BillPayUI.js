@@ -1,23 +1,9 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Modal } from "react-bootstrap";
-import {
-  FaMobileAlt,
-  FaSatelliteDish,
-  FaGasPump,
-  FaUmbrella,
-  FaGooglePlay,
-  FaTrafficLight,
-} from "react-icons/fa";
+import {FaMobileAlt,FaSatelliteDish,FaGasPump,FaUmbrella,FaGooglePlay,FaTrafficLight,} from "react-icons/fa";
 import { MdElectricBolt, MdCreditCard } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
-import {
-  GiGasStove,
-  GiTap,
-  GiTv,
-  GiUsbKey,
-  GiVikingLonghouse,
-  GiWifiRouter,
-} from "react-icons/gi";
+import { GiGasStove,GiTap,GiTv,GiUsbKey,GiVikingLonghouse,GiWifiRouter,} from "react-icons/gi";
 import MobileRechargeUI from "./Mobile_Recharge/MobileRechargeUI";
 import DTHRecharge from "./DTH_Recharge/DTHRecharge";
 import ElectricityBillPayment from "./ElectricityBillPayment/ElectricityBillPayment";
@@ -29,6 +15,7 @@ import PipedGas from "./PipedGas/PipedGas";
 import Insurance from "./Insurance/Insurance";
 import { HiCurrencyRupee } from "react-icons/hi";
 import { FaHouseChimney } from "react-icons/fa6";
+import Water from "./Water/Water";
 
 const BillPayUI = () => {
   const [activeMenu, setActiveMenu] = useState("Mobile");
@@ -43,19 +30,28 @@ const BillPayUI = () => {
     { name: "Broadband", icon: <GiWifiRouter size={24} /> },
     { name: "Piped Gas", icon: <FaGasPump size={24} /> },
     { name: "Insurance", icon: <FaUmbrella size={24} /> },
-    { name: "More", icon: "+8" },
+    // { name: "More", icon: "+8" },
   ]);
 
-  const moreItems = [
-    { name: "Water", icon: <GiTap /> },
-    { name: "Google Play", icon: <FaGooglePlay /> },
-    { name: "Cable", icon: <GiTv /> },
-    { name: "Municipality", icon: <GiVikingLonghouse /> },
-    { name: "EMI", icon: <HiCurrencyRupee /> },
-    { name: "Challan", icon: <FaTrafficLight /> },
-    { name: "Housing", icon: <FaHouseChimney /> },
-    { name: "LPG Booking", icon: <GiGasStove /> },
-  ];
+  const [moreItems, setMoreItems] = useState([
+    { name: "Water", icon: <GiTap size={24}/> },
+    { name: "Google Play", icon: <FaGooglePlay size={24}/> },
+    { name: "Cable", icon: <GiTv size={24}/> },
+    { name: "Municipality", icon: <GiVikingLonghouse size={24}/> },
+    { name: "EMI", icon: <HiCurrencyRupee size={24}/> },
+    { name: "Challan", icon: <FaTrafficLight size={24}/> },
+    { name: "Housing", icon: <FaHouseChimney size={24}/> },
+    { name: "LPG Booking", icon: <GiGasStove size={24}/> },
+  ]);
+
+  const updateMenuItems = () => {
+    const moreCount = moreItems.length; // Dynamically calculate count
+    const updatedMenuItems = [
+      ...menuItems.slice(0, -1),
+      { name: "More", icon: `+${moreCount}` },
+    ];
+    setMenuItems(updatedMenuItems);
+  };
 
   const handleMenuClick = (menu) => {
     if (menu === "More") {
@@ -67,16 +63,30 @@ const BillPayUI = () => {
 
   const handleMoreItemClick = (menu) => {
     if (!menuItems.find((item) => item.name === menu)) {
-      const newItem = moreItems.find((item) => item.name === menu);
+      const selectedModalItem = moreItems.find((item) => item.name === menu);
+      const lastNavbarItem = menuItems[menuItems.length - 2]; // Last item before "More"
+
+      // Update navbar: replace last item with selected modal item
       setMenuItems((prev) => [
-        ...prev.slice(0, -1),
-        { name: newItem.name, icon: newItem.icon },
-        { name: "More", icon: "+8" },
+        ...prev.slice(0, -2), // Remove last item and "More"
+        { name: selectedModalItem.name, icon: selectedModalItem.icon }, // Add selected item
+        { name: "More", icon: `+${moreItems.length - 1}` }, // Update "More" with new count
+      ]);
+
+      // Update modal: remove selected item and add last navbar item
+      setMoreItems((prev) => [
+        ...prev.filter((item) => item.name !== menu), // Remove selected modal item
+        { name: lastNavbarItem.name, icon: lastNavbarItem.icon }, // Add last navbar item
       ]);
     }
-    setActiveMenu(menu);
-    setShowModal(false);
+
+    setActiveMenu(menu); // Set the active menu to the selected item
+    setShowModal(false); // Close the modal
   };
+
+  React.useEffect(() => {
+    updateMenuItems();
+  }, [moreItems]); // Update "More" count whenever modal items change
 
   return (
     <>
@@ -143,9 +153,9 @@ const BillPayUI = () => {
         {activeMenu === "Broadband" && <Broadband />}
         {activeMenu === "Piped Gas" && <PipedGas />}
         {activeMenu === "Insurance" && <Insurance />}
+        {activeMenu === "Water" && <Water/>}
       </Container>
 
-      {/* Modal for "More" */}
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Body>
           <Container>
