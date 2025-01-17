@@ -13,9 +13,20 @@ import Landline from "./Landline/Landline";
 import Broadband from "./Broadband/Broadband";
 import PipedGas from "./PipedGas/PipedGas";
 import Insurance from "./Insurance/Insurance";
+import Water from "./Water/Water"
 import { HiCurrencyRupee } from "react-icons/hi";
 import { FaHouseChimney } from "react-icons/fa6";
-import Water from "./Water/Water";
+import GooglePlay from "./GooglePlay/GooglePlay";
+import Cable from "./Cable/Cable";
+import Municipality from "./Municipality/Municipality";
+import Emi from "./EMI/Emi";
+import TrafficChallan from "./TrafficChallan/TrafficChallan";
+import HousingBillPayment from "./HousingBillPayment/HousingBillPayment";
+import LpgBooking from "./LpgBooking/LpgBooking";
+
+// import { Link } from 'react-router-dom'
+
+
 
 const BillPayUI = () => {
   const [activeMenu, setActiveMenu] = useState("Mobile");
@@ -45,7 +56,7 @@ const BillPayUI = () => {
   ]);
 
   const updateMenuItems = () => {
-    const moreCount = moreItems.length; // Dynamically calculate count
+    const moreCount = moreItems.length; 
     const updatedMenuItems = [
       ...menuItems.slice(0, -1),
       { name: "More", icon: `+${moreCount}` },
@@ -90,7 +101,7 @@ const BillPayUI = () => {
 
   return (
     <>
-      <nav className="py-3 bg-light border-bottom">
+      <nav className="py-3 bg-light border-bottom marginTop">
         <Container>
           <Row className="text-center">
             {menuItems.map((item) => (
@@ -154,6 +165,14 @@ const BillPayUI = () => {
         {activeMenu === "Piped Gas" && <PipedGas />}
         {activeMenu === "Insurance" && <Insurance />}
         {activeMenu === "Water" && <Water/>}
+        {activeMenu === "Google Play" && <GooglePlay/>}
+        {activeMenu === "Cable" && <Cable/>}
+        {activeMenu === "Municipality" && <Municipality/>}
+        {activeMenu === "EMI" && <Emi/>}
+        {activeMenu === "Challan" && <TrafficChallan/>}
+        {activeMenu === "Housing" && <HousingBillPayment/>}
+        {activeMenu === "LPG Booking" && <LpgBooking/>}
+        
       </Container>
 
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>

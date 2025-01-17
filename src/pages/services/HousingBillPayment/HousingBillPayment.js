@@ -1,8 +1,10 @@
-import React from 'react';
+import React from 'react'
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import FAQGooglePlayPayments from './FAQGooglePlayPayments';
+import FAQHousingBillPayments from './FAQHousingBillPayments';
 
-const GooglePlay = () => {
+
+
+const HousingBillPayment = () => {
   return (
     <>
          <Container className="py-5">
@@ -10,9 +12,11 @@ const GooglePlay = () => {
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             {/* <h6 className="text-primary">Trusted by over 167M customers</h6> */}
-            <h2 className="fw-bold">Effortless Google Play Recharge</h2>
+            <h2 className="fw-bold">
+            Simplify Your Housing Bill Payments
+            </h2>
             <p>
-            Empower your digital entertainment with seamless Google Play recharge.
+            Enhance your living experience by managing housing bills with ease, ensuring comfort and convenience.
             </p>
             {/* <Button variant="primary" className="me-2">
               Download App
@@ -26,21 +30,32 @@ const GooglePlay = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "400px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Online Google Play Recharge</h5>
+              <h5 className="mb-4 text-center">Online Housing Society Electricity Bill Payment</h5>
               <Form>
-                
-
-                <Form.Group className="mb-3" controlId="operator">
-                  <Form.Label>Operator</Form.Label>
+                <Form.Group className="mb-3" controlId="city">
+                  <Form.Label>City</Form.Label>
                   <Form.Select>
-                    <option>Google Play Recharge Code</option>
-      
+                    <option>City</option>
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="telephoneNumber">
-                  <Form.Label>Amount (₹ 10 - ₹ 5000)</Form.Label>
-                  <Form.Control type="text" placeholder="Amount (₹ 10 - ₹ 5000)" />
+                <Form.Group className="mb-3" controlId="societyName">
+                  <Form.Label>Society Name</Form.Label>
+                  <Form.Select>
+                    <option>Society Name</option>
+                  </Form.Select>
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="serviceType">
+                  <Form.Label>Service Type</Form.Label>
+                  <Form.Select>
+                    <option>service Type</option>
+                  </Form.Select>
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="subscriberCode">
+                  <Form.Label>Amount</Form.Label>
+                  <Form.Control type="text" placeholder="₹ Amount" />
                 </Form.Group>
 
                 {/* <Form.Group className="mb-3" controlId="circle">
@@ -65,9 +80,9 @@ const GooglePlay = () => {
           </Col>
         </Row>
       </Container>
-      <FAQGooglePlayPayments/>
+      <FAQHousingBillPayments/>
     </>
   )
 }
 
-export default GooglePlay;
+export default HousingBillPayment;

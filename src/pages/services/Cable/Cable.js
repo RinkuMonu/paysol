@@ -1,18 +1,21 @@
-import React from 'react';
+import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import FAQGooglePlayPayments from './FAQGooglePlayPayments';
+import FAQCableBillPayments from "./FAQCableBillPayments";
 
-const GooglePlay = () => {
+const Cable = () => {
   return (
     <>
-         <Container className="py-5">
+      <Container className="py-5">
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             {/* <h6 className="text-primary">Trusted by over 167M customers</h6> */}
-            <h2 className="fw-bold">Effortless Google Play Recharge</h2>
+            <h2 className="fw-bold">
+              Cable Bill Ease: Simplify Your Viewing Experience.
+            </h2>
             <p>
-            Empower your digital entertainment with seamless Google Play recharge.
+              Streamline your entertainment with easy cable bill payments,
+              ensuring endless viewing pleasure.
             </p>
             {/* <Button variant="primary" className="me-2">
               Download App
@@ -26,21 +29,18 @@ const GooglePlay = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "400px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Online Google Play Recharge</h5>
+              <h5 className="mb-4 text-center">Online Cable Bill Payment</h5>
               <Form>
-                
-
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
                   <Form.Select>
-                    <option>Google Play Recharge Code</option>
-      
+                    <option>Asianet Digital</option>
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="telephoneNumber">
-                  <Form.Label>Amount (₹ 10 - ₹ 5000)</Form.Label>
-                  <Form.Control type="text" placeholder="Amount (₹ 10 - ₹ 5000)" />
+                <Form.Group className="mb-3" controlId="subscriberCode">
+                  <Form.Label>Subscriber Code</Form.Label>
+                  <Form.Control type="text" placeholder="Subscriber Code" />
                 </Form.Group>
 
                 {/* <Form.Group className="mb-3" controlId="circle">
@@ -65,9 +65,9 @@ const GooglePlay = () => {
           </Col>
         </Row>
       </Container>
-      <FAQGooglePlayPayments/>
+      <FAQCableBillPayments />
     </>
-  )
-}
+  );
+};
 
-export default GooglePlay;
+export default Cable;

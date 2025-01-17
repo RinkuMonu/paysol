@@ -1,5 +1,5 @@
 
-import Header from "./components/Header/Header.js";
+// import Header from "./components/Header/Header.js";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
@@ -13,6 +13,7 @@ import WhyUs from "./pages/WhyUs";
 import BillPayUI from '../src/pages/services/BillPayUI.js'
 import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
+
 
 function App() {
   const router = createBrowserRouter([
@@ -36,15 +37,16 @@ function App() {
           path: "/Services",
           element: <OurService />,
         },
-    {
+        {
           path: "/WhyUs",
           element: <WhyUs />,
         },
-       
+
         {
-          path: "/Services",
+          path: "/BillPayUI",
           element: <BillPayUI />,
         },
+
         {
           path: "/OurPartner",
           element: <OurPartner />,
