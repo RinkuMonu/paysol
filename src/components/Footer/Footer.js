@@ -1,6 +1,7 @@
 
 import React from "react";
 import "./Footer.css"; // Create a CSS file for the styles or inline styles if preferred
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -56,13 +57,13 @@ function Footer() {
                   <h5>Pages</h5>
                   <ul className="list-unstyled">
                     <li>
-                      <a href="/BBPS">BBPS</a>
+                      <Link to={"/BBPS"}>BBPS</Link>
                     </li>
                     <li>
-                      <a href="/Services">Services</a>
+                      <Link to={"/Services"}>Services</Link>
                     </li>
                     <li>
-                      <a href="/OurPartner">Our Partners</a>
+                      <Link to={"/OurPartner"}>Our Partners</Link>
                     </li>
                   </ul>
                 </div>
