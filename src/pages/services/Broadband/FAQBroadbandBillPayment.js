@@ -4,13 +4,13 @@ import Accordion from 'react-bootstrap/Accordion';
 const FAQBroadbandBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle screen size change
+  
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as per your design
+      setIsMobile(window.innerWidth <= 768); 
     };
 
-    handleResize(); // Check initial screen size
+    handleResize(); 
     window.addEventListener('resize', handleResize);
 
     return () => {

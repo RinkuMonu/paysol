@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/Header/Header.js";
+
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
@@ -16,6 +17,7 @@ import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
 import Login from "./pages/Login/Login";
 import Popup from "./pages/Popup/Popup.jsx";
+
 
 function App() {
  
@@ -40,15 +42,16 @@ function App() {
           path: "/Services",
           element: <OurService />,
         },
-    {
+        {
           path: "/WhyUs",
           element: <WhyUs />,
         },
-       
+
         {
-          path: "/Services",
+          path: "/BillPayUI",
           element: <BillPayUI />,
         },
+
         {
           path: "/OurPartner",
           element: <OurPartner />,
