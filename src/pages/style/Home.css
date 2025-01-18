@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&amp;display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap'); :root {
-    --themeht-primary-color: #ff6004;
-    --themeht-secondary-color: #fe9e30;
+    --themeht-primary-color: #872D67;
+    /* --themeht-primary-color: #c146f7; */
+    /* --themeht-secondary-color: #2a4172; */
+    --themeht-secondary-color: #14263F;
     --themeht-primary2-color: #103ce7;
     --themeht-secondary2-color: #64e9ff;
     --themeht-text-color: #191919;
@@ -23,7 +25,7 @@ body{
 ------------------------*/
 
 section {
-    padding: 50px 0;
+    padding: 50px 0 !important;
     position: relative;
 }
 
@@ -108,7 +110,7 @@ section {
 }
 
 .banner {
-    padding: 98px 0 50px;
+    padding: 98px 0 50px !important;
     position: relative;
 }
 
@@ -955,7 +957,7 @@ iframe {
     stop-color: var(--themeht-primary2-color);
 }
 .step-item.style-1 .step-icon::before {
-    background: linear-gradient(115deg, #ff6004, #fe9e30);
+    background: linear-gradient(115deg, #c146f7, #fe9e30);
     transition: all 0.35s ease-in-out;
     position: absolute;
     left: 0;
@@ -979,7 +981,7 @@ iframe {
     animation: spinnerRotate 10s linear infinite;
     margin-left: -8px;
     margin-top: -8px;
-    border: 2px solid #ff6004;
+    border: 2px solid #c146f7;
     transition: all 0.35s ease-in-out;
 }
 @keyframes spinnerRotate {
@@ -1141,7 +1143,6 @@ a, i, .themeht-btn, button, img, span, .nav-link, .dropdown-item, #ht-main-nav, 
     display: inline-block;
     width: 20%;
     text-align: center;
-    float: left;
 }
 
 .widget-size li:nth-child(4n+4) {
@@ -1149,7 +1150,6 @@ a, i, .themeht-btn, button, img, span, .nav-link, .dropdown-item, #ht-main-nav, 
 }
 
 input.form-product {
-    -moz-appearance: textfield;
     height: 40px !important;
     border: none;
     background: var(--themeht-white-color);
@@ -1201,7 +1201,7 @@ input.form-product {
 }
 
 .step-item.style-1 .step-icon::before {
-    background: linear-gradient(115deg, #ff6004, #fe9e30);
+    background: linear-gradient(115deg, #c146f7, #fe9e30);
     transition: all 0.35s ease-in-out;
     position: absolute;
     left: 0;
@@ -1226,7 +1226,7 @@ input.form-product {
     animation: spinnerRotate 10s linear infinite;
     margin-left: -8px;
     margin-top: -8px;
-    border: 2px solid #ff6004;
+    border: 2px solid #c146f7;
     transition: all 0.35s ease-in-out;
 }
 
@@ -1425,9 +1425,6 @@ input.form-product {
     padding-bottom: 0 !important;
 }
 
-.page-title img {
-    width: 100%;
-}
 
 .bbps {
     padding-top: 50px;
@@ -1460,7 +1457,10 @@ input.form-product {
 .terms p {
     margin-bottom: 10px !important;
 }
-
+.dropdown-toggle::after {
+    display: none !important; /* Hides the arrow */
+  }
+  
 .terms h4 {
     font-size: 18px !important;
 }
@@ -1468,7 +1468,9 @@ input.form-product {
 .mask-img1 {
     width: 100%;
 }
-
+.page-title{
+    margin-top: 47px !important;
+}
 @media (max-width: 767px) and (min-width:320px) {
     .banner {
         padding-bottom: 20px !important;
