@@ -29,6 +29,8 @@ import PipedGas from "./PipedGas/PipedGas";
 import Insurance from "./Insurance/Insurance";
 import { HiCurrencyRupee } from "react-icons/hi";
 import { FaHouseChimney } from "react-icons/fa6";
+import { Link } from 'react-router-dom'
+
 
 const BillPayUI = () => {
   const [activeMenu, setActiveMenu] = useState("Mobile");
@@ -80,7 +82,7 @@ const BillPayUI = () => {
 
   return (
     <>
-      <nav className="py-3 bg-light border-bottom">
+      <nav className="py-3 bg-light border-bottom marginTop">
         <Container>
           <Row className="text-center">
             {menuItems.map((item) => (
@@ -90,7 +92,7 @@ const BillPayUI = () => {
                 className="menu-item"
                 style={{ cursor: "pointer" }}
               >
-                <div
+                <Link  to={`/${item.name.replace(" ", "").toLowerCase()}`}
                   className={`d-flex flex-column align-items-center ${
                     activeMenu === item.name ? "active" : ""
                   }`}
@@ -126,7 +128,7 @@ const BillPayUI = () => {
                       ></span>
                     )}
                   </p>
-                </div>
+                </Link>
               </Col>
             ))}
           </Row>

@@ -34,7 +34,7 @@ a{
 
 .primary-footer h5 {
     margin-bottom: 20px;
-    background: linear-gradient(115deg, #ff6004, #fe9e30);
+    background: linear-gradient(115deg, #c146f7, #fe9e30);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -66,8 +66,8 @@ a{
 .media-icon li img {
     position: absolute;
     left: 0;
-    top: 3px;
-    font-size: 30px;
+    top: 0;
+   width: 24px;
 }
 
 .media-icon li a {
@@ -75,7 +75,7 @@ a{
 }
 
 .media-icon li a:hover {
-    color: #ff6004;
+    color: #c146f7;
 }
 
 .footer-menu li {
@@ -95,7 +95,7 @@ a{
 }
 
 .footer-menu li a:hover {
-    color: #ff6004
+    color: #c146f7
 }
 
 .footer-menu .list-inline li {
@@ -117,7 +117,7 @@ a{
 
 .footer-social li a:hover {
     color: #ffffff;
-    background: #ff6004;
+    background: #c146f7;
 }
 
 .copyright::after {

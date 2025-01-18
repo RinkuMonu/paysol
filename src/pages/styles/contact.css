@@ -26,17 +26,17 @@
 
   /* Contact Section Styling */
 .contact-box {
-    background-color: #f8f9fa; /* Light background for contrast */
+    background-color: #f8f9fa;
     border: 1px solid #e0e0e0;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 25px 70px rgba(8, 10, 55, 0.08); /* Smooth shadow */
+    box-shadow: 0 25px 70px rgba(8, 10, 55, 0.08); 
     transition: all 0.3s ease-in-out;
   }
   
   .contact-box:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Hover effect to lift the box */
-    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-5px); 
   }
 
 
@@ -48,7 +48,7 @@ margin-bottom: 50px;
 
   .theme-title h2 {
     line-height: 28px;
-    font-size: 20px; /* Larger font size */
+    font-size: 20px; 
     margin-bottom: 0;
     font-weight: 400;
     color: gray;
@@ -93,7 +93,7 @@ margin-bottom: 50px;
 }
 
 .themeht-btn.primary-btn {
-    background: linear-gradient(115deg, #ff6c0c, #fe9e30);
+    background: linear-gradient(115deg,var(--themeht-primary-color), var(--themeht-secondary-color));
     color: var(--themeht-white-color);
 }
 
@@ -178,7 +178,7 @@ span {
   }
 
   .contact-item i {
-    font-size: 2rem; /* Adjust icon size */
+    font-size: 2rem; 
   }
   
   .contact-info {
@@ -199,7 +199,7 @@ span {
     top: 0;
     line-height: 24px;
     font-size: 30px;
-    color: #ff7b30;
+    color: var(--themeht-primary-color);
     text-align: center;
 }
 .contact-info li span {
