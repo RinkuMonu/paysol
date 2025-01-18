@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 const FAQGasBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle screen size change
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); 
