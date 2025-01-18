@@ -18,18 +18,18 @@ function Footer() {
                 <img src="/assets/Home/world.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
                   <p className="mb-0" style={{color:"#fff"}}>
-                    Madhapur Village, Gafoor Nagar, Hyderabad, Telangana - 500081
+                  Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
                   </p>
                 </li>
                 <li>
                 <img src="/assets/Home/send-mail.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
-                  <a href="mailto:info@paysguru.com">info@paysguru.com</a>
+                  <a href="mailto:info@paysguru.com">info@7unique.in</a>
                 </li>
                 <li>
                 <img src="/assets/Home/phone-call.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
-                  <a href="tel:+9059400261">9059400261</a>
+                  <a href="tel:+9059400261">9119101723</a>
                 </li>
               </ul>
             </div>
