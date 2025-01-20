@@ -16,7 +16,7 @@ function OurService() {
           imgSrc: "/assets/Electricity.png",
           title: "Electricity Bill",
           description:
-            "Pay your Electricity bill online using the Pay Skriptonic Softech Private Limited app. We use best in industry technology to make it fast and reliable.",
+            "Pay your Electricity bill online using the Pay finunique Private Limited app. We use best in industry technology to make it fast and reliable.",
         },
         {
           imgSrc: "/assets/Utility.png",
@@ -34,13 +34,13 @@ function OurService() {
           imgSrc: "/assets/BBPS.png",
           title: "BBPS",
           description:
-            "Skriptonic Softech Private Limited offers its customers to pay their bills with just a click. No need to stand in queue at operator’s office anymore.",
+            "finunique Private Limited offers its customers to pay their bills with just a click. No need to stand in queue at operator’s office anymore.",
         },
         {
           imgSrc: "/assets/Recharge.png",
           title: "Recharge Services",
           description:
-            "Skriptonic Softech Private Limited recharge service covers all major service providers of Mobile, And you can earn best commission on each recharge.",
+            "finunique Private Limited recharge service covers all major service providers of Mobile, And you can earn best commission on each recharge.",
         },
       ];
     
