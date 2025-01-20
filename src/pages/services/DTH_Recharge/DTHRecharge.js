@@ -7,7 +7,7 @@ import FAQDthRecharge from './FAQDthRecharge';
 const DTHRecharge=()=>{
     return(
     <>
-    <Container className="py-5 marginTop">
+    <Container className="py-5">
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">

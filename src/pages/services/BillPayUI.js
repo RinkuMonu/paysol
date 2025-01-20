@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Modal } from "react-bootstrap";
-import {FaMobileAlt,FaSatelliteDish,FaGasPump,FaUmbrella,FaGooglePlay,FaTrafficLight,} from "react-icons/fa";
+import {FaMobileAlt,FaSatelliteDish,FaGasPump,FaGooglePlay,FaTrafficLight,} from "react-icons/fa";
+import { FaUmbrella } from "react-icons/fa6";
 import { MdElectricBolt, MdCreditCard } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { GiGasStove,GiTap,GiTv,GiUsbKey,GiVikingLonghouse,GiWifiRouter,} from "react-icons/gi";
@@ -75,7 +76,7 @@ const BillPayUI = () => {
   const handleMoreItemClick = (menu) => {
     if (!menuItems.find((item) => item.name === menu)) {
       const selectedModalItem = moreItems.find((item) => item.name === menu);
-      const lastNavbarItem = menuItems[menuItems.length - 2]; // Last item before "More"
+      const lastNavbarItem = menuItems[menuItems.length - 1]; // Last item before "More"
 
       // Update navbar: replace last item with selected modal item
       setMenuItems((prev) => [
@@ -97,6 +98,7 @@ const BillPayUI = () => {
 
   React.useEffect(() => {
     updateMenuItems();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moreItems]); // Update "More" count whenever modal items change
 
   return (

@@ -13,6 +13,14 @@ import WhyUs from "./pages/WhyUs";
 import BillPayUI from '../src/pages/services/BillPayUI.js'
 import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
+import MobileRechargeUI from "./pages/services/Mobile_Recharge/MobileRechargeUI.js";
+import DTHRecharge from "./pages/services/DTH_Recharge/DTHRecharge.js";
+import ElectricityBillPayment from "./pages/services/ElectricityBillPayment/ElectricityBillPayment.js";
+import CreditCardPayment from "./pages/services/CreditCardPayment/CreditCardPayment.js";
+import DataCardRecharge from "./pages/services/DataCard/DataCardRecharge.js";
+import Landline from "./pages/services/Landline/Landline.js";
+import Broadband from "./pages/services/Broadband/Broadband.js";
+import Insurance from "./pages/services/Insurance/Insurance.js";
 
 
 function App() {
@@ -43,7 +51,7 @@ function App() {
         },
 
         {
-          path: "/BillPayUI",
+          path: "/recharge",
           element: <BillPayUI />,
         },
 
@@ -57,6 +65,22 @@ function App() {
         }
       ],
     },
+    {
+      path: "/recharge",
+      element: <BillPayUI />,
+      children: [
+        { path: "mobile", element: <MobileRechargeUI /> },
+        { path: "dth", element: <DTHRecharge /> },
+        { path: "electricity", element: <ElectricityBillPayment /> },
+        { path: "credit-card", element: <CreditCardPayment /> },
+        { path: "datacard", element: <DataCardRecharge /> },
+        { path: "landline", element: <Landline /> },
+        { path: "broadband", element: <Broadband /> },
+        // { path: "gas", element: <GasService /> },
+        { path: "insurance", element: <Insurance /> },
+        
+      ],
+    }
   ]);
   return (
     <>
