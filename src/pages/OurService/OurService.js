@@ -47,7 +47,7 @@ function OurService() {
   return (
     <>
        <section className="page-title ">
-      <img src="/assets/ourService.png" alt="services" />
+      <img src="/assets/SERVICE.svg" alt="services" />
     </section>
    
 

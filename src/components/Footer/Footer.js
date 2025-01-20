@@ -24,12 +24,12 @@ function Footer() {
                 <li>
                 <img src="/assets/Home/send-mail.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
-                  <a href="mailto:info@paysguru.com">info@7unique.in</a>
+                  <a href="mailto:info@finuniques.in">info@finuniques.in</a>
                 </li>
                 <li>
                 <img src="/assets/Home/phone-call.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
-                  <a href="tel:+9059400261">9119101723</a>
+                  <a href="tel:+9660339514">9660339514</a>
                 </li>
               </ul>
             </div>
@@ -42,13 +42,13 @@ function Footer() {
                   <h5>Other Links</h5>
                   <ul className="list-unstyled w-100">
                     <li>
-                      <a href="/PrivacyPolicy">Privacy Policy</a>
+                      <Link to={"/privacypolicy"}>Privacy Policy</Link>
                     </li>
                     <li>
-                      <a href="/TermsAndCondition">Terms Conditions</a>
+                      <Link to={"/term"}>Terms Conditions</Link>
                     </li>
                     <li>
-                      <a href="/RefundPolicy">Refund Cancellation</a>
+                      <Link href="/RefundPolicy">Refund Cancellation</Link>
                     </li>
                   </ul>
                 </div>
@@ -106,7 +106,7 @@ function Footer() {
           <div className="copyright">
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
-                © 2024 @Paysguru. All rights reserved.
+                © 2024 @finuniques. All rights reserved.
               </div>
             </div>
           </div>

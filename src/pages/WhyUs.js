@@ -3,9 +3,9 @@ import "./styles/whyUs.css"
 const WhyUs = () => {
   return (
     <div>
-      <section className="page-title">
+      <section className="page-title border-0">
         <img
-          src="/images/why-us.png"
+          src="/images/whyBG.svg"
           alt="Contact Us"
           className="full-width-image"
         />
@@ -16,7 +16,7 @@ const WhyUs = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className="shape-img-bg">
-                <img className="mask-img1" src="/images/why-us-vector.jpg" alt="WhyUs vector" />
+                <img className="mask-img1" src="/images/WHY.svg" alt="WhyUs vector" />
               </div>
             </div>
             <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">

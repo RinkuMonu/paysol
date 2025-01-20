@@ -3,9 +3,9 @@ import "./styles/bbps.css";
 const BBPS = () => {
   return (
     <div>
-      <section className="page-title">
+      <section className="page-title  border-0">
         <img
-          src="/images/bbps 2.png"
+          src="/images/BBPSBG.svg"
           alt="Contact Us"
           className="full-width-image"
         />
@@ -16,7 +16,7 @@ const BBPS = () => {
           <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
               <div class="shape-img-bg">
-                <img class="mask-img1" src="/images/bbps-vector.png" alt="bbps vector" />
+                <img class="mask-img1" src="/images/BBPS.svg" alt="bbps vector" />
               </div>
             </div>
             <div class="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">
