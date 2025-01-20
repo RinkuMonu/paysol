@@ -48,7 +48,7 @@ function Footer() {
                       <Link to={"/term"}>Terms Conditions</Link>
                     </li>
                     <li>
-                      <Link href="/RefundPolicy">Refund Cancellation</Link>
+                      <Link to={"/RefundPolicy"}>Refund Cancellation</Link>
                     </li>
                   </ul>
                 </div>

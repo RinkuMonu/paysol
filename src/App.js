@@ -19,6 +19,7 @@ import Login from "./pages/Login/Login";
 import Popup from "./pages/Popup/Popup.jsx";
 import Term from "./pages/Term";
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
+import RefundPolicy from './pages/RefundPolicy.js';
 
 
 function App() {
@@ -69,6 +70,10 @@ function App() {
         {
           path: "/privacypolicy",
           element: <PrivacyPolicy />,
+        },
+        {
+          path: "/RefundPolicy",
+          element: <RefundPolicy />,
         },
        
       ],

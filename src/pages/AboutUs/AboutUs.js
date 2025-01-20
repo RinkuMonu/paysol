@@ -6,7 +6,7 @@ const AboutUs = () => {
   
     <div style={{marginTop:"50px"}}>
       <section className="page-title">
-        <img src="/assets/ABOUT.svg" alt="about" />
+        <img src="/assets/aboutbg2.svg" alt="about" />
       </section>
       <div className="page-content">
         <section className="pb-0">
