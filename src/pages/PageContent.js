@@ -34,7 +34,7 @@ function PageContent() {
                                     The Fastest Way To <span>Grow Your Business</span>
                                 </h2>
                                 <p>
-                                    We are happy to introduce Paysguru, a Fintech service provider
+                                    We are happy to introduce finuniques, a  service provider
                                     offering services like Bills Payment (BBPS) and Recharge to
                                     retailers/merchants.
                                 </p>
@@ -86,7 +86,7 @@ function PageContent() {
                             </p>
                             <h4>Growth Is Our Only Obsession</h4>
                             <p>
-                                Paysguru makes your work easier and faster. Our strongest motive
+                                finuniques makes your work easier and faster. Our strongest motive
                                 is to provide the best possible services to our customers.
                             </p>
                         </div>
@@ -142,7 +142,7 @@ function PageContent() {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-md-12 order-lg-1">
-                            <img className="img-fluid" src="/assets/Home/06.png" alt="" />
+                            <img className="img-fluid" src="/assets/Home/SERVICE1.svg" alt="" />
                         </div>
                         <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">
                             {/* First Featured Item */}
@@ -155,7 +155,7 @@ function PageContent() {
                                         <h4>Explore Unlimited Business Opportunities</h4>
                                     </div>
                                     <p>
-                                        Paysguru is easy to operate and it also makes your work easier and faster.
+                                        finuniques is easy to operate and it also makes your work easier and faster.
                                         We will always have a wide variety of options as per your needs. You are always
                                         privileged to choose how to go forward. After all, You are Important to us.
                                     </p>
@@ -188,10 +188,10 @@ function PageContent() {
                             <div className="theme-title">
                                 <h6 className="fz40">Services</h6>
                                 <p>
-                                    Services that we offer to our clients at a glance. We have earned 3+ years of expertise in fintech services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Paysguru fintech services and provide Recharge and Bill Payment (BBPS) to your customers.
+                                    Services that we offer to our clients at a glance. We have earned 3+ years of expertise in  services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with finuniques  services and provide Recharge and Bill Payment (BBPS) to your customers.
                                 </p>
                             </div>
-                            <img className="img-fluid" src="/assets/Home/03.png" alt="about" />
+                            <img className="img-fluid" src="/assets/Home/SERVICE2.svg" alt="about" />
                         </div>
                         <div className="col-lg-7 ps-lg-8">
                             <div className="row">
@@ -200,14 +200,14 @@ function PageContent() {
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assets/Home/electricity.png" width="100" alt="electricity" />
+                                                <img src="/assets/Home/electricity-bill.svg" width="50" alt="electricity" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
                                                     <h4>Electricity Bill</h4>
                                                 </div>
                                                 <p>
-                                                    Pay your Electricity bill online using the Pay Paysguru app. We use the best in industry technology to make it fast and reliable.
+                                                    Pay your Electricity bill online using the Pay finuniques app. We use the best in industry technology to make it fast and reliable.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -222,7 +222,7 @@ function PageContent() {
                                     <div className="service-item style-1 service-active">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assets/Home/pay-utility.png" width="100" alt="pay-utility" />
+                                                <img src="/assets/Home/water-bill.svg" width="50" alt="pay-utility" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
@@ -244,14 +244,14 @@ function PageContent() {
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assets/Home/bbps1.png" width="100" alt="bbps1" />
+                                                <img src="/assets/Home/b.svg" width="40" alt="bbps1" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
                                                     <h4>BBPS</h4>
                                                 </div>
                                                 <p>
-                                                    Paysguru offers its customers to pay their bills with just a click. No need to stand in queue at the operator’s office anymore.
+                                                    finuniques offers its customers to pay their bills with just a click. No need to stand in queue at the operator’s office anymore.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -266,14 +266,14 @@ function PageContent() {
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assets/Home/recharge.png" width="100" alt="recharge" />
+                                                <img src="/assets/Home/electricity.svg" width="50" alt="recharge" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
                                                     <h4>Recharge Services</h4>
                                                 </div>
                                                 <p>
-                                                    Paysguru recharge service covers all major service providers of Mobile, and you can earn the best commission on each recharge.
+                                                    finuniques recharge service covers all major service providers of Mobile, and you can earn the best commission on each recharge.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>

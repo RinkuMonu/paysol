@@ -6,7 +6,7 @@ const AboutUs = () => {
   
     <div style={{marginTop:"50px"}}>
       <section className="page-title">
-        <img src="/assets/about-us.png" alt="about" />
+        <img src="/assets/aboutbg2.svg" alt="about" />
       </section>
       <div className="page-content">
         <section className="pb-0">
@@ -14,7 +14,7 @@ const AboutUs = () => {
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-12">
                 <div className="shape-img-bg">
-                  <img className="mask-img1" src="/assets/about-us1.png" alt="" />
+                  <img className="mask-img1" src="/assets/IMG18.png" alt="" />
                 </div>
               </div>
               <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10 text-secondary">
