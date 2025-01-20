@@ -1,52 +1,106 @@
-
-import React from 'react'
-import './Header.css'
-import { Link } from 'react-router-dom'
-export default function Header() {
+import React from "react";
+import "./Header.css";
+import { Link } from "react-router-dom";
+export default function Header({ onLoginClick }) {
     return (
         <>
-            <header id="site-header" class="header">
+            <header id="site-header" className="header">
                 <div id="header-wrap">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col">
-                                <nav class="navbar navbar-expand-lg justify-content-lg-between px-4">
-                                    <a class="navbar-brand logo" href="#">
-                                        <img class="img-fluid" src="/assets/Home/logo.png" alt="" />
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col">
+                                <nav className="navbar navbar-expand-lg justify-content-lg-between px-4">
+                                    <a className="navbar-brand logo" href="#">
+                                        <img
+                                            className="img-fluid"
+                                            src="/assets/Home/logo.jpg"
+                                            alt=""
+                                        />
                                     </a>
-                                    <button class="navbar-toggler ht-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                        <svg width="40px" height="40px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.528"></g><g id="SVGRepo_iconCarrier"> <path d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z" fill="#000000"></path> <path d="M2 12C2 11.4477 2.44772 11 3 11H21C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H3C2.44772 13 2 12.5523 2 12Z" fill="#000000"></path> <path d="M3 17C2.44772 17 2 17.4477 2 18C2 18.5523 2.44772 19 3 19H21C21.5523 19 22 18.5523 22 18C22 17.4477 21.5523 17 21 17H3Z" fill="#000000"></path> </g></svg>
+                                    <button
+                                        className="navbar-toggler ht-toggler"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNav"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation"
+                                    >
+                                        <svg
+                                            width="40px"
+                                            height="40px"
+                                            viewBox="-2.4 -2.4 28.80 28.80"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g
+                                                id="SVGRepo_tracerCarrier"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke="#CCCCCC"
+                                                stroke-width="0.528"
+                                            ></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                {" "}
+                                                <path
+                                                    d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+                                                    fill="#000000"
+                                                ></path>{" "}
+                                                <path
+                                                    d="M2 12C2 11.4477 2.44772 11 3 11H21C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H3C2.44772 13 2 12.5523 2 12Z"
+                                                    fill="#000000"
+                                                ></path>{" "}
+                                                <path
+                                                    d="M3 17C2.44772 17 2 17.4477 2 18C2 18.5523 2.44772 19 3 19H21C21.5523 19 22 18.5523 22 18C22 17.4477 21.5523 17 21 17H3Z"
+                                                    fill="#000000"
+                                                ></path>{" "}
+                                            </g>
+                                        </svg>
                                     </button>
                                     <div className="collapse navbar-collapse" id="navbarNav">
                                         <ul className="nav navbar-nav mx-auto">
                                             <li className="nav-item">
-                                                <Link className="nav-link active" to={"/"}>Home</Link>
+                                                <Link className="nav-link active" to={"/"}>
+                                                    Home
+                                                </Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link className="nav-link" to={"/AboutUs"}>About Us</Link>
+                                                <Link className="nav-link" to={"/AboutUs"}>
+                                                    About Us
+                                                </Link>
                                             </li>
                                             <li className="nav-item dropdown">
                                                 {/* Hoverable Services Menu */}
                                                 <Link
-                                                    className="nav-link dropdown-toggle"
+                                                    className="nav-link"
                                                     to="/Services"
-                                                    id="servicesDropdown"
-                                                    role="button"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
+
                                                 >
                                                     Our Services
+                                                    <button
+                                                        className=" dropdown-toggle bg-white border-0"
+                                                        id="servicesDropdown"
+                                                        role="button"
+                                                        data-bs-toggle="dropdown"
+                                                        aria-expanded="false"
+
+                                                    ><i class="bi bi-chevron-down"></i></button>
                                                 </Link>
-                                                <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
+                                                <ul
+                                                    className="dropdown-menu"
+                                                    aria-labelledby="servicesDropdown"
+                                                >
                                                     <li>
                                                         <Link className="dropdown-item" to={"/BillPayUI"}>
                                                             <i class="bi bi-lightning-charge"></i>
-                                                            Recharge & Bill Pay</Link>
+                                                            Recharge & Bill Pay
+                                                        </Link>
                                                     </li>
                                                     <li>
                                                         <Link className="dropdown-item" to={"/Service2"}>
                                                             <i class="bi bi-currency-rupee"></i>
-                                                            Transfer to Bank</Link>
+                                                            Transfer to Bank
+                                                        </Link>
                                                     </li>
                                                     <li>
                                                         <Link className="dropdown-item" to={"/Service3"}>
@@ -63,7 +117,11 @@ export default function Header() {
                                                                 xmlSpace="preserve"
                                                             >
                                                                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                                                                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                                                                <g
+                                                                    id="SVGRepo_tracerCarrier"
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                ></g>
                                                                 <g id="SVGRepo_iconCarrier">
                                                                     <g>
                                                                         <g>
@@ -78,20 +136,29 @@ export default function Header() {
                                                                     </g>
                                                                 </g>
                                                             </svg>
-                                                            Offers & Deals</Link>
+                                                            Offers & Deals
+                                                        </Link>
                                                     </li>
                                                     <li>
                                                         <Link className="dropdown-item" to={"/LocalStores"}>
                                                             <i class="bi bi-geo"></i>
-                                                            Local Stores</Link>
+                                                            Local Stores
+                                                        </Link>
                                                     </li>
                                                     <li>
-                                                        <Link className="dropdown-item" to={"/RedeemPaybackPoints"}>
-                                                        <i class="bi bi-ui-radios-grid"></i>
-                                                            Redeem Payback Points</Link>
+                                                        <Link
+                                                            className="dropdown-item"
+                                                            to={"/RedeemPaybackPoints"}
+                                                        >
+                                                            <i class="bi bi-ui-radios-grid"></i>
+                                                            Redeem Payback Points
+                                                        </Link>
                                                     </li>
                                                     <li>
-                                                        <Link className="dropdown-item" to={"/WalletTransfer"}>
+                                                        <Link
+                                                            className="dropdown-item"
+                                                            to={"/WalletTransfer"}
+                                                        >
                                                             <svg
                                                                 className="custom-svg"
                                                                 height="64px"
@@ -105,61 +172,63 @@ export default function Header() {
                                                                 fill="#000000"
                                                             >
                                                                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                                                                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                                                                <g
+                                                                    id="SVGRepo_tracerCarrier"
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                ></g>
                                                                 <g id="SVGRepo_iconCarrier">
                                                                     <g>
                                                                         <g>
-                                                                            <path
-                                                                                d="M90.3,96.956c-3.8,3.9-3.8,10.2,0.2,14c3.9,3.8,10.2,3.8,14-0.2c35.8-36.7,83.8-57.2,135-57.8 c50-0.6,97.4,18,133.7,52.2l-18.2,0.2c-5.5,0.1-9.8,4.5-9.8,10c0.1,5.4,4.5,9.8,9.9,9.8h0.1l42.2-0.5c5.5-0.1,9.8-4.5,9.8-10 l-0.4-42.1c-0.1-5.4-4.5-9.8-9.9-9.8h-0.1c-5.5,0.1-9.8,4.5-9.8,10l0.2,18.4c-40.1-38-92.6-58.6-147.9-58 C182.7,33.956,129.8,56.556,90.3,96.956z"
-                                                                            ></path>
-                                                                            <path
-                                                                                d="M378.9,379.056c-35.8,36.7-83.8,57.2-135,57.8c-50,0.6-97.4-18-133.7-52.2l18.2-0.2 c5.5-0.1,9.8-4.5,9.8-10c-0.1-5.4-4.5-9.8-9.9-9.8h-0.1l-42.2,0.5c-5.5,0.1-9.8,4.5-9.8,10l0.5,42.2c0.1,5.4,4.5,9.8,9.9,9.8h0.1 c5.5-0.1,9.8-4.5,9.8-10l-0.2-18.4c39.5,37.4,90.9,58,145.4,58c0.8,0,1.7,0,2.5,0c56.5-0.7,109.5-23.3,149-63.7 c3.8-3.9,3.8-10.2-0.2-14C389,375.056,382.8,375.156,378.9,379.056z"
-                                                                            ></path>
-                                                                            <path
-                                                                                d="M78.2,240.256c0-3.3-1.7-6.4-4.4-8.2c-1.8-1.2-2.8-3.2-2.8-5.3v-36.1c0-12.5,10.1-22.6,22.6-22.6 h7.8c12.5,0,22.6,10.1,22.6,22.6v36.1c0,2.1-1.1,4.1-2.8,5.3c-2.8,1.8-4.4,4.9-4.4,8.2v34.8c0,4.4,2.5,8.4,6.5,10.3 c4.5,2.2,27.8,14,49.4,31.7c1.7,1.4,2.7,3.6,2.7,5.9v24.7c0,5.5,4.4,9.9,9.9,9.9s9.9-4.4,9.9-9.9v-24.7c0-8.2-3.6-15.9-10-21.2 c-18.9-15.6-39.2-26.9-48.6-31.8v-25.1c4.6-4.8,7.3-11.3,7.3-18.1v-36.1c0-23.4-19-42.4-42.4-42.4h-7.8c-23.4,0-42.4,19-42.4,42.4 v36.1c0,6.8,2.6,13.3,7.3,18.1v25.1c-9.5,4.9-29.7,16.3-48.6,31.8c-6.3,5.2-10,12.9-10,21.2v24.7c0,5.5,4.4,9.9,9.9,9.9 s9.9-4.4,9.9-9.9v-24.7c0-2.3,1-4.4,2.7-5.9c21.5-17.7,44.9-29.5,49.4-31.7c3.9-1.9,6.5-6,6.5-10.3v-34.8H78.2z"
-                                                                            ></path>
-                                                                            <path
-                                                                                d="M479.9,301.856c-18.9-15.6-39.2-26.9-48.6-31.8v-25.1c4.6-4.8,7.3-11.3,7.3-18.1v-36.1 c0-23.4-19-42.4-42.4-42.4h-7.8c-23.4,0-42.4,19-42.4,42.4v36.1c0,6.8,2.6,13.3,7.3,18.1v25c-9.5,4.9-29.7,16.3-48.6,31.8 c-6.3,5.2-10,12.9-10,21.2v24.7c0,5.5,4.4,9.9,9.9,9.9s9.9-4.4,9.9-9.9v-24.7c0-2.3,1-4.4,2.7-5.9c21.5-17.7,44.9-29.5,49.4-31.7 c3.9-1.9,6.4-6,6.4-10.3v-34.8c0-3.3-1.7-6.4-4.4-8.2c-1.8-1.2-2.8-3.2-2.8-5.3v-36.1c0-12.5,10.1-22.6,22.6-22.6h7.8 c12.5,0,22.6,10.1,22.6,22.6v36.1c0,2.1-1.1,4.1-2.8,5.3c-2.8,1.8-4.4,4.9-4.4,8.2v34.8c0,4.4,2.5,8.4,6.4,10.3 c4.5,2.2,27.9,14,49.4,31.7c1.7,1.4,2.7,3.6,2.7,5.9v24.7c0,5.5,4.4,9.9,9.9,9.9s9.9-4.4,9.9-9.9v-24.7 C489.8,314.756,486.2,307.056,479.9,301.856z"
-                                                                            ></path>
+                                                                            <path d="M90.3,96.956c-3.8,3.9-3.8,10.2,0.2,14c3.9,3.8,10.2,3.8,14-0.2c35.8-36.7,83.8-57.2,135-57.8 c50-0.6,97.4,18,133.7,52.2l-18.2,0.2c-5.5,0.1-9.8,4.5-9.8,10c0.1,5.4,4.5,9.8,9.9,9.8h0.1l42.2-0.5c5.5-0.1,9.8-4.5,9.8-10 l-0.4-42.1c-0.1-5.4-4.5-9.8-9.9-9.8h-0.1c-5.5,0.1-9.8,4.5-9.8,10l0.2,18.4c-40.1-38-92.6-58.6-147.9-58 C182.7,33.956,129.8,56.556,90.3,96.956z"></path>
+                                                                            <path d="M378.9,379.056c-35.8,36.7-83.8,57.2-135,57.8c-50,0.6-97.4-18-133.7-52.2l18.2-0.2 c5.5-0.1,9.8-4.5,9.8-10c-0.1-5.4-4.5-9.8-9.9-9.8h-0.1l-42.2,0.5c-5.5,0.1-9.8,4.5-9.8,10l0.5,42.2c0.1,5.4,4.5,9.8,9.9,9.8h0.1 c5.5-0.1,9.8-4.5,9.8-10l-0.2-18.4c39.5,37.4,90.9,58,145.4,58c0.8,0,1.7,0,2.5,0c56.5-0.7,109.5-23.3,149-63.7 c3.8-3.9,3.8-10.2-0.2-14C389,375.056,382.8,375.156,378.9,379.056z"></path>
+                                                                            <path d="M78.2,240.256c0-3.3-1.7-6.4-4.4-8.2c-1.8-1.2-2.8-3.2-2.8-5.3v-36.1c0-12.5,10.1-22.6,22.6-22.6 h7.8c12.5,0,22.6,10.1,22.6,22.6v36.1c0,2.1-1.1,4.1-2.8,5.3c-2.8,1.8-4.4,4.9-4.4,8.2v34.8c0,4.4,2.5,8.4,6.5,10.3 c4.5,2.2,27.8,14,49.4,31.7c1.7,1.4,2.7,3.6,2.7,5.9v24.7c0,5.5,4.4,9.9,9.9,9.9s9.9-4.4,9.9-9.9v-24.7c0-8.2-3.6-15.9-10-21.2 c-18.9-15.6-39.2-26.9-48.6-31.8v-25.1c4.6-4.8,7.3-11.3,7.3-18.1v-36.1c0-23.4-19-42.4-42.4-42.4h-7.8c-23.4,0-42.4,19-42.4,42.4 v36.1c0,6.8,2.6,13.3,7.3,18.1v25.1c-9.5,4.9-29.7,16.3-48.6,31.8c-6.3,5.2-10,12.9-10,21.2v24.7c0,5.5,4.4,9.9,9.9,9.9 s9.9-4.4,9.9-9.9v-24.7c0-2.3,1-4.4,2.7-5.9c21.5-17.7,44.9-29.5,49.4-31.7c3.9-1.9,6.5-6,6.5-10.3v-34.8H78.2z"></path>
+                                                                            <path d="M479.9,301.856c-18.9-15.6-39.2-26.9-48.6-31.8v-25.1c4.6-4.8,7.3-11.3,7.3-18.1v-36.1 c0-23.4-19-42.4-42.4-42.4h-7.8c-23.4,0-42.4,19-42.4,42.4v36.1c0,6.8,2.6,13.3,7.3,18.1v25c-9.5,4.9-29.7,16.3-48.6,31.8 c-6.3,5.2-10,12.9-10,21.2v24.7c0,5.5,4.4,9.9,9.9,9.9s9.9-4.4,9.9-9.9v-24.7c0-2.3,1-4.4,2.7-5.9c21.5-17.7,44.9-29.5,49.4-31.7 c3.9-1.9,6.4-6,6.4-10.3v-34.8c0-3.3-1.7-6.4-4.4-8.2c-1.8-1.2-2.8-3.2-2.8-5.3v-36.1c0-12.5,10.1-22.6,22.6-22.6h7.8 c12.5,0,22.6,10.1,22.6,22.6v36.1c0,2.1-1.1,4.1-2.8,5.3c-2.8,1.8-4.4,4.9-4.4,8.2v34.8c0,4.4,2.5,8.4,6.4,10.3 c4.5,2.2,27.9,14,49.4,31.7c1.7,1.4,2.7,3.6,2.7,5.9v24.7c0,5.5,4.4,9.9,9.9,9.9s9.9-4.4,9.9-9.9v-24.7 C489.8,314.756,486.2,307.056,479.9,301.856z"></path>
                                                                         </g>
                                                                     </g>
                                                                 </g>
                                                             </svg>
-                                                            Wallet Transfer</Link>
+                                                            Wallet Transfer
+                                                        </Link>
                                                     </li>
                                                     <div class="arrow"></div>
-
                                                 </ul>
                                             </li>
                                             <li className="nav-item">
-                                                <Link className="nav-link" to={"/BBPS"}>BBPS</Link>
+                                                <Link className="nav-link" to={"/BBPS"}>
+                                                    BBPS
+                                                </Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link className="nav-link" to={"/OurPartner"}>Our Partners</Link>
+                                                <Link className="nav-link" to={"/OurPartner"}>
+                                                    Our Partners
+                                                </Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link className="nav-link" to={"/WhyUs"}>Why Us?</Link>
+                                                <Link className="nav-link" to={"/WhyUs"}>
+                                                    Why Us?
+                                                </Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link className="nav-link" to={"/ContactUs"}>Contact Us</Link>
-                                            </li>
-                                            <li className="nav-item xs">
-                                                <Link className="nav-link" to={"/Login"}>Login</Link>
+                                                <Link className="nav-link" to={"/ContactUs"}>
+                                                    Contact Us
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
 
-                                    <div class="header-right d-lg-flex align-items-center login-none">
-                                        <Link class="header-btn" to={"/Login"}>Login <i class="bi bi-arrow-right"></i></Link>
+
+                                    <div className="header-right d-lg-flex align-items-center login-none">
+                                        <Link className="header-btn" onClick={onLoginClick}>
+                                            Login <i className="bi bi-arrow-right"></i>
+                                        </Link>
                                     </div>
                                 </nav>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
         </>
-    )
+    );
 }
-

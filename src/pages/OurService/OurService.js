@@ -51,7 +51,7 @@ function OurService() {
     </section>
    
 
-    <section className="page-content text-col">
+    <section className="page-content text-col marginTop">
       <div className="container">
         <div className="row justify-content-center text-center">
           <div className="col-lg-8 col-md-12">
