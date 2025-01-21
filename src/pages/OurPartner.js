@@ -3,9 +3,9 @@ import "./styles/ourpartner.css";
 const OurPartener = () => {
   return (
     <div>
-      <section className="page-title">
+      <section className="page-title  border-0">
         <img
-          src="/images/our-partenr.png"
+          src="/images/PARTNERS.svg"
           alt="Contact Us"
           className="full-width-image"
         />
