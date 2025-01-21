@@ -82,7 +82,7 @@ const ContactUs = () => {
                           Visit Our Location
                         </span>
                         <b >
-                          Skriptonic Softech Private Limited
+                          finunique Private Limited
                         </b>
                         <p>
                           1-98/G/38, PLOT No 37 &amp; 38, Serenity Square,
