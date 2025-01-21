@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import FAQGasBillPayment from "./FAQGasBillPayment";
 
 const PipedGas = () => {
+  const [formData, setFormData] = useState({
+    operator: "",
+    caNumber: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const isFormValid = formData.operator && formData.caNumber;
+
   return (
     <>
       <Container className="py-5">
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            {/* <h6 className="text-primary">Trusted by over 167M customers</h6> */}
             <h2 className="fw-bold">Your Convenient Gas Bill Solution</h2>
             <p>
               Simplify your life with effortless gas bill payments, keeping your
               home comfortably energized.
             </p>
-            {/* <Button variant="primary" className="me-2">
-              Download App
-            </Button>
-            <Button variant="outline-primary">App Store</Button> */}
           </Col>
 
           {/* Right Side Form */}
@@ -30,26 +40,41 @@ const PipedGas = () => {
               <h5 className="mb-4 text-center">Gas Bill Payment Online</h5>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
-                  <Form.Label>Operator</Form.Label>
-                  <Form.Select>
-                    <option>Select Operator</option>
-                    <option>Airtel</option>
-                    <option>Jio</option>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Form.Label>Operator</Form.Label>
+                    <img
+                      height={15}
+                      src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                      alt="BBPS"
+                    />
+                  </div>
+                  <Form.Select
+                    value={formData.operator}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select Operator</option>
+                    <option value="Airtel">Airtel</option>
+                    <option value="Jio">Jio</option>
                   </Form.Select>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="caNumber">
                   <Form.Label>CA Number</Form.Label>
-                  <Form.Control type="text" placeholder="CA Number" />
+                  <Form.Control
+                    type="text"
+                    placeholder="CA Number"
+                    value={formData.caNumber}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
 
-                {/* 
-                <Form.Group className="mb-3" controlId="amount">
-                  <Form.Label>Amount</Form.Label>
-                  <Form.Control type="text" placeholder="₹ Amount" />
-                </Form.Group> */}
-
-                <Button variant="primary" type="submit" className="w-100">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-100"
+                  style={{ backgroundColor: '#664A86', color: 'white' }}
+                  disabled={!isFormValid}
+                >
                   Confirm
                 </Button>
               </Form>

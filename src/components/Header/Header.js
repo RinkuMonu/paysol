@@ -91,7 +91,7 @@ export default function Header({ onLoginClick }) {
                                                     aria-labelledby="servicesDropdown"
                                                 >
                                                     <li>
-                                                        <Link className="dropdown-item" to={"/BillPayUI"}>
+                                                        <Link className="dropdown-item" to="/recharge">
                                                             <i class="bi bi-lightning-charge"></i>
                                                             Recharge & Bill Pay
                                                         </Link>

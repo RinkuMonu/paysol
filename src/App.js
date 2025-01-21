@@ -51,7 +51,7 @@ function App() {
         },
 
         {
-          path: "/BillPayUI",
+          path: "/recharge",
           element: <BillPayUI />,
         },
 
@@ -78,6 +78,7 @@ function App() {
        
       ],
     },
+   
   ]);
   return (
     <>
