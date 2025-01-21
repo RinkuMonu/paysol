@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import FAQCableBillPayments from "./FAQCableBillPayments";
 
 const Cable = () => {
+  const [formData, setFormData] = useState({
+    subscriberCode: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const isFormValid = formData.subscriberCode.trim() !== "";
+
   return (
     <>
       <Container className="py-5">
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            {/* <h6 className="text-primary">Trusted by over 167M customers</h6> */}
             <h2 className="fw-bold">
               Cable Bill Ease: Simplify Your Viewing Experience.
             </h2>
@@ -17,10 +30,6 @@ const Cable = () => {
               Streamline your entertainment with easy cable bill payments,
               ensuring endless viewing pleasure.
             </p>
-            {/* <Button variant="primary" className="me-2">
-              Download App
-            </Button>
-            <Button variant="outline-primary">App Store</Button> */}
           </Col>
 
           {/* Right Side Form */}
@@ -32,7 +41,14 @@ const Cable = () => {
               <h5 className="mb-4 text-center">Online Cable Bill Payment</h5>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
-                  <Form.Label>Operator</Form.Label>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Form.Label>Operator</Form.Label>
+                    <img
+                      height={15}
+                      src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                      alt="BBPS"
+                    />
+                  </div>
                   <Form.Select>
                     <option>Asianet Digital</option>
                   </Form.Select>
@@ -40,24 +56,21 @@ const Cable = () => {
 
                 <Form.Group className="mb-3" controlId="subscriberCode">
                   <Form.Label>Subscriber Code</Form.Label>
-                  <Form.Control type="text" placeholder="Subscriber Code" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Subscriber Code"
+                    value={formData.subscriberCode}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
 
-                {/* <Form.Group className="mb-3" controlId="circle">
-                  <Form.Label>Circle</Form.Label>
-                  <Form.Select>
-                    <option>Select Circle</option>
-                    <option>Mumbai</option>
-                    <option>Delhi</option>
-                  </Form.Select>
-                </Form.Group> */}
-
-                {/* <Form.Group className="mb-3" controlId="amount">
-                  <Form.Label>Amount</Form.Label>
-                  <Form.Control type="text" placeholder="₹ Amount" />
-                </Form.Group> */}
-
-                <Button variant="primary" type="submit" className="w-100">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-100"
+                  style={{ backgroundColor: '#664A86', color: 'white' }}
+                  disabled={!isFormValid}
+                >
                   Confirm
                 </Button>
               </Form>
