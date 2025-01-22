@@ -1,25 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import FAQMunicipality from './FAQMunicipality';
 
 const Municipality = () => {
+  const [formData, setFormData] = useState({
+    operator: "Asianet Digital",
+    houseNumber: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  // Check if all fields are filled
+  const isFormValid = formData.operator && formData.houseNumber.trim();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isFormValid) {
+      console.log("Form submitted:", formData);
+      // Add form submission logic here (e.g., API call)
+    }
+  };
+
   return (
     <>
-        <Container className="py-5">
+      <Container className="py-5">
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            {/* <h6 className="text-primary">Trusted by over 167M customers</h6> */}
-            <h2 className="fw-bold">
-            Simplify Municipal Bill Payments
-            </h2>
-            <p>
-            Simplify urban life with convenient municipality bill payments.
-            </p>
-            {/* <Button variant="primary" className="me-2">
-              Download App
-            </Button>
-            <Button variant="outline-primary">App Store</Button> */}
+            <h2 className="fw-bold">Simplify Municipal Bill Payments</h2>
+            <p>Simplify urban life with convenient municipality bill payments.</p>
           </Col>
 
           {/* Right Side Form */}
@@ -28,35 +43,46 @@ const Municipality = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "400px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Online Municipal Property Tax Payment</h5>
-              <Form>
+              <h5 className="mb-4 text-center">
+                Online Municipal Property Tax Payment
+              </h5>
+              <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
-                  <Form.Label>Operator</Form.Label>
-                  <Form.Select>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Form.Label>Operator</Form.Label>
+                    <img
+                      height={15}
+                      src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                      alt="BBPS"
+                    />
+                  </div>
+                  <Form.Select
+                    value={formData.operator}
+                    onChange={handleChange}
+                    id="operator"
+                  >
                     <option>Asianet Digital</option>
+                    {/* Add more operators here if needed */}
                   </Form.Select>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="houseNumber">
                   <Form.Label>House Number</Form.Label>
-                  <Form.Control type="text" placeholder="House Number" />
+                  <Form.Control
+                    type="text"
+                    placeholder="House Number"
+                    value={formData.houseNumber}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
 
-                {/* <Form.Group className="mb-3" controlId="circle">
-                  <Form.Label>Circle</Form.Label>
-                  <Form.Select>
-                    <option>Select Circle</option>
-                    <option>Mumbai</option>
-                    <option>Delhi</option>
-                  </Form.Select>
-                </Form.Group> */}
-
-                {/* <Form.Group className="mb-3" controlId="amount">
-                  <Form.Label>Amount</Form.Label>
-                  <Form.Control type="text" placeholder="₹ Amount" />
-                </Form.Group> */}
-
-                <Button variant="primary" type="submit" className="w-100">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-100"
+                  style={{ backgroundColor: '#664A86', color: 'white' }}
+                  disabled={!isFormValid} // Button is disabled until all fields are valid
+                >
                   Confirm
                 </Button>
               </Form>
@@ -64,9 +90,9 @@ const Municipality = () => {
           </Col>
         </Row>
       </Container>
-      <FAQMunicipality/>
+      <FAQMunicipality />
     </>
-  )
-}
+  );
+};
 
 export default Municipality;

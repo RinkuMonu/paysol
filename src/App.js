@@ -14,6 +14,11 @@ import WhyUs from "./pages/WhyUs";
 import BillPayUI from '../src/pages/services/BillPayUI.js'
 import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
+import Login from "./pages/Login/Login";
+import Popup from "./pages/Popup/Popup.jsx";
+import Term from "./pages/Term";
+import PrivacyPolicy from './pages/PrivacyPolicy.js';
+import RefundPolicy from './pages/RefundPolicy.js';
 
 
 
@@ -46,7 +51,7 @@ function App() {
         },
 
         {
-          path: "/BillPayUI",
+          path: "/recharge",
           element: <BillPayUI />,
         },
 
@@ -58,9 +63,22 @@ function App() {
           path: "/BBPS",
           element: <BBPS />,
         },
+        {
+          path: "/term",
+          element: <Term />,
+        },
+        {
+          path: "/privacypolicy",
+          element: <PrivacyPolicy />,
+        },
+        {
+          path: "/RefundPolicy",
+          element: <RefundPolicy />,
+        },
        
       ],
     },
+   
   ]);
   return (
     <>

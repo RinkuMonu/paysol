@@ -3,16 +3,16 @@ import "./styles/contact.css";
 const ContactUs = () => {
   return (
     <div>
-      <section className="page-title">
+      <section className="page-title pb-0 border-0">
         <img
-          src="/images/Contact-Us.png"
+          src="/images/contact.svg"
           alt="Contact Us"
           className="full-width-image"
         />
       </section>
 
       <div className="page-content">
-        <section className="pb-lg-0 z-index-1">
+        <section className="pb-lg-0 z-index-1 pt-0">
           <div className="container py-5">
             <div className="row">
               <div className="col-lg-7 col-md-12 ps-lg-10 order-lg-1">
@@ -82,7 +82,7 @@ const ContactUs = () => {
                           Visit Our Location
                         </span>
                         <b >
-                          Skriptonic Softech Private Limited
+                          finunique Private Limited
                         </b>
                         <p>
                           1-98/G/38, PLOT No 37 &amp; 38, Serenity Square,
@@ -96,10 +96,10 @@ const ContactUs = () => {
                       <div>
                         <span >Send Us Email</span>
                         <a
-                          href="mailto:info@paysguru.com"
+                          href="mailto:info@finuniques.in"
                           className="text-decoration-none"
                         >
-                          info@paysguru.com
+                          info@finuniques.in
                         </a>
                       </div>
                     </li>

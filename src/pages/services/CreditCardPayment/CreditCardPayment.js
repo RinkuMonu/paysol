@@ -1,24 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import FAQCreditCardPayment from './FAQCreditCardBill';
 
-
 const CreditCardPayment = () => {
+  const [formData, setFormData] = useState({
+    creditCard: "",
+    amount: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const isFormValid = formData.creditCard && formData.amount;
+
   return (
-   <>
-     <Container className="py-5">
+    <>
+      <Container className="py-5">
         <Row>
-        
+          {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            {/* <h6 className="text-primary">Trusted by over 167M customers</h6> */}
             <h2 className="fw-bold">Streamlined Credit Card Payments</h2>
             <p>
-            Effortlessly manage your finances by settling credit card bills with ease, ensuring financial peace of mind.
+              Effortlessly manage your finances by settling credit card bills
+              with ease, ensuring financial peace of mind.
             </p>
-            {/* <Button variant="primary" className="me-2">
-              Download App
-            </Button>
-            <Button variant="outline-primary">App Store</Button> */}
           </Col>
 
           {/* Right Side Form */}
@@ -30,20 +40,32 @@ const CreditCardPayment = () => {
               <h5 className="mb-4 text-center">Credit Card Payment</h5>
               <Form>
                 <Form.Group className="mb-3" controlId="creditCard">
-                  <Form.Label>Credit card Number</Form.Label>
-                  <Form.Control type="text" placeholder="Mobile Number" />
+                  <Form.Label>Credit Card Number</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Credit Card Number"
+                    value={formData.creditCard}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
-
-                
-
-                
 
                 <Form.Group className="mb-3" controlId="amount">
                   <Form.Label>Bill Amount</Form.Label>
-                  <Form.Control type="text" placeholder="₹ Bill Amount" />
+                  <Form.Control
+                    type="text"
+                    placeholder="₹ Bill Amount"
+                    value={formData.amount}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="w-100">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-100"
+                  style={{ backgroundColor: '#664A86', color: 'white' }}
+                  disabled={!isFormValid}
+                >
                   Confirm
                 </Button>
               </Form>
@@ -51,9 +73,9 @@ const CreditCardPayment = () => {
           </Col>
         </Row>
       </Container>
-      <FAQCreditCardPayment/>
-   </>
-  )
-}
+      <FAQCreditCardPayment />
+    </>
+  );
+};
 
 export default CreditCardPayment;

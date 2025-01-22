@@ -6,7 +6,7 @@ const AboutUs = () => {
   
     <div style={{marginTop:"50px"}}>
       <section className="page-title">
-        <img src="/assets/about-us.png" alt="about" />
+        <img src="/assets/aboutbg2.svg" alt="about" />
       </section>
       <div className="page-content">
         <section className="pb-0">
@@ -14,20 +14,20 @@ const AboutUs = () => {
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-12">
                 <div className="shape-img-bg">
-                  <img className="mask-img1" src="/assets/about-us1.png" alt="" />
+                  <img className="mask-img1" src="/assets/IMG18.png" alt="" />
                 </div>
               </div>
               <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10 text-secondary">
                 <div className="theme-title mb-4">
                   <h2>WHO WE ARE</h2>
                   <p>
-                    We are happy to introduce you about Skriptonic Softech Private
-                    Limited, Skriptonic Softech Private Limited is service provider
+                    We are happy to introduce you about finunique Private
+                    Limited, finunique Private Limited is service provider
                     company which is providing Recharge and BillPayment - BBPS
                     services to our valuable retailers/merchants.
                   </p>
                   <p>
-                    Skriptonic Softech Private Limited has taken a step forward in
+                    finunique Private Limited has taken a step forward in
                     the field of Financial Inclusion through a partnership with
                     Multiple Banks &amp; Other Parties.
                   </p>
@@ -52,7 +52,7 @@ const AboutUs = () => {
                       <h4>WHAT WE DO</h4>
                     </div>
                     <p>
-                      Skriptonic Softech Private Limited is easy to operate but also
+                      finunique Private Limited is easy to operate but also
                       it makes your easier and faster. We are providing the best
                       services to our customers. Whether it’s IT Services &amp;
                       Banking Services.
