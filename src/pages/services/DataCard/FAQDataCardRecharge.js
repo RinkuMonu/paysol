@@ -4,13 +4,12 @@ import Accordion from "react-bootstrap/Accordion";
 const FAQDataCardRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -29,7 +28,7 @@ const FAQDataCardRecharge = () => {
             internet service on their smartphone. With monthly, quarterly or
             annual data card recharge plans, users can avail seamless browsing,
             online streaming and downloading services. The data card recharge
-            plans vary for each network operator and time period. MobiKwik
+            plans vary for each network operator and time period. Finunique
             ensures an instant and simple process of online data card recharge,
             dongle recharge, modem recharge, dongle recharge plans, wifi dongle
             recharge plans and more. Instant data card recharge ensures internet
