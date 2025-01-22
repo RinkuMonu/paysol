@@ -10,13 +10,13 @@ export default function Header({ onLoginClick }) {
                         <div className="row">
                             <div className="col">
                                 <nav className="navbar navbar-expand-lg justify-content-lg-between px-4">
-                                    <a className="navbar-brand logo" href="#">
+                                    <Link className="navbar-brand logo" to={"/"}>
                                         <img
                                             className="img-fluid"
                                             src="/assets/Home/logo.jpg"
                                             alt=""
                                         />
-                                    </a>
+                                    </Link>
                                     <button
                                         className="navbar-toggler ht-toggler"
                                         type="button"

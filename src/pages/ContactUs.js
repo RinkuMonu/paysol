@@ -82,12 +82,10 @@ const ContactUs = () => {
                           Visit Our Location
                         </span>
                         <b >
-                          finunique Private Limited
+                          Finuniques Private Limited
                         </b>
                         <p>
-                          1-98/G/38, PLOT No 37 &amp; 38, Serenity Square,
-                          Madhapur Village, Gafoor Nagar, Hyderabad, Telangana -
-                          500081
+                        Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
                         </p>
                       </div>
                     </li>
@@ -108,10 +106,10 @@ const ContactUs = () => {
                       <div>
                         <span>Phone No.</span>
                         <a
-                          href="tel:9059400261"
+                          href="tel:9660339514"
                           className="text-decoration-none"
                         >
-                          9059400261
+                          9660339514
                         </a>
                       </div>
                     </li>

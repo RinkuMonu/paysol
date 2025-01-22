@@ -81,7 +81,7 @@ export default function Term() {
                                         as described below, a hyperlink from this website to another website does not imply or mean
                                         that Seven Unique Private Limited endorses the content on that website or the operator
                                         or operations of that site. You are solely responsible for determining the extent to which
-                                        you may use any content at any other websites to which you link from the finunique
+                                        you may use any content at any other websites to which you link from the Finuniques
                                         Private Limited website.
                                     </p>
 
