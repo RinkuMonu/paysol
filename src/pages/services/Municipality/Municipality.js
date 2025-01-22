@@ -33,8 +33,8 @@ const Municipality = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Simplify Municipal Bill Payments</h2>
-            <p>Simplify urban life with convenient municipality bill payments.</p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Simplify Municipal Bill Payments</h2>
+            <h3>Simplify urban life with convenient municipality bill payments.</h3>
           </Col>
 
           {/* Right Side Form */}

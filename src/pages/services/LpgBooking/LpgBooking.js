@@ -32,10 +32,10 @@ const LpgBooking = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Quick Gas Booking Service</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Quick Gas Booking Service</h2>
+            <h3>
               Effortlessly secure your fuel supply with swift and convenient gas booking services, ensuring uninterrupted energy for your needs.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

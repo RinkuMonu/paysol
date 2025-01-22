@@ -23,10 +23,10 @@ const GooglePlay = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Effortless Google Play Recharge</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Effortless Google Play Recharge</h2>
+            <h3>
               Empower your digital entertainment with seamless Google Play recharge.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

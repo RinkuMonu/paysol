@@ -24,10 +24,10 @@ const Water = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Online Water Bill Simplified</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Online Water Bill Simplified</h2>
+            <h3>
               Simplify your life with effortless online water bill payments, ensuring a continuous flow of convenience at your fingertips.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

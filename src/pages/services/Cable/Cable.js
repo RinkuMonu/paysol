@@ -23,13 +23,13 @@ const Cable = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">
+            <h2 className="fw-bold" style={{color:"#664A86"}}>
               Cable Bill Ease: Simplify Your Viewing Experience.
             </h2>
-            <p>
+            <h3>
               Streamline your entertainment with easy cable bill payments,
               ensuring endless viewing pleasure.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

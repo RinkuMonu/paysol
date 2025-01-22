@@ -30,13 +30,13 @@ const Insurance = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">
+            <h2 className="fw-bold" style={{color:"#664A86"}}>
               Secure Pay: Your Convenient Insurance Payment Solution
             </h2>
-            <p>
+            <h3>
               Secure your peace of mind through easy and timely insurance
               payments, ensuring your financial protection remains intact.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import AddMoney from "./AddMoney";
 export default function Header({ onLoginClick }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -14,6 +13,7 @@ export default function Header({ onLoginClick }) {
 
     return (
         <>
+    
             <header id="site-header" className="header">
                 <div id="header-wrap">
                     <div className="container-fluid">
@@ -107,7 +107,7 @@ export default function Header({ onLoginClick }) {
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link className="dropdown-item" to={"/Service2"}>
+                                                        <Link className="dropdown-item" to={"/transfer-to-bank"}>
                                                             <i class="bi bi-currency-rupee"></i>
                                                             Transfer to Bank
                                                         </Link>
@@ -158,7 +158,7 @@ export default function Header({ onLoginClick }) {
                                                     <li>
                                                         <Link
                                                             className="dropdown-item"
-                                                            to={"/RedeemPaybackPoints"}
+                                                            to={"/redeem-payback-points"}
                                                         >
                                                             <i class="bi bi-ui-radios-grid"></i>
                                                             Redeem Payback Points
@@ -167,7 +167,7 @@ export default function Header({ onLoginClick }) {
                                                     <li>
                                                         <Link
                                                             className="dropdown-item"
-                                                            to={"/WalletTransfer"}
+                                                            to={"/wallet-transfer"}
                                                         >
                                                             <svg
                                                                 className="custom-svg"

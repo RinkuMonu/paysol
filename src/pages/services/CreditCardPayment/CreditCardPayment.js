@@ -24,11 +24,11 @@ const CreditCardPayment = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Streamlined Credit Card Payments</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Streamlined Credit Card Payments</h2>
+            <h3>
               Effortlessly manage your finances by settling credit card bills
               with ease, ensuring financial peace of mind.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

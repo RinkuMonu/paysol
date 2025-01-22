@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React from 'react';
+import { Container, Row, Col,} from "react-bootstrap";
 import FAQeChallanPayments from './FAQeChallanPayments';
+import ShimmerUI from '../../ShimmerUI/ShimmerUI';
 
 const TrafficChallan = () => {
-  const [formData, setFormData] = useState({
-    operator: "Asianet Digital",
-    subscriberCode: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   operator: "Asianet Digital",
+  //   subscriberCode: "",
+  // });
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { id, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [id]: value,
+  //   }));
+  // };
 
-  const isFormValid = formData.operator && formData.subscriberCode.trim();
+  // const isFormValid = formData.operator && formData.subscriberCode.trim();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isFormValid) {
-      console.log("Form submitted:", formData);
-      // Add your form submission logic here
-    }
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (isFormValid) {
+  //     console.log("Form submitted:", formData);
+  //     // Add your form submission logic here
+  //   }
+  // };
 
   return (
     <>
@@ -32,10 +33,10 @@ const TrafficChallan = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Hassle-free Traffic Ticket Settlement</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Hassle-free Traffic Ticket Settlement</h2>
+            <h3>
               Navigate the fines and penalties seamlessly with online traffic challan payment.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}
@@ -45,7 +46,7 @@ const TrafficChallan = () => {
               style={{ maxWidth: "400px", margin: "0 auto" }}
             >
               <h5 className="mb-4 text-center">Online Traffic Challan Payment</h5>
-              <Form onSubmit={handleSubmit}>
+              {/* <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
                   <Form.Select
@@ -76,7 +77,8 @@ const TrafficChallan = () => {
                 >
                   Confirm
                 </Button>
-              </Form>
+              </Form> */}
+              <ShimmerUI/>
             </div>
           </Col>
         </Row>
