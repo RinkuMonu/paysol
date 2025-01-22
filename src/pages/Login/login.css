@@ -183,7 +183,6 @@
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 50%;
-  height: 50%;
 
 }
 .popup-contents h3{
@@ -198,6 +197,6 @@
 
   }
   .login-form-wrapper{
-    height: auto;
+    height: inherit;
   }
 }

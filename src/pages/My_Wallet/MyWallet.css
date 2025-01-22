@@ -1,0 +1,195 @@
+
+
+.hero-section-container .overlay {
+    background-color: #eff8ff;
+    background-repeat: no-repeat;
+    background-position: top 100px right;
+    position: relative;
+    background-size: auto;
+    background-attachment: fixed;
+    padding: 40px 0 320px;
+}
+
+.hero-section-container .overlay .hero-section-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-heading {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.top-section-heading {
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.ft55 {
+    font-size: 55px !important;
+}
+
+.hero-section-content {
+    margin-bottom: 34px;
+}
+
+.sub-heading {
+    color: #0a4bff;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.Blue_Heading {
+    color: #0042A6;
+    font-weight: 600;
+    text-transform: none;
+    transition: all .3s;
+}
+
+.bg_blue {
+    border-color: #0042A6;
+    color: #ffffff;
+}
+
+.cmnFtLh {
+    line-height: 36px;
+    margin-top: -7px;
+}
+
+.glowshdo5 {
+    box-shadow: 4px 3px 20px #00000026;
+}
+
+.roundwrapper {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+
+.nav button.active {
+    color: #fff;
+    border-radius: 8px;
+    background-color: #0042a6;
+}
+
+/* .sec-nav a:before {
+    content: "\uF234";
+    display: block;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}  */
+
+.btn_color {
+    background-color: #0042a6;
+}
+
+.tgreyteel {
+    color: gray;
+}
+
+.bar_blue {
+    background-color: rgb(0, 115, 207);
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+}
+.cardNumber{
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+.modal-open{
+    padding-right: 0px !important;
+}
+.card_removeBtn .btn{
+    background-color: #0042A6;
+    padding:12px 16px 11px;
+    border: 1px solid #00327e;
+    color: #fff;
+}
+.green_bar {
+    background-color: rgb(36, 161, 0);
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.bg_blue {
+    background-color: #0042a6;
+}
+
+.outline_color {
+    border-color: #0042a6;
+    color: #0042A6;
+}
+
+.text_sm {
+    font-size: 12px;
+}
+
+ .text_blue {
+    color: #0042a6 !important;
+}
+
+.blue_active a:not(.know-more-link).active {
+    color: #0042a6;
+    font-weight: 600;
+}
+
+.blue_active a:not(.know-more-link) {
+    margin-right: 20px;
+    padding: 10px 0;
+    position: relative;
+    color: #404040;
+}
+
+.bg_bluelight {
+    background-color: #eff8ff;
+}
+
+.popoverblock {
+    width: 350px;
+    left: -15px;
+}
+.w100{
+    width: 100%;
+}
+
+.border_dashed{
+    border-bottom: 1px  dashed rgb(229, 227, 227);
+    
+}
+.modal-body::-webkit-scrollbar {
+    width: 3px;
+  }
+   
+  .modal-body::-webkit-scrollbar-track {
+    background: #ffffff;
+    box-shadow: inset 0 0 8px #f7f7f7;
+    border-radius: 0;
+
+  }
+   .recharge_box p,  .primary_number p{
+    font-size: 16px; 
+    font-weight: 500;
+   }
+   .primary_number span{
+    font-size: 13px;
+    color:gray;
+    
+   }
+   #Connection .btn-primary{
+    background-color: #0042A6;
+    padding:12px 16px 11px;
+    border: 1px solid #00327e;
+    color: #fff;
+   }
+  .modal-body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #d8d8d8
+  }
