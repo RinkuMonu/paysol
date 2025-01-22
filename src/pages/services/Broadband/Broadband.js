@@ -24,10 +24,10 @@ const Broadband = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Streamlined Broadband Bill Settlement</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Streamlined Broadband Bill Settlement</h2>
+            <h3>
               Effortlessly handle your broadband bills, keeping your online world running smoothly.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

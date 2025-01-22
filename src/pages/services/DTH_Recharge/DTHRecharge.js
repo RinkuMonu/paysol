@@ -35,13 +35,13 @@ const DTHRecharge = () => {
       <Container className="py-5">
         <Row>
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">
+            <h2 className="fw-bold" style={{color:"#664A86"}}>
               DTH Recharge: Uninterrupted Entertainment!
             </h2>
-            <p>
+            <h3>
               Elevate your entertainment with hassle-free DTH recharges that put
               you in control of your TV experience.
-            </p>
+            </h3>
           </Col>
 
           <Col md={6}>

@@ -34,10 +34,10 @@ const HousingBillPayment = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Simplify Your Housing Bill Payments</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Simplify Your Housing Bill Payments</h2>
+            <h3>
               Enhance your living experience by managing housing bills with ease, ensuring comfort and convenience.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

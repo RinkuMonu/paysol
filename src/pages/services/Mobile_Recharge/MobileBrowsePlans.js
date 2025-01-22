@@ -47,9 +47,10 @@ const MobileBrowsePlans = () => {
   ];
 
   return (
-    <>
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <Dropdown>
+    <div className="container">
+      {/* Filters Section */}
+      <div className="d-flex flex-wrap justify-content-between align-items-center mb-3">
+        <Dropdown className="mb-2 mb-md-0">
           <Dropdown.Toggle variant="outline-primary" id="dropdown-operator">
             {selectedOperator}
           </Dropdown.Toggle>
@@ -63,7 +64,7 @@ const MobileBrowsePlans = () => {
           </Dropdown.Menu>
         </Dropdown>
 
-        <Dropdown>
+        <Dropdown className="mb-2 mb-md-0">
           <Dropdown.Toggle variant="outline-primary" id="dropdown-region">
             {selectedRegion}
           </Dropdown.Toggle>
@@ -76,36 +77,33 @@ const MobileBrowsePlans = () => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-
-        <input
+<div className="align-items-center">
+<input
           type="text"
-          className="form-control w-25"
+          className="form-control  mb-2 mb-md-0 mt-2 align-items-center"
           placeholder="Search by Amount"
         />
+</div>
+       
       </div>
 
-      <div className="d-flex" style={{ height: "50vh" }}>
-        {/* side bar */}
-        <div
-          className="text-white p-2"
-          style={{ width: "250px", minWidth: "210px" }}
-        >
-          <Nav className="flex-column">
+      <div className="row">
+        {/* Sidebar */}
+        <div className="col-md-3 mb-3">
+          <Nav className="flex-column p-2 ">
             {categories.map((category, index) => (
               <Nav.Link
                 key={index}
                 href="#"
                 onClick={() => setSelectedCategory(category)}
                 className={`${
-                  selectedCategory === category ? "active bg-primary" : ""
+                  selectedCategory === category ? "active bg-primary text-white" : "text-dark"
                 }`}
                 style={{
                   fontSize: "16px",
-                  padding: "10px 15px",
+                  padding: "10px 10px",
                   cursor: "pointer",
-                  display: "inline-block",
-                  color: selectedCategory === category ? "white" : "black",
-                  borderRadius: selectedCategory === category ? "5px" : "0px",
+                  borderRadius: "5px",
                 }}
               >
                 {category}
@@ -115,8 +113,7 @@ const MobileBrowsePlans = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-grow-1 p-2">
-          {/* Plans Table */}
+        <div className="col-md-9">
           <div style={{ maxHeight: "50vh", overflowY: "auto" }}>
             <Table bordered hover responsive className="bg-white">
               <thead className="bg-light">
@@ -132,9 +129,7 @@ const MobileBrowsePlans = () => {
                   <tr key={index}>
                     <td>{plan.talktime}</td>
                     <td>{plan.validity}</td>
-                    <td style={{ whiteSpace: "pre-wrap" }}>
-                      {plan.description}
-                    </td>
+                    <td style={{ whiteSpace: "pre-wrap" }}>{plan.description}</td>
                     <td>
                       <div className="d-flex justify-content-between align-items-center">
                         <span>{plan.price}</span>
@@ -153,7 +148,7 @@ const MobileBrowsePlans = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -24,12 +24,12 @@ const ElectricityBillPayment = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Ingenious Electricity Bill Settlement</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Ingenious Electricity Bill Settlement</h2>
+            <h3>
               Empower your life with the efficient management of electricity
               bills, ensuring uninterrupted power supply for your world of
               possibilities.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

@@ -50,8 +50,8 @@ const DataCardRecharge = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Fuel Your Connectivity with Datacard Recharge</h2>
-            <p>Energize Your Online Experience with Datacard Recharge.</p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Fuel Your Connectivity with Datacard Recharge</h2>
+            <h3>Energize Your Online Experience with Datacard Recharge.</h3>
           </Col>
 
           {/* Right Side Form */}

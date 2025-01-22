@@ -45,13 +45,13 @@ const MobileRechargeUI = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">
+            <h2 className="fw-bold" style={{color:"#664A86"}}>
               Instant Prepaid Mobile Recharge Solution
             </h2>
-            <p>
+            <h3>
               Empower your connectivity with seamless prepaid mobile recharges,
               where convenience meets innovation.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

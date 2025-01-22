@@ -32,11 +32,11 @@ const Emi = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold">Seamless online EMI payments.</h2>
-            <p>
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Seamless online EMI payments.</h2>
+            <h3>
               Streamline your financial commitments with effortless online loan
               EMI payments.
-            </p>
+            </h3>
           </Col>
 
           {/* Right Side Form */}

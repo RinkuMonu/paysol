@@ -20,6 +20,9 @@ import Popup from "./pages/Popup/Popup.jsx";
 import Term from "./pages/Term";
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import RefundPolicy from './pages/RefundPolicy.js';
+import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
+import WalletTransfer from './pages/services/WalletTransfer/WalletTransfer.js';
+import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
 
 
 function App() {
@@ -75,7 +78,19 @@ function App() {
           path: "/RefundPolicy",
           element: <RefundPolicy />,
         },
-       
+        {
+          path:"/transfer-to-bank",
+          element:<TransferToBank/>
+        },
+        {
+          path:"/wallet-transfer",
+          element:<WalletTransfer/>
+        },
+        {
+          path:"/redeem-payback-points",
+          element:<RedeemPayback/>
+        },
+    
       ],
     },
    
