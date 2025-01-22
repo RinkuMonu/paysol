@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import React, { useState, useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
 
 const FAQCreditCardPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,42 +11,54 @@ const FAQCreditCardPayment = () => {
     };
 
     handleResize(); // Check initial screen size
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const content = [
     {
-      title: 'About Credit Card Bill Payment',
+      title: "About Credit Card Bill Payment",
       body: (
         <>
           <p>
-            A credit card allows you to use short-term credit from banks for immediate payments. For credit card users, it is
-            very important to remember the bill due date to avoid late fees and interest. With MobiKwik, you can instantly
-            make online credit card payments with exciting cashback offers.
+            A credit card allows you to use short-term credit from their banks
+            for immediate payments. For credit card users, it is very important
+            to remember the credit card bill date. Therefore, the user shall
+            clear the dues monthly. If you don't pay the Credit Card Bill on
+            time, you are charged with interest. Further, untimely payment of
+            the credit card bill also leads to a late fee. To avoid unnecessary
+            late fees and interest on credit card processing, you can instantly
+            make online credit card payments using Finunique Small pvt. Ltd.
           </p>
           <p>
-            MobiKwik provides a convenient and seamless experience for users to pay their credit card bills online, ensuring
-            timely payments and savings.
+            MobiKwik provides a convenient and seamless experience for users to
+            pay their credit card bills online, ensuring timely payments and
+            savings.
           </p>
         </>
       ),
     },
     {
-      title: 'How to Make Credit Card Bill Payment on MobiKwik',
+      title: "How to Make Credit Card Bill Payment on MobiKwik",
       body: (
         <>
           <p>
-            Follow these simple steps to pay your credit card bill online for any bank, including HDFC Bank, SBI, Axis Bank,
-            and more:
+            Follow these simple steps to pay your credit card bill online for
+            any bank, including HDFC Bank, SBI, Axis Bank, and more:
           </p>
           <ol>
-            <li>Download the MobiKwik app from the Play Store (Android) or App Store (iOS).</li>
+            <li>
+              Download the MobiKwik app from the Play Store (Android) or App
+              Store (iOS).
+            </li>
             <li>Login using your mobile number and OTP.</li>
-            <li>Navigate to the "Recharge and Bill Pay" section or tap "Credit Card Payment."</li>
+            <li>
+              Navigate to the "Recharge and Bill Pay" section or tap "Credit
+              Card Payment."
+            </li>
             <li>Enter your credit card number and the billing amount.</li>
             <li>Apply available coupons, if any.</li>
             <li>Click "Proceed" and select your preferred payment mode.</li>
@@ -56,10 +68,13 @@ const FAQCreditCardPayment = () => {
       ),
     },
     {
-      title: 'Supported Credit Cards for Payment',
+      title: "Supported Credit Cards for Payment",
       body: (
         <>
-          <p>MobiKwik supports credit card payments for a wide range of banks, including:</p>
+          <p>
+            MobiKwik supports credit card payments for a wide range of banks,
+            including:
+          </p>
           <ul>
             <li>HDFC Bank</li>
             <li>SBI</li>
@@ -75,33 +90,38 @@ const FAQCreditCardPayment = () => {
       ),
     },
     {
-      title: 'Frequently Asked Questions about Credit Card Payment',
+      title: "Frequently Asked Questions about Credit Card Payment",
       body: (
         <ul>
           <li>
             <strong>Can I only pay the minimum due amount?</strong>
             <br />
-            Yes, you can, but regular minimum payments can negatively impact your credit score.
+            Yes, you can, but regular minimum payments can negatively impact
+            your credit score.
           </li>
           <li>
             <strong>When should I pay my credit card bill?</strong>
             <br />
-            Always pay before the due date to avoid late fees and interest charges.
+            Always pay before the due date to avoid late fees and interest
+            charges.
           </li>
           <li>
             <strong>How much should I pay to avoid interest?</strong>
             <br />
-            To avoid interest, pay the total outstanding amount before the grace period expires.
+            To avoid interest, pay the total outstanding amount before the grace
+            period expires.
           </li>
           <li>
             <strong>Does late payment affect my credit score?</strong>
             <br />
-            Yes, late payments can lower your credit score and suggest unreliability as a borrower.
+            Yes, late payments can lower your credit score and suggest
+            unreliability as a borrower.
           </li>
           <li>
             <strong>How long does it take to process the payment?</strong>
             <br />
-            Payments made via MobiKwik usually take 2-3 business days to process.
+            Payments made via MobiKwik usually take 2-3 business days to
+            process.
           </li>
         </ul>
       ),
@@ -122,7 +142,7 @@ const FAQCreditCardPayment = () => {
       ) : (
         <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
+            <div key={index} style={{ marginBottom: "1rem" }}>
               <h3>{item.title}</h3>
               {item.body}
             </div>

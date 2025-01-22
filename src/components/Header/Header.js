@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-
 export default function Header({ onLoginClick }) {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const handleMouseEnter = () => setIsDropdownOpen(true);
+    const handleMouseLeave = () => setIsDropdownOpen(false);
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const openModal = () => setIsOpen(true);
+
     return (
         <>
     
@@ -12,13 +20,13 @@ export default function Header({ onLoginClick }) {
                         <div className="row">
                             <div className="col">
                                 <nav className="navbar navbar-expand-lg justify-content-lg-between px-4">
-                                    <a className="navbar-brand logo" href="#">
+                                    <Link className="navbar-brand logo" to={"/"}>
                                         <img
                                             className="img-fluid"
                                             src="/assets/Home/logo.jpg"
                                             alt=""
                                         />
-                                    </a>
+                                    </Link>
                                     <button
                                         className="navbar-toggler ht-toggler"
                                         type="button"
@@ -60,7 +68,7 @@ export default function Header({ onLoginClick }) {
                                         </svg>
                                     </button>
                                     <div className="collapse navbar-collapse" id="navbarNav">
-                                        <ul className="nav navbar-nav mx-auto">
+                                        <ul className="nav navbar-nav ms-auto">
                                             <li className="nav-item">
                                                 <Link className="nav-link active" to={"/"}>
                                                     Home
@@ -86,7 +94,7 @@ export default function Header({ onLoginClick }) {
                                                         data-bs-toggle="dropdown"
                                                         aria-expanded="false"
 
-                                                    ><i class="bi bi-chevron-down"></i></button>
+                                                    ><i className="bi bi-chevron-down"></i></button>
                                                 </Link>
                                                 <ul
                                                     className="dropdown-menu"
@@ -216,14 +224,83 @@ export default function Header({ onLoginClick }) {
                                                     Contact Us
                                                 </Link>
                                             </li>
+                                            <li className="nav-item">
+                                                <div className="nav-link header-right d-lg-flex align-items-center">
+                                                    <Link className="header-btn" onClick={onLoginClick}>
+                                                        Login <i className="bi bi-arrow-right"></i>
+                                                    </Link>
+                                                </div>
+                                            </li>
+                                            <li className="nav-item">
+                                                {/* Trigger Button */}
+                                                <Link to={'#'} className="nav-link balance_link" onClick={openModal}>
+                                                    <p className="mb-0" style={{ fontSize: "12px" }}>Balance:</p>
+                                                    <p className="mb-0" style={{ fontWeight: "700", lineHeight: "6px", fontSize: "12px" }}>₹0 <i class="bi bi-plus" style={{ color: "#404040", fontSize: "14px" }}></i></p>
+                                                </Link>
+
+                                            </li>
+                                            <li
+                                                className={`nav-item dropdown ${isDropdownOpen ? "show" : ""}`}
+                                                onMouseEnter={handleMouseEnter}
+                                                onMouseLeave={handleMouseLeave}
+                                            >
+                                                <Link
+                                                    className="nav-link dropdown-toggle"
+                                                    to="#"
+                                                    id="profileDropdown"
+                                                    role="button"
+                                                    data-bs-toggle="dropdown"
+                                                    aria-expanded={isDropdownOpen ? "true" : "false"}
+                                                >
+                                                    <img src="/assets/Home/user-logo-new.svg" width={27} />
+                                                    <img className="downimage" src="/assets/Home/menu-ham-icon.png" width={15} />
+                                                </Link>
+                                                <ul
+                                                    className={`dropdown-menu profile-menu ${isDropdownOpen ? "show" : ""}`}
+                                                    aria-labelledby="profileDropdown"
+                                                >
+                                                    <div className="">
+                                                        {/* Header Section */}
+                                                        <div className="dropdown-header">
+                                                            <div className="float-end">
+                                                                <Link to={''} className="help_link p-0">Help?</Link>
+                                                            </div>
+                                                            <h2 className="mb-1">Vijay Gupta</h2>
+                                                            <p className="mb-0">vg670616@gmail.com</p>
+                                                            <p>9358448803</p>
+
+
+                                                            <div className="d-flex align-items-baseline justify-content-between">
+                                                                <span>Available Balance: ₹0</span>
+                                                                <button className="btn btn-primary btn-sm mt-2">Add</button>
+                                                            </div>
+
+                                                            <button className="border-0 kycBtn btn-sm mt-2">Complete Your KYC</button>
+                                                        </div>
+
+                                                        {/* List Items */}
+                                                        <ul className="dropdown-list">
+                                                            <li className="dropdown-item">
+                                                                <Link to={'/mywallet'}>
+                                                                    <i className="bi bi-wallet2"></i> My Wallet
+                                                                </Link>
+                                                            </li>
+                                                            <li className="dropdown-item">
+                                                                <Link to={'/history'}>
+                                                                    <i className="bi bi-clock-history"></i> History
+                                                                </Link>
+                                                            </li>
+                                                            <li className="dropdown-item">
+                                                                <Link to={'/profilesetting'}><i className="bi bi-gear"></i> Profile Settings</Link>
+                                                            </li>
+                                                            <li className="dropdown-item">
+                                                                <Link><i className="bi bi-box-arrow-right"></i> LogOut</Link>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </ul>
+                                            </li>
                                         </ul>
-                                    </div>
-
-
-                                    <div className="header-right d-lg-flex align-items-center login-none">
-                                        <Link className="header-btn" onClick={onLoginClick}>
-                                            Login <i className="bi bi-arrow-right"></i>
-                                        </Link>
                                     </div>
                                 </nav>
                             </div>
@@ -231,6 +308,8 @@ export default function Header({ onLoginClick }) {
                     </div>
                 </div>
             </header>
+           {isOpen && <AddMoney setIsOpen={setIsOpen} />}
+
         </>
     );
 }

@@ -58,9 +58,6 @@ a, i, .themeht-btn, button, img, span, .nav-link, .dropdown-item, #ht-main-nav, 
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-*, :after, :before {
-    box-sizing: border-box;
-}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     color: #67757c;
     font-weight: 400;
