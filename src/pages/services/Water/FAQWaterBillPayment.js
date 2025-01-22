@@ -1,55 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import React, { useState, useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
 
 const FAQWaterBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); 
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); 
-    window.addEventListener('resize', handleResize);
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const content = [
     {
-      title: 'Water Bill Payment',
+      title: "Water Bill Payment",
       body: (
         <>
           <p>
-            Water is a necessity of life, and it is critical to pay your water bill on time. In this era, everyone is too busy to stand in long queues for water bill payments at the centers. The good news is that your water bills can now be paid from the comfort of your own home in a few simple clicks with a fast and secure payments app like MobiKwik.
+            Water is a necessity of life, and it is critical to pay your water
+            bill on time. In this era, everyone is too busy to stand in long
+            queues for water bill payments at the centers. The good news is that
+            your water bills can now be paid from the comfort of your own home
+            in a few simple clicks with a fast and secure payments Website like
+            Finunique Small Pvt Ltd.
           </p>
           <p>
-            MobiKwik is India’s No. 1 site for Online water bill payments like BWSSB, Delhi Jal Board, Kerala water Authority.
+            MobiKwik is India’s No. 1 site for Online water bill payments like
+            BWSSB, Delhi Jal Board, Kerala water Authority.
           </p>
         </>
       ),
     },
     {
-      title: 'What is the Advantage of Water Bill Payment Online?',
+      title: "What is the Advantage of Water Bill Payment Online?",
       body: (
         <>
           <ul>
-            <li>Online bill payment allows you to tidy up your funds all at once.</li>
-            <li>Getting rid of paper bills is one of the most significant benefits of paying online.</li>
-            <li>By paying online, you can avail discounts and apply promo codes.</li>
-            <li>You can pay bills for your relatives and family in other cities.</li>
+            <li>
+              Online bill payment allows you to tidy up your funds all at once.
+            </li>
+            <li>
+              Getting rid of paper bills is one of the most significant benefits
+              of paying online.
+            </li>
+            <li>
+              By paying online, you can avail discounts and apply promo codes.
+            </li>
+            <li>
+              You can pay bills for your relatives and family in other cities.
+            </li>
           </ul>
         </>
       ),
     },
     {
-      title: 'What are the Available Options to Make Payment for Water Bill?',
+      title: "What are the Available Options to Make Payment for Water Bill?",
       body: (
         <>
-          <p>With multiple payment options, MobiKwik has become a popular choice for bill payments. The following methods are available:</p>
+          <p>
+            With multiple payment options, MobiKwik has become a popular choice
+            for bill payments. The following methods are available:
+          </p>
           <ul>
             <li>Debit Card</li>
             <li>Credit Card</li>
@@ -61,17 +78,20 @@ const FAQWaterBillPayment = () => {
       ),
     },
     {
-      title: 'Is it Safe to Pay Water Bills Online?',
+      title: "Is it Safe to Pay Water Bills Online?",
       body: (
         <>
           <p>
-            Water bill online payment is safe when using the right bill payment service. Digital payment apps like MobiKwik are 100% trustworthy and dependable, using encryption and multistep identity verification to keep your data secure.
+            Water bill online payment is safe when using the right bill payment
+            service. Digital payment apps like MobiKwik are 100% trustworthy and
+            dependable, using encryption and multistep identity verification to
+            keep your data secure.
           </p>
         </>
       ),
     },
     {
-      title: 'Steps to Pay Water Bills Online Through MobiKwik',
+      title: "Steps to Pay Water Bills Online Through MobiKwik",
       body: (
         <>
           <ol>
@@ -79,23 +99,32 @@ const FAQWaterBillPayment = () => {
             <li>Click on the 'Recharge and Bill Pay' option.</li>
             <li>Select 'Water' as a category.</li>
             <li>Select your operator & enter your Consumer Number.</li>
-            <li>Once you enter the details, the system will automatically fetch your due amount.</li>
+            <li>
+              Once you enter the details, the system will automatically fetch
+              your due amount.
+            </li>
             <li>Click on 'Pay Now'.</li>
           </ol>
         </>
       ),
     },
     {
-      title: 'FAQs',
+      title: "FAQs",
       body: (
         <ul>
           <li>
-            <strong>Is it Safe to Pay Water Bills Online Through MobiKwik?</strong><br />
-            MobiKwik offers a safe and secured payment platform where you can make payments.
+            <strong>
+              Is it Safe to Pay Water Bills Online Through MobiKwik?
+            </strong>
+            <br />
+            MobiKwik offers a safe and secured payment platform where you can
+            make payments.
           </li>
           <li>
-            <strong>Can we make payment from any bank?</strong><br />
-            Yes, you can pay your water bills from any bank listed on the MobiKwik app.
+            <strong>Can we make payment from any bank?</strong>
+            <br />
+            Yes, you can pay your water bills from any bank listed on the
+            MobiKwik app.
           </li>
         </ul>
       ),
@@ -116,7 +145,7 @@ const FAQWaterBillPayment = () => {
       ) : (
         <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
+            <div key={index} style={{ marginBottom: "1rem" }}>
               <h3>{item.title}</h3>
               {item.body}
             </div>

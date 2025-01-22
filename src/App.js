@@ -1,10 +1,9 @@
 
-import { useState } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from "./components/Header/Header.js";
+
 
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
@@ -20,6 +19,7 @@ import Popup from "./pages/Popup/Popup.jsx";
 import Term from "./pages/Term";
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import RefundPolicy from './pages/RefundPolicy.js';
+
 
 
 function App() {
