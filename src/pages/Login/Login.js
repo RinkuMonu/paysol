@@ -205,7 +205,7 @@ const Login = () => {
                             />
                           </div>
                           <button
-                            className="btn btn-secondary"
+                            className="btn btn-primary OtpBtn"
                             type="button"
 
                           >

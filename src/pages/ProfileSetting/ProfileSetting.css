@@ -1,0 +1,41 @@
+.profile-setting{
+    margin-top: 70px;
+}
+.overlay {
+    background-color: #eff8ff;
+    background-repeat: no-repeat;
+    background-position: top 100px right;
+    position: relative;
+    background-size: auto;
+    background-attachment: fixed;
+    padding: 92px 0 86px;
+}
+.profile_form{
+    padding: 40px 50px 35px!important;
+    box-shadow: 0 5px 11px #00000026;
+    background-color: #fff;
+    border-radius: 20px;
+    animation-name: animBottomInKey;
+    animation-duration: .35s;
+    animation-delay: calc(var(--animation-order)* .1s);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    margin-top: 62px;
+}
+.profile-setting .updateBtn{
+    width: -webkit-fill-available;
+    border: 0px;
+    padding: 7px;
+    border-radius: 5px;
+    color: #ccc;
+}
+@keyframes animBottomInKey
+{
+    0% {
+        opacity: 0;
+        transform: scaleX(1) translateY(18px);
+    }
+    100% {
+        opacity: 1;
+    }
+}

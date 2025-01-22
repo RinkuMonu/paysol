@@ -1,0 +1,125 @@
+.history-section {
+    margin-top: 100px;
+}
+
+.hero-section-container .overlay {
+    background-color: #eff8ff;
+    background-repeat: no-repeat;
+    background-position: top 100px right;
+    position: relative;
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+.hero-section-container .overlay .hero-section-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tb-plain th {
+    padding: 18px 20px !important;
+}
+
+.history-section table tr td.fund-td {
+    font-size: 16px !important;
+    font-weight: 400;
+}
+
+.history-section table tr td.fund-td p {
+    font-size: 14px !important;
+}
+.tred {
+    color: #d0021b;
+    font-size: 14px;
+}
+.sub-heading {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+.InvoiceBtn{
+    padding: 9px 16px 8px;
+    font-size: 15px;
+    box-shadow: 0 0 #0003, 0 0 #00000024, 0 0 #0000001f;
+    border: 1px solid #0042A6;
+    color: #0042a6;
+    background: transparent;
+}
+.top-section-heading {
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.ft55 {
+    font-size: 55px !important;
+}
+
+.hero-section-content {
+    margin-bottom: 34px;
+}
+
+.sub-heading {
+    color: #0a4bff;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.Blue_Heading {
+    color: #0042A6;
+    font-weight: 600;
+    text-transform: none;
+    transition: all .3s;
+}
+
+.bg_blue {
+    border-color: #0042A6;
+    color: #ffffff;
+
+}
+
+.cmnFtLh {
+    line-height: 36px;
+    margin-top: -7px;
+}
+
+.colort {
+    color: transparent;
+}
+
+.glowshdo5 {
+    box-shadow: 0 5px 11px #00000026;
+}
+
+.roundwrapper {
+
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+}
+
+.pad5.pbottom {
+    padding-bottom: 5px !important;
+}
+
+.padding {
+    padding: 80px 0 32px;
+}
+
+
+.top-area ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.table tbody>tr>td {
+    padding: 25px 20px;
+}

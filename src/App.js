@@ -20,6 +20,9 @@ import Popup from "./pages/Popup/Popup.jsx";
 import Term from "./pages/Term";
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import RefundPolicy from './pages/RefundPolicy.js';
+import History from './pages/History/History.js';
+import MyWallet from './pages/My_Wallet/MyWallet.js';
+import ProfileSetting from './pages/ProfileSetting/ProfileSetting.js';
 
 
 function App() {
@@ -74,6 +77,18 @@ function App() {
         {
           path: "/RefundPolicy",
           element: <RefundPolicy />,
+        },
+        {
+          path: "/history",
+          element: <History />,
+        },
+        {
+          path: "/mywallet",
+          element: <MyWallet />,
+        },
+        {
+          path: "/profilesetting",
+          element: <ProfileSetting />,
         },
        
       ],
