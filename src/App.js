@@ -3,8 +3,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
@@ -17,6 +15,9 @@ import BBPS from "./pages/BBPS";
 import Term from "./pages/Term";
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import RefundPolicy from './pages/RefundPolicy.js';
+import PaymentMode from './pages/services/PaymentMode/PaymentMode.js';
+import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
+import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
 
 
 function App() {
@@ -72,6 +73,18 @@ function App() {
           path: "/RefundPolicy",
           element: <RefundPolicy />,
         },
+        {
+          path: "/paymentmode",
+          element: <PaymentMode />,
+        },
+        {
+          path:"/transfer-to-bank",
+          element: <TransferToBank />,
+        },
+        {
+          path:"/redeem-payback-points",
+          element:<RedeemPayback />
+        }
        
       ],
     },

@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans from "./MobileBrowsePlans";
+import ConfirmRechargeModal from "./ConfirmRechargeModal";
 
 const MobileRechargeUI = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [showPlansModal, setShowPlansModal] = useState(false);
 
-  const handleModalOpen = () => setShowModal(true);
-  const handleModalClose = () => setShowModal(false);
+  const handleConfirmModalOpen = () => setShowConfirmModal(true);
+  const handleConfirmModalClose = () => setShowConfirmModal(false);
+
+  const handlePlansModalOpen = () => setShowPlansModal(true);
+  const handlePlansModalClose = () => setShowPlansModal(false);
 
   const [formData, setFormData] = useState({
     mobileNumber: "",
@@ -45,7 +50,7 @@ const MobileRechargeUI = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>
+            <h2 className="fw-bold" style={{ color: "#664A86" }}>
               Instant Prepaid Mobile Recharge Solution
             </h2>
             <h3>
@@ -131,7 +136,7 @@ const MobileRechargeUI = () => {
                       className="btn btn-outline-secondary"
                       type="button"
                       aria-label="Check Plans"
-                      onClick={handleModalOpen}
+                      onClick={handlePlansModalOpen}
                     >
                       Check Plans
                     </button>
@@ -140,10 +145,11 @@ const MobileRechargeUI = () => {
 
                 <Button
                   variant="primary"
-                  type="submit"
+                  type="button"
                   className="w-100"
                   style={{ backgroundColor: "#664A86", color: "white" }}
                   disabled={!isFormValid}
+                  onClick={handleConfirmModalOpen} // Open Confirm Modal
                 >
                   Confirm
                 </Button>
@@ -152,11 +158,21 @@ const MobileRechargeUI = () => {
           </Col>
         </Row>
       </Container>
+
+      {/* FAQ Section */}
       <FAQMobileRecharge />
 
+      {/* Confirm Recharge Modal */}
+      <ConfirmRechargeModal
+        show={showConfirmModal}
+        handleClose={handleConfirmModalClose}
+        formData={formData} // Pass form data for displaying
+      />
+
+      {/* Plans Modal */}
       <Modal
-        show={showModal}
-        onHide={handleModalClose}
+        show={showPlansModal}
+        onHide={handlePlansModalClose}
         size="lg"
         centered
         className="slide-in-right"
@@ -168,7 +184,7 @@ const MobileRechargeUI = () => {
           <MobileBrowsePlans />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleModalClose}>
+          <Button variant="secondary" onClick={handlePlansModalClose}>
             Close
           </Button>
         </Modal.Footer>

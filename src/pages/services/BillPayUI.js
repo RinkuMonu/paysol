@@ -135,7 +135,7 @@ const BillPayUI = () => {
 
   return (
     <>
-      <nav className="py-3 bg-light border-bottom marginTop">
+      <nav className="py-4 bg-light border-bottom" style={{marginTop:"95px"}}>
         <Container>
           <Row className="text-center">
             {menuItems.map((item) => (
