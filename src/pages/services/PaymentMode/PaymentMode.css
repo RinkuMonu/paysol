@@ -1,0 +1,17 @@
+.paybalance{
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.accept{
+    background-color: #E1EBF6;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
