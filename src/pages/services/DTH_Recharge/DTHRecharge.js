@@ -103,7 +103,7 @@ const DTHRecharge = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#664A86", color: "white" }}
+                  style={{ backgroundColor: "#872D67", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm
