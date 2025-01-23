@@ -116,6 +116,16 @@ const ContactUs = () => {
                   </ul>
                 </div>
               </div>
+          
+            </div>
+            <div className="row my-4">
+            <div className="col-12">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3561.264701407029!2d75.869785!3d26.799699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQ3JzU4LjkiTiA3NcKwNTInMTEuMiJF!5e0!3m2!1sen!2sin!4v1724749044503!5m2!1sen!2sin"
+                    width="100%" height="100%" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+              </div>
+
             </div>
           </div>
         </section>

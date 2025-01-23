@@ -76,11 +76,6 @@
         margin: 0;
     }
 }
-
-#header-wrap.fixed-header .logo img {
-    height: 55px;
-}
-
 .header {
     position: absolute;
     top: 0;
@@ -121,7 +116,7 @@
 }
 
 .logo img {
-    max-height: 70px;
+    max-height: 89px;
 }
 
 .navbar {
@@ -156,7 +151,7 @@
     border-radius: 22px !important;
     box-shadow: -13px 13px 20px 1px #0000001a !important;
     overflow: hidden !important;
-    background-color: #0042a6 !important;
+    background-color: var(--themeht-primary-color) !important;
     transition: .4s !important;
 }
 
@@ -460,7 +455,7 @@
     box-shadow: -13px 13px 20px 1px #0000001a !important;
     overflow: hidden;
     transition: .4s;
-    background: #0042A6;
+    background: var(--themeht-primary-color);
     padding: 20px;
 }
 
@@ -540,7 +535,7 @@
     box-shadow: none !important;
 }
 .form-header {
-    background-color: #00245a;
+    background-color: var(--themeht-primary-color);
     border-radius: 20px !important;
     width: 100%;
     position: relative;
@@ -601,6 +596,10 @@
     z-index: 2;
     animation: _ngcontent-wes-c87_zoomOutKey .6s 1;
     animation-fill-mode: forwards;
+}
+.form-body .btn-primary{
+    background-color: var(--themeht-primary-color);
+    border-color: var(--themeht-primary-color);
 }
 @keyframes _ngcontent-wes-c87_zoomOutKey {
 0% {

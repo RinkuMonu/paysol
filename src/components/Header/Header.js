@@ -23,7 +23,7 @@ export default function Header({ onLoginClick }) {
                                     <Link className="navbar-brand logo" to={"/"}>
                                         <img
                                             className="img-fluid"
-                                            src="/assets/Home/logo.jpg"
+                                            src="/assets/Home/logo.png"
                                             alt=""
                                         />
                                     </Link>
@@ -204,7 +204,7 @@ export default function Header({ onLoginClick }) {
                                                     <div class="arrow"></div>
                                                 </ul>
                                             </li>
-                                            <li className="nav-item">
+                                            {/* <li className="nav-item">
                                                 <Link className="nav-link" to={"/BBPS"}>
                                                     BBPS
                                                 </Link>
@@ -213,7 +213,7 @@ export default function Header({ onLoginClick }) {
                                                 <Link className="nav-link" to={"/OurPartner"}>
                                                     Our Partners
                                                 </Link>
-                                            </li>
+                                            </li> */}
                                             <li className="nav-item">
                                                 <Link className="nav-link" to={"/WhyUs"}>
                                                     Why Us?

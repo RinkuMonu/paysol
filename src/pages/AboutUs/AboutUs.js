@@ -4,7 +4,7 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return <>
   
-    <div style={{marginTop:"50px"}}>
+    <div style={{marginTop:"-5px"}}>
       <section className="page-title">
         <img src="/assets/aboutbg2.svg" alt="about" />
       </section>

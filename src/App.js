@@ -23,6 +23,7 @@ import RefundPolicy from './pages/RefundPolicy.js';
 import History from './pages/History/History.js';
 import MyWallet from './pages/My_Wallet/MyWallet.js';
 import ProfileSetting from './pages/ProfileSetting/ProfileSetting.js';
+import PaymentCheck from './pages/My_Wallet/PaymentCheck.js';
 
 
 function App() {
@@ -89,6 +90,10 @@ function App() {
         {
           path: "/profilesetting",
           element: <ProfileSetting />,
+        },
+        {
+          path: "/paymentcheck",
+          element: <PaymentCheck />,
         },
        
       ],

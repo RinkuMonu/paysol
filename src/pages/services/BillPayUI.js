@@ -118,7 +118,7 @@ const BillPayUI = () => {
                 >
                   <div
                     style={{
-                      color: activeMenu === item.name ? "#0042A6" : "#6c757d",
+                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "#6c757d",
                     }}
                   >
                     {item.icon}
@@ -126,7 +126,7 @@ const BillPayUI = () => {
                   <p
                     className="mb-0"
                     style={{
-                      color: activeMenu === item.name ? "#0042A6" : "#6c757d",
+                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "#6c757d",
                       fontWeight: activeMenu === item.name ? "bold" : "normal",
                       position: "relative",
                       display: "inline-block",
@@ -141,7 +141,7 @@ const BillPayUI = () => {
                           left: "0",
                           right: "0",
                           height: "4px",
-                          backgroundColor: "#0042A6",
+                          backgroundColor: "var(--themeht-primary-color)",
                           borderRadius: "20px",
                         }}
                       ></span>
