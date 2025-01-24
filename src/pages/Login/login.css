@@ -22,7 +22,7 @@
 
 } */
 .bg-img {
-  background: url(/public/assets/Home/auth-bg1.png) no-repeat 40%, linear-gradient(90deg, #0049ff, #002fa3);
+  background: url(http://localhost:3000/static/media/auth-bg1.78c93e3….png) no-repeat 40%, linear-gradient(90deg, #872d67, #14263F);
   background-size: cover;
   background-blend-mode: screen;
   padding: 0 50px;
@@ -84,11 +84,14 @@
   justify-content: space-between;
   gap: 20px;
   align-items: center;
-  background-color: #0c286d;
+  background-color: #872d67;
   border-radius: 10px;
   padding: 15px;
 }
-
+.btn:hover, .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+  background-color: #872d67d1;
+  border-color: #872d67d1;
+}
 .QrCode_section .QrCode p {
   color: #fff;
   font-size: 14px;
@@ -109,14 +112,14 @@
   margin-bottom: 30px;
 }
 .login-Heading .form-label{
-  color: #0042a6;
+  color: var(--themeht-primary-color);
 }
 .login-Heading input{
-  border-color: #0042a6;
+  border-color: var(--themeht-primary-color);
   font-size: 14px;
 }
 .login-Heading .form-check a{
-  color: #0042a6;
+  color: var(--themeht-primary-color);
 }
 .login-Heading .form-check label {
   font-size: 16px;
@@ -124,7 +127,7 @@
 }
 .OtpBtn{
   box-shadow: 0 0 #0003,0 0 #00000024,0 0 #0000001f;
-  background-color: #0a4bff;
+  background-color: var(--themeht-primary-color);
   border: 0px;
   color: #fff;
   margin-top:27px;
@@ -157,7 +160,7 @@
   margin: 0 auto;
 }
 .already-account button{
-  color: #0042a6;
+  color: var(--themeht-primary-color);
   font-size: 16px;
   font-weight: 400;
   text-align: left;

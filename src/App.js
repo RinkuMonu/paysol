@@ -14,9 +14,14 @@ import BBPS from "./pages/BBPS";
 import Term from "./pages/Term";
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import RefundPolicy from './pages/RefundPolicy.js';
+import History from './pages/History/History.js';
+import MyWallet from './pages/My_Wallet/MyWallet.js';
+import ProfileSetting from './pages/ProfileSetting/ProfileSetting.js';
+import PaymentCheck from './pages/My_Wallet/PaymentCheck.js';
 import PaymentMode from './pages/services/PaymentMode/PaymentMode.js';
 import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
 import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
+
 
 
 function App() {
@@ -81,6 +86,13 @@ function App() {
           element: <TransferToBank />,
         },
         {
+          path: "/profilesetting",
+          element: <ProfileSetting />,
+        },
+        {
+          path: "/paymentcheck",
+          element: <PaymentCheck />,
+        },
           path:"/redeem-payback-points",
           element:<RedeemPayback />
         }

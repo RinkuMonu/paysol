@@ -77,11 +77,11 @@ const Login = () => {
 
               <div className="logo-img">
                 <img
-                  src="/assets/Home/logo.png"
+                  src="/assets/Home/logo.jpg"
                   alt=""
-                  className="m-auto"
+                  className="m-auto mt-4"
                   style={{
-                    width: "146px",
+                    width: "100px",
                   }}
                 />
 
