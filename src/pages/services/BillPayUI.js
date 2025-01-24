@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Modal } from "react-bootstrap";
-import {FaMobileAlt,FaSatelliteDish,FaGasPump,FaUmbrella,FaGooglePlay,FaTrafficLight,} from "react-icons/fa";
+import {
+  FaMobileAlt,
+  FaSatelliteDish,
+  FaGasPump,
+  FaUmbrella,
+  FaGooglePlay,
+  FaTrafficLight,
+} from "react-icons/fa";
 import { MdElectricBolt, MdCreditCard } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
-import { GiGasStove,GiTap,GiTv,GiUsbKey,GiVikingLonghouse,GiWifiRouter,} from "react-icons/gi";
+import {
+  GiGasStove,
+  GiTap,
+  GiTv,
+  GiUsbKey,
+  GiVikingLonghouse,
+  GiWifiRouter,
+} from "react-icons/gi";
+import { HiCurrencyRupee } from "react-icons/hi";
+import { FaHouseChimney } from "react-icons/fa6";
 import MobileRechargeUI from "./Mobile_Recharge/MobileRechargeUI";
 import DTHRecharge from "./DTH_Recharge/DTHRecharge";
 import ElectricityBillPayment from "./ElectricityBillPayment/ElectricityBillPayment";
@@ -13,9 +29,7 @@ import Landline from "./Landline/Landline";
 import Broadband from "./Broadband/Broadband";
 import PipedGas from "./PipedGas/PipedGas";
 import Insurance from "./Insurance/Insurance";
-import Water from "./Water/Water"
-import { HiCurrencyRupee } from "react-icons/hi";
-import { FaHouseChimney } from "react-icons/fa6";
+import Water from "./Water/Water";
 import GooglePlay from "./GooglePlay/GooglePlay";
 import Cable from "./Cable/Cable";
 import Municipality from "./Municipality/Municipality";
@@ -24,14 +38,12 @@ import TrafficChallan from "./TrafficChallan/TrafficChallan";
 import HousingBillPayment from "./HousingBillPayment/HousingBillPayment";
 import LpgBooking from "./LpgBooking/LpgBooking";
 
-// import { Link } from 'react-router-dom'
-
-
-
 const BillPayUI = () => {
   const [activeMenu, setActiveMenu] = useState("Mobile");
   const [showModal, setShowModal] = useState(false);
-  const [menuItems, setMenuItems] = useState([
+  const [isMobile, setIsMobile] = useState(false);
+
+  const allItems = [
     { name: "Mobile", icon: <FaMobileAlt size={24} /> },
     { name: "DTH", icon: <FaSatelliteDish size={24} /> },
     { name: "Electricity", icon: <MdElectricBolt size={24} /> },
@@ -41,28 +53,42 @@ const BillPayUI = () => {
     { name: "Broadband", icon: <GiWifiRouter size={24} /> },
     { name: "Piped Gas", icon: <FaGasPump size={24} /> },
     { name: "Insurance", icon: <FaUmbrella size={24} /> },
-    // { name: "More", icon: "+8" },
-  ]);
+    { name: "Water", icon: <GiTap size={24} /> },
+    { name: "Google Play", icon: <FaGooglePlay size={24} /> },
+    { name: "Cable", icon: <GiTv size={24} /> },
+    { name: "Municipality", icon: <GiVikingLonghouse size={24} /> },
+    { name: "EMI", icon: <HiCurrencyRupee size={24} /> },
+    { name: "Housing", icon: <FaHouseChimney size={24} /> },
+    { name: "LPG Booking", icon: <GiGasStove size={24} /> },
+    { name: "Challan", icon: <FaTrafficLight size={24} /> },
+  ];
 
-  const [moreItems, setMoreItems] = useState([
-    { name: "Water", icon: <GiTap size={24}/> },
-    { name: "Google Play", icon: <FaGooglePlay size={24}/> },
-    { name: "Cable", icon: <GiTv size={24}/> },
-    { name: "Municipality", icon: <GiVikingLonghouse size={24}/> },
-    { name: "EMI", icon: <HiCurrencyRupee size={24}/> },
-    { name: "Challan", icon: <FaTrafficLight size={24}/> },
-    { name: "Housing", icon: <FaHouseChimney size={24}/> },
-    { name: "LPG Booking", icon: <GiGasStove size={24}/> },
-  ]);
+  const [menuItems, setMenuItems] = useState([]);
+  const [moreItems, setMoreItems] = useState([]);
 
-  const updateMenuItems = () => {
-    const moreCount = moreItems.length; 
-    const updatedMenuItems = [
-      ...menuItems.slice(0, -1),
-      { name: "More", icon: `+${moreCount}` },
-    ];
-    setMenuItems(updatedMenuItems);
-  };
+  useEffect(() => {
+    const updateMenuItems = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+        setMenuItems([
+          ...allItems.slice(0, 3),
+          { name: "More", icon: `+${allItems.length - 3}` },
+        ]);
+        setMoreItems(allItems.slice(3));
+      } else {
+        setIsMobile(false);
+        setMenuItems([
+          ...allItems.slice(0, 9),
+          { name: "More", icon: `+${allItems.length - 9}` },
+        ]);
+        setMoreItems(allItems.slice(9));
+      }
+    };
+
+    updateMenuItems();
+    window.addEventListener("resize", updateMenuItems);
+    return () => window.removeEventListener("resize", updateMenuItems);
+  }, []);
 
   const handleMenuClick = (menu) => {
     if (menu === "More") {
@@ -73,35 +99,43 @@ const BillPayUI = () => {
   };
 
   const handleMoreItemClick = (menu) => {
-    if (!menuItems.find((item) => item.name === menu)) {
-      const selectedModalItem = moreItems.find((item) => item.name === menu);
-      const lastNavbarItem = menuItems[menuItems.length - 2]; // Last item before "More"
+    const selectedModalItemIndex = moreItems.findIndex(
+      (item) => item.name === menu
+    );
 
-      // Update navbar: replace last item with selected modal item
-      setMenuItems((prev) => [
-        ...prev.slice(0, -2), // Remove last item and "More"
-        { name: selectedModalItem.name, icon: selectedModalItem.icon }, // Add selected item
-        { name: "More", icon: `+${moreItems.length - 1}` }, // Update "More" with new count
+    if (selectedModalItemIndex !== -1) {
+      const selectedModalItem = moreItems[selectedModalItemIndex];
+      const lastVisibleItem = menuItems[menuItems.length - 2]; // Last visible item before "More"
+
+      // Update the navbar menu items
+      setMenuItems((prevMenuItems) => [
+        ...prevMenuItems.slice(0, -2), // Remove the last item and "More"
+        { name: selectedModalItem.name, icon: selectedModalItem.icon }, // Add the selected modal item
+        { name: "More", icon: `+${moreItems.length}` }, // Keep "More" with the same count
       ]);
 
-      // Update modal: remove selected item and add last navbar item
-      setMoreItems((prev) => [
-        ...prev.filter((item) => item.name !== menu), // Remove selected modal item
-        { name: lastNavbarItem.name, icon: lastNavbarItem.icon }, // Add last navbar item
+      // Update the modal items
+      setMoreItems((prevMoreItems) => [
+        ...prevMoreItems.filter((item) => item.name !== menu), // Remove selected modal item
+        { name: lastVisibleItem.name, icon: lastVisibleItem.icon }, // Add the last navbar item to modal
       ]);
+
+      setActiveMenu(menu); // Set the active menu to the selected item
+      setShowModal(false); // Close the modal
     }
-
-    setActiveMenu(menu); // Set the active menu to the selected item
-    setShowModal(false); // Close the modal
   };
 
-  React.useEffect(() => {
-    updateMenuItems();
-  }, [moreItems]); // Update "More" count whenever modal items change
+  useEffect(() => {
+    // Dynamically update "More" count
+    setMenuItems((prevMenuItems) => [
+      ...prevMenuItems.slice(0, -1),
+      { name: "More", icon: `+${moreItems.length}` },
+    ]);
+  }, [moreItems]);
 
   return (
     <>
-      <nav className="py-3 bg-light border-bottom marginTop">
+      <nav className="py-4 bg-light border-bottom" style={{marginTop:"95px"}}>
         <Container>
           <Row className="text-center">
             {menuItems.map((item) => (
@@ -118,7 +152,9 @@ const BillPayUI = () => {
                 >
                   <div
                     style={{
+
                       color: activeMenu === item.name ? "var(--themeht-primary-color)" : "#6c757d",
+
                     }}
                   >
                     {item.icon}
@@ -126,8 +162,10 @@ const BillPayUI = () => {
                   <p
                     className="mb-0"
                     style={{
+
                       color: activeMenu === item.name ? "var(--themeht-primary-color)" : "#6c757d",
                       fontWeight: activeMenu === item.name ? "bold" : "normal",
+
                       position: "relative",
                       display: "inline-block",
                     }}
@@ -141,7 +179,9 @@ const BillPayUI = () => {
                           left: "0",
                           right: "0",
                           height: "4px",
+\
                           backgroundColor: "var(--themeht-primary-color)",
+
                           borderRadius: "20px",
                         }}
                       ></span>
@@ -164,15 +204,14 @@ const BillPayUI = () => {
         {activeMenu === "Broadband" && <Broadband />}
         {activeMenu === "Piped Gas" && <PipedGas />}
         {activeMenu === "Insurance" && <Insurance />}
-        {activeMenu === "Water" && <Water/>}
-        {activeMenu === "Google Play" && <GooglePlay/>}
-        {activeMenu === "Cable" && <Cable/>}
-        {activeMenu === "Municipality" && <Municipality/>}
-        {activeMenu === "EMI" && <Emi/>}
-        {activeMenu === "Challan" && <TrafficChallan/>}
-        {activeMenu === "Housing" && <HousingBillPayment/>}
-        {activeMenu === "LPG Booking" && <LpgBooking/>}
-        
+        {activeMenu === "Water" && <Water />}
+        {activeMenu === "Google Play" && <GooglePlay />}
+        {activeMenu === "Cable" && <Cable />}
+        {activeMenu === "Municipality" && <Municipality />}
+        {activeMenu === "EMI" && <Emi />}
+        {activeMenu === "Challan" && <TrafficChallan />}
+        {activeMenu === "Housing" && <HousingBillPayment />}
+        {activeMenu === "LPG Booking" && <LpgBooking />}
       </Container>
 
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
@@ -188,10 +227,10 @@ const BillPayUI = () => {
                   onClick={() => handleMoreItemClick(item.name)}
                   style={{ cursor: "pointer" }}
                 >
-                  <div className="icon" style={{ fontSize: "24px" }}>
+                  <div className="icon" style={{ fontSize: "24px",color:"#872D67" }}>
                     {item.icon}
                   </div>
-                  <p className="mb-0">{item.name}</p>
+                  <p className="mb-0" style={{color:"#872D67"}}>{item.name}</p>
                 </Col>
               ))}
             </Row>

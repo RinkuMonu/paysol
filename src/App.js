@@ -1,11 +1,7 @@
-
-import { useState } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from "./components/Header/Header.js";
-
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
@@ -15,8 +11,6 @@ import WhyUs from "./pages/WhyUs";
 import BillPayUI from '../src/pages/services/BillPayUI.js'
 import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
-import Login from "./pages/Login/Login";
-import Popup from "./pages/Popup/Popup.jsx";
 import Term from "./pages/Term";
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import RefundPolicy from './pages/RefundPolicy.js';
@@ -24,6 +18,10 @@ import History from './pages/History/History.js';
 import MyWallet from './pages/My_Wallet/MyWallet.js';
 import ProfileSetting from './pages/ProfileSetting/ProfileSetting.js';
 import PaymentCheck from './pages/My_Wallet/PaymentCheck.js';
+import PaymentMode from './pages/services/PaymentMode/PaymentMode.js';
+import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
+import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
+
 
 
 function App() {
@@ -55,7 +53,7 @@ function App() {
         },
 
         {
-          path: "/BillPayUI",
+          path: "/recharge",
           element: <BillPayUI />,
         },
 
@@ -80,12 +78,12 @@ function App() {
           element: <RefundPolicy />,
         },
         {
-          path: "/history",
-          element: <History />,
+          path: "/paymentmode",
+          element: <PaymentMode />,
         },
         {
-          path: "/mywallet",
-          element: <MyWallet />,
+          path:"/transfer-to-bank",
+          element: <TransferToBank />,
         },
         {
           path: "/profilesetting",
@@ -95,14 +93,18 @@ function App() {
           path: "/paymentcheck",
           element: <PaymentCheck />,
         },
+          path:"/redeem-payback-points",
+          element:<RedeemPayback />
+        }
        
       ],
     },
+   
   ]);
   return (
     <>
       <RouterProvider router={router} />
-     
+
     </>
   );
 }

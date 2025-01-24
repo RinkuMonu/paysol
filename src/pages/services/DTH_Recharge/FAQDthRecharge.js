@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import React, { useState, useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
 
 const FAQDthRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,92 +11,118 @@ const FAQDthRecharge = () => {
     };
 
     handleResize(); // Check initial screen size
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const content = [
     {
-      title: 'How to Make DTH Recharge Online',
+      title: "How to Make DTH Recharge Online",
       body: (
         <>
           <p>
-            DTH is one good source of entertainment for the audiences, and timely recharge for the
-            same is vital for constant access to content. There are many options online for instant
-            recharge, but MobiKwik is a leading payment wallet that allows users to make recharges
-            and bill payments with a button click. Online DTH recharge via MobiKwik is a simple
-            process, and users can avail a variety of the best DTH recharge offers in a few simple steps.
+            DTH is one good source of entertainment for the audiences & timely
+            recharge for the same is vital for the constant grasp of content.
+            There are many options online for instant recharge but Finunique is
+            a leading payment wallet that allows users to make recharges and
+            bill payments with a button click. On the Finunique platform, the
+            users can get their DTH recharge done and enjoy uninterrupted DTH
+            services. Online DTH recharge via Finunique is a simple process, and
+            the users can avail a variety of the best DTH recharge offers.
+            Online DTH recharge can be done via Finunique Small Pvt. Ltd.
           </p>
           <ol>
-            <li>Go to the recharge and bill payment section on the MobiKwik website or app.</li>
+            <li>
+              Go to the recharge and bill payment section on the MobiKwik
+              website or app.
+            </li>
             <li>Select ‘DTH’ as a category.</li>
-            <li>Select the operator, e.g., Airtel DTH recharge, Dish TV recharge, etc.</li>
+            <li>
+              Select the operator, e.g., Airtel DTH recharge, Dish TV recharge,
+              etc.
+            </li>
             <li>Enter your customer ID.</li>
             <li>
-              Check for available DTH recharge plans for the selected operator or enter the amount
-              manually.
+              Check for available DTH recharge plans for the selected operator
+              or enter the amount manually.
             </li>
           </ol>
           <p>
-            With this, your DTH recharge will be done within minutes. MobiKwik provides multiple
-            payment modes like UPI, wallet, credit card, debit card, Pay Later (ZIP), and net banking.
+            With this, your DTH recharge will be done within minutes. MobiKwik
+            provides multiple payment modes like UPI, wallet, credit card, debit
+            card, Pay Later (ZIP), and net banking.
           </p>
         </>
       ),
     },
     {
-      title: 'Why Choose MobiKwik for DTH Recharge Online',
+      title: "Why Choose MobiKwik for DTH Recharge Online",
       body: (
         <>
           <p>
-            If you seek to make DTH recharge online while enjoying exciting DTH recharge offers,
-            discounts, and cashback, then MobiKwik is the right platform. Benefits include:
+            If you seek to make DTH recharge online while enjoying exciting DTH
+            recharge offers, discounts, and cashback, then MobiKwik is the right
+            platform. Benefits include:
           </p>
           <ul>
-            <li><strong>Free online DTH recharge:</strong> No transaction fee is chargeable.</li>
             <li>
-              <strong>Exciting deals and offers:</strong> Discounts, cashback, and coupons to
-              maximize savings.
+              <strong>Free online DTH recharge:</strong> No transaction fee is
+              chargeable.
             </li>
             <li>
-              <strong>Safe and secure:</strong> Payment details are encrypted and not shared with
-              third parties.
+              <strong>Exciting deals and offers:</strong> Discounts, cashback,
+              and coupons to maximize savings.
             </li>
             <li>
-              <strong>Available across all operators:</strong> Airtel DTH, Dish TV, Tata Sky, etc.
+              <strong>Safe and secure:</strong> Payment details are encrypted
+              and not shared with third parties.
             </li>
             <li>
-              <strong>Simple and seamless:</strong> Recharge within minutes by providing basic
-              details.
+              <strong>Available across all operators:</strong> Airtel DTH, Dish
+              TV, Tata Sky, etc.
+            </li>
+            <li>
+              <strong>Simple and seamless:</strong> Recharge within minutes by
+              providing basic details.
             </li>
           </ul>
         </>
       ),
     },
     {
-      title: 'Frequently Asked Questions about DTH Recharge',
+      title: "Frequently Asked Questions about DTH Recharge",
       body: (
         <ul>
           <li>
-            <strong>How long does it take to process DTH Recharge Online?</strong><br />
-            Transactions are completed within minutes. Depending on the operator, the balance
-            reflects shortly after.
+            <strong>
+              How long does it take to process DTH Recharge Online?
+            </strong>
+            <br />
+            Transactions are completed within minutes. Depending on the
+            operator, the balance reflects shortly after.
           </li>
           <li>
-            <strong>Does MobiKwik support all operators for DTH recharge?</strong><br />
-            Yes, it supports Airtel DTH, Dish TV, Tata Sky, Videocon D2H, and Sun Direct.
+            <strong>
+              Does MobiKwik support all operators for DTH recharge?
+            </strong>
+            <br />
+            Yes, it supports Airtel DTH, Dish TV, Tata Sky, Videocon D2H, and
+            Sun Direct.
           </li>
           <li>
-            <strong>How to check DTH balance online?</strong><br />
-            The process varies by operator. Check the balance via the operator’s website, app, or
-            customer support.
+            <strong>How to check DTH balance online?</strong>
+            <br />
+            The process varies by operator. Check the balance via the operator’s
+            website, app, or customer support.
           </li>
           <li>
-            <strong>What payment options are available on MobiKwik?</strong><br />
-            Payment options include UPI, credit/debit cards, internet banking, and wallet balance.
+            <strong>What payment options are available on MobiKwik?</strong>
+            <br />
+            Payment options include UPI, credit/debit cards, internet banking,
+            and wallet balance.
           </li>
         </ul>
       ),
@@ -117,7 +143,7 @@ const FAQDthRecharge = () => {
       ) : (
         <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
+            <div key={index} style={{ marginBottom: "1rem" }}>
               <h3>{item.title}</h3>
               {item.body}
             </div>

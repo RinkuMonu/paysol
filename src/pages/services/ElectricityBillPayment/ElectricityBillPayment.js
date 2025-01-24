@@ -1,26 +1,35 @@
-import React from 'react'
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import FAQElectricityBill from './FAQElectricityBill';
-
-
-
+import FAQElectricityBill from "./FAQElectricityBill";
 
 const ElectricityBillPayment = () => {
+  const [formData, setFormData] = useState({
+    operator: "",
+    consumerNumber: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const isFormValid = formData.operator && formData.consumerNumber;
+
   return (
     <>
-         <Container className="py-5">
+      <Container className="py-5">
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            
-            <h2 className="fw-bold">Ingenious Electricity Bill Settlement</h2>
-            <p>
-            Empower your life with the efficient management of electricity bills, ensuring uninterrupted power supply for your world of possibilities.
-            </p>
-            {/* <Button variant="primary" className="me-2">
-              Download App
-            </Button>
-            <Button variant="outline-primary">App Store</Button> */}
+            <h2 className="fw-bold" style={{color:"#664A86"}}>Ingenious Electricity Bill Settlement</h2>
+            <h3>
+              Empower your life with the efficient management of electricity
+              bills, ensuring uninterrupted power supply for your world of
+              possibilities.
+            </h3>
           </Col>
 
           {/* Right Side Form */}
@@ -31,27 +40,41 @@ const ElectricityBillPayment = () => {
             >
               <h5 className="mb-4 text-center">Electricity Bill Payment</h5>
               <Form>
-            
-
                 <Form.Group className="mb-3" controlId="operator">
-                  <Form.Label>Operator</Form.Label>
-                  <Form.Select>
-                    <option>Select Operator</option>
-                    <option>Airtel</option>
-                    <option>Jio</option>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Form.Label>Operator</Form.Label>
+                    <img
+                      height={15}
+                      src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                      alt="BBPS"
+                    />
+                  </div>
+                  <Form.Select
+                    value={formData.operator}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select Operator</option>
+                    <option value="Airtel">Airtel</option>
+                    <option value="Jio">Jio</option>
                   </Form.Select>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="consumernumber">
+                <Form.Group className="mb-3" controlId="consumerNumber">
                   <Form.Label>Consumer Number</Form.Label>
-                  <Form.Control type="text" placeholder="consumer Number" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Consumer Number"
+                    value={formData.consumerNumber}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
-                
-                {/* <Form.Group className="mb-3" controlId="amount">
-                  <Form.Label>Amount</Form.Label>
-                  <Form.Control type="text" placeholder="₹ Amount" />
-                </Form.Group> */}
 
-                <Button variant="primary" type="submit" className="w-100">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-100"
+                  style={{ backgroundColor: "#872D67", color: "white" }}
+                  disabled={!isFormValid}
+                >
                   Confirm
                 </Button>
               </Form>
@@ -59,9 +82,9 @@ const ElectricityBillPayment = () => {
           </Col>
         </Row>
       </Container>
-      <FAQElectricityBill/>
+      <FAQElectricityBill />
     </>
-  )
-}
+  );
+};
 
 export default ElectricityBillPayment;
