@@ -106,7 +106,7 @@ const Login = () => {
                         <p>For smooth & fast experience</p>
                       </div>
                       <div className="qr-code_img">
-                        <img className="img-fluid" src="/assets/Home/qr.png" />
+                        <img className="img-fluid" src="/assets/Home/qr.jpg"  width={158}/>
                       </div>
                     </div>
                   </div>

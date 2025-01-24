@@ -97,6 +97,10 @@ function App() {
           path: "/wallet-transfer",
           element: <WalletTransfer />,
         },
+        {
+          path: "/history",
+          element: <History />,
+        },
       ],
     },
   ]);

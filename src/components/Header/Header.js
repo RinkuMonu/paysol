@@ -108,7 +108,7 @@ export default function Header({ onLoginClick }) {
                                                             Transfer to Bank
                                                         </Link>
                                                     </li>
-                                                    <li>
+                                                    {/* <li>
                                                         <Link className="dropdown-item" to={"/Service3"}>
                                                             <svg
                                                                 className="custom-svg"
@@ -150,7 +150,7 @@ export default function Header({ onLoginClick }) {
                                                             <i class="bi bi-geo"></i>
                                                             Local Stores
                                                         </Link>
-                                                    </li>
+                                                    </li> */}
                                                     <li>
                                                         <Link
                                                             className="dropdown-item"
