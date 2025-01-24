@@ -17,6 +17,7 @@ import RefundPolicy from './pages/RefundPolicy.js';
 import PaymentMode from './pages/services/PaymentMode/PaymentMode.js';
 import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
 import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
+import WalletTransfer from './pages/services/WalletTransfer/WalletTransfer.js';
 
 
 function App() {
@@ -83,6 +84,10 @@ function App() {
         {
           path:"/redeem-payback-points",
           element:<RedeemPayback />
+        },
+        {
+          path:"/wallet-transfer",
+          element:<WalletTransfer />
         }
        
       ],

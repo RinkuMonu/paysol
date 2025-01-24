@@ -50,7 +50,7 @@ const LpgBooking = () => {
                   <div className="d-flex justify-content-between align-items-center">
                     <Form.Label>Operator</Form.Label>
                     <img
-                      height={15}
+                      height={20}
                       src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
                       alt="BBPS"
                     />
@@ -83,7 +83,7 @@ const LpgBooking = () => {
                   type="submit"
                   className="w-100"
                   style={{ backgroundColor: '#872D67', color: 'white' }}
-                  disabled={!isFormValid} // Disable the button if the form is incomplete
+                  disabled={!isFormValid} 
                 >
                   Confirm
                 </Button>
