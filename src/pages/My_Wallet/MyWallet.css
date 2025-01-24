@@ -36,20 +36,20 @@
 }
 
 .sub-heading {
-    color: #0a4bff;
+    color: var(--themeht-primary-color);
     margin-bottom: 30px;
     font-size: 24px;
 }
 
 .Blue_Heading {
-    color: #0042A6;
+    color: var(--themeht-primary-color);
     font-weight: 600;
     text-transform: none;
     transition: all .3s;
 }
 
 .bg_blue {
-    border-color: #0042A6;
+    border-color: var(--themeht-primary-color);
     color: #ffffff;
 }
 
@@ -72,7 +72,7 @@
 .nav button.active {
     color: #fff;
     border-radius: 8px;
-    background-color: #0042a6;
+    background-color: var(--themeht-primary-color);
 }
 
 /* .sec-nav a:before {
@@ -85,7 +85,7 @@
 }  */
 
 .btn_color {
-    background-color: #0042a6;
+    background-color: var(--themeht-primary-color);
 }
 
 .tgreyteel {
@@ -107,7 +107,7 @@
     padding-right: 0px !important;
 }
 .card_removeBtn .btn{
-    background-color: #0042A6;
+    background-color: var(--themeht-primary-color);
     padding:12px 16px 11px;
     border: 1px solid #00327e;
     color: #fff;
@@ -120,12 +120,12 @@
 }
 
 .bg_blue {
-    background-color: #0042a6;
+    background-color: var(--themeht-primary-color);
 }
 
 .outline_color {
-    border-color: #0042a6;
-    color: #0042A6;
+    border-color: var(--themeht-primary-color);
+    color: var(--themeht-primary-color);
 }
 
 .text_sm {
@@ -133,11 +133,11 @@
 }
 
  .text_blue {
-    color: #0042a6 !important;
+    color: var(--themeht-primary-color) !important;
 }
 
 .blue_active a:not(.know-more-link).active {
-    color: #0042a6;
+    color: var(--themeht-primary-color);
     font-weight: 600;
 }
 
@@ -184,7 +184,7 @@
     
    }
    #Connection .btn-primary{
-    background-color: #0042A6;
+    background-color: var(--themeht-primary-color);
     padding:12px 16px 11px;
     border: 1px solid #00327e;
     color: #fff;
@@ -193,3 +193,121 @@
     border-radius: 10px;
     background: #d8d8d8
   }
+  /* PaymentCheck Css */
+
+  .Payment_card{
+    padding: 20px 35px 35px;
+    box-shadow: #0000003d 0 3px 8px;
+    background-color: #fff;
+    border-radius: 20px;
+    line-height: 30px;
+  }
+  .payment_checkout{
+    margin-top: 89px;
+    padding: 62px;
+    background-color: #eff8ff;
+  }
+  .payment_checkout h3{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--themeht-primary-color);
+  }
+  .Payment_card button.nav-link.active:after, .Payment_card button.nav-link:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    border-radius: 3px;
+    height: 4px;
+    background-color: var(--themeht-primary-color);
+    content: "";
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+    -o-transition: opacity .3s, -o-transform .3s;
+    -ms-transition: opacity .3s, -ms-transform .3s;
+    transform: translateY(-10px);
+}
+.Payment_card .nav.nav-tabs{
+    position: relative;
+}
+/* .Payment_card button.nav-link:hover:after {
+    opacity: 1;
+    transform: translateY(0);
+} */
+.Payment_card button.nav-link.active:after {
+    opacity: 1;
+    transform: translateY(0);
+}
+.Payment_card .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link{
+    position: relative;
+}
+.Payment_card .nav-tabs .nav-link.active{
+    border-color: transparent !important;
+}
+.Payment_card .nav-tabs .nav-link:hover{
+    border-color: transparent !important;
+}
+.Payment_card .nav-link{
+    color: #000;
+}
+.Payment_card .tab-content{
+    margin-top: 40px;
+}
+.debit_card h4{
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+}
+.Payment_card .cvv-img {
+    display: flex;
+    align-items: center;
+}
+
+.Payment_card .input-group-text {
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+}
+.Payment_card .input-group-text img{
+    position: relative;
+    right: 39px;
+}
+.Payment_card .input-group input{
+    padding-right: 37px;
+}
+.Payment_card label{
+    font-weight: 400;
+    color: var(--themeht-primary-color);
+    font-size: 14px;
+}
+.payment_summary{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #ffff;
+    border-radius: 20px;
+    padding: 30px !important;
+    padding-bottom: 0px !important;
+    width: 500px;
+    margin-top: 40px;
+}
+.payment_summary h3{
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+}
+.payment_summary p{
+    font-size: 16px;
+    font-weight: 400;
+}
+.final-Payment{
+    padding: 20px 20px;
+    background-color: #d3d3d3 !important;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: -30px;
+    margin-right: -30px;
+
+}
+.final-Payment p{
+    font-size: 18px;
+    font-weight: 600;
+}
