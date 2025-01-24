@@ -21,11 +21,9 @@ import PaymentCheck from './pages/My_Wallet/PaymentCheck.js';
 import PaymentMode from './pages/services/PaymentMode/PaymentMode.js';
 import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
 import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
-
-
+import WalletTransfer from './pages/services/WalletTransfer/WalletTransfer.js';
 
 function App() {
- 
   const router = createBrowserRouter([
     {
       path: "/",
@@ -51,12 +49,10 @@ function App() {
           path: "/WhyUs",
           element: <WhyUs />,
         },
-
         {
           path: "/recharge",
           element: <BillPayUI />,
         },
-
         {
           path: "/OurPartner",
           element: <OurPartner />,
@@ -82,7 +78,7 @@ function App() {
           element: <PaymentMode />,
         },
         {
-          path:"/transfer-to-bank",
+          path: "/transfer-to-bank",
           element: <TransferToBank />,
         },
         {
@@ -93,18 +89,20 @@ function App() {
           path: "/paymentcheck",
           element: <PaymentCheck />,
         },
-          path:"/redeem-payback-points",
-          element:<RedeemPayback />
-        }
-       
+        {
+          path: "/redeem-payback-points",
+          element: <RedeemPayback />,
+        },
+        {
+          path: "/wallet-transfer",
+          element: <WalletTransfer />,
+        },
       ],
     },
-   
   ]);
   return (
     <>
       <RouterProvider router={router} />
-
     </>
   );
 }

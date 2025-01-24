@@ -179,7 +179,6 @@ const BillPayUI = () => {
                           left: "0",
                           right: "0",
                           height: "4px",
-\
                           backgroundColor: "var(--themeht-primary-color)",
 
                           borderRadius: "20px",

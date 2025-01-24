@@ -88,14 +88,9 @@ export default function Header({ onLoginClick }) {
 
                                                 >
                                                     Our Services
-                                                    <button
-                                                        className=" dropdown-toggle bg-white border-0"
-                                                        id="servicesDropdown"
-                                                        role="button"
-                                                        data-bs-toggle="dropdown"
-                                                        aria-expanded="false"
-
-                                                    ><i className="bi bi-chevron-down"></i></button>
+                                                    <button className=" dropdown-toggle bg-white border-0">
+                                                    <i className="bi bi-chevron-down"></i>
+                                                    </button>
                                                 </Link>
                                                 <ul
                                                     className="dropdown-menu"
