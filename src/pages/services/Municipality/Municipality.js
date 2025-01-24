@@ -80,8 +80,8 @@ const Municipality = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#664A86', color: 'white' }}
-                  disabled={!isFormValid} // Button is disabled until all fields are valid
+                  style={{ backgroundColor: '#872D67', color: 'white' }}
+                  disabled={!isFormValid} 
                 >
                   Confirm
                 </Button>

@@ -152,7 +152,7 @@ const BillPayUI = () => {
                 >
                   <div
                     style={{
-                      color: activeMenu === item.name ? "#0042A6" : "#6c757d",
+                      color: activeMenu === item.name ? "#872D67" : "#872D67",
                     }}
                   >
                     {item.icon}
@@ -160,8 +160,8 @@ const BillPayUI = () => {
                   <p
                     className="mb-0"
                     style={{
-                      color: activeMenu === item.name ? "#0042A6" : "#6c757d",
-                      fontWeight: activeMenu === item.name ? "bold" : "normal",
+                      color: activeMenu === item.name ? "#872D67" : "#872D67",
+                      fontWeight: activeMenu === item.name ? "bold" : "bold",
                       position: "relative",
                       display: "inline-block",
                     }}
@@ -175,7 +175,7 @@ const BillPayUI = () => {
                           left: "0",
                           right: "0",
                           height: "4px",
-                          backgroundColor: "#0042A6",
+                          backgroundColor: "#872D67",
                           borderRadius: "20px",
                         }}
                       ></span>
@@ -221,10 +221,10 @@ const BillPayUI = () => {
                   onClick={() => handleMoreItemClick(item.name)}
                   style={{ cursor: "pointer" }}
                 >
-                  <div className="icon" style={{ fontSize: "24px" }}>
+                  <div className="icon" style={{ fontSize: "24px",color:"#872D67" }}>
                     {item.icon}
                   </div>
-                  <p className="mb-0">{item.name}</p>
+                  <p className="mb-0" style={{color:"#872D67"}}>{item.name}</p>
                 </Col>
               ))}
             </Row>
