@@ -29,11 +29,11 @@ const TrafficChallan = () => {
 
   return (
     <>
-      <Container className="py-5">
+      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Hassle-free Traffic Ticket Settlement</h2>
+            <h2 className="fw-bold" style={{color:"#872D67"}}>Hassle-free Traffic Ticket Settlement</h2>
             <h3>
               Navigate the fines and penalties seamlessly with online traffic challan payment.
             </h3>
@@ -43,9 +43,9 @@ const TrafficChallan = () => {
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Online Traffic Challan Payment</h5>
+              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Online Traffic Challan Payment</h3>
               {/* <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
@@ -82,7 +82,7 @@ const TrafficChallan = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
       <FAQeChallanPayments />
     </>
   );

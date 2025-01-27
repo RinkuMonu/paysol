@@ -17,7 +17,7 @@ import "./PaymentMode.css";
 
 function PaymentMode() {
   return (
-    <Container style={{ marginTop: "100px", paddingBottom: "20px" }}>
+    <Container style={{ marginTop: "150px", paddingBottom: "20px" }}>
       <Row>
         {/* Right Section (Placed at top on mobile/tablet view) */}
         <Col lg={4} md={12} sm={12} className="mb-4 order-1 order-lg-2">
@@ -74,7 +74,7 @@ function PaymentMode() {
                 height={20}
               />
             </div>
-            <h4 className="mt-3">Trusted By</h4>
+            <h4 className="mt-3 fw-bol" style={{color:"#872D67"}}>Trusted By</h4>
             <div className="payment-methods d-flex flex-wrap gap-2">
               <Image
                 src="https://static-00.iconduck.com/assets.00/payment-visa-verified-icon-2048x878-1oes6l3d.png"
@@ -148,6 +148,7 @@ function PaymentMode() {
                               <option
                                 key={i}
                                 value={new Date().getFullYear() + i}
+                                
                               >
                                 {new Date().getFullYear() + i}
                               </option>
@@ -162,7 +163,7 @@ function PaymentMode() {
                         </Form.Group>
                       </Col>
                     </Row>
-                    <Button variant="primary" type="submit" className="w-100">
+                    <Button variant="primary" type="submit" className="w-100 py-2" style={{backgroundColor:"#872D67"}}>
                       Proceed to Pay ₹198
                     </Button>
                   </Form>
@@ -218,7 +219,7 @@ function PaymentMode() {
                         </Form.Group>
                       </Col>
                     </Row>
-                    <Button variant="primary" type="submit" className="w-100">
+                    <Button variant="primary" type="submit" className="w-100 py-2" style={{backgroundColor:"#872D67"}}>
                       Proceed to Pay ₹198
                     </Button>
                   </Form>

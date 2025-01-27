@@ -10,7 +10,7 @@ const RedeemPayback = () => {
       <Row>
         {/* Left Side Content */}
         <Col md={6} className="text-center text-md-start">
-          <h2 className="fw-bold" style={{color:"#664A86"}}>
+          <h2 className="fw-bold" style={{color:"#872D67"}}>
             The best reward for loyalty? Money.
           </h2>
           <h3>
@@ -26,12 +26,12 @@ const RedeemPayback = () => {
             style={{ maxWidth: "400px" }}
           >
            
-            <h5>Login with phone number linked with</h5>
-            <h3 className="fw-bold">PAYBACK</h3>
+            <h3 className='fw-bold' style={{color:"#872D67"}}>Login with phone number linked with PAYBACK </h3>
+            
             <Button
               variant="primary"
               className="mt-3 w-100"
-              style={{ backgroundColor: "#664A86", color: "white" }}
+              style={{ backgroundColor: "#872D67", color: "white" }}
             >
               Login
             </Button>

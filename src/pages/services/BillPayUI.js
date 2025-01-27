@@ -153,7 +153,7 @@ const BillPayUI = () => {
                   <div
                     style={{
 
-                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "#6c757d",
+                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "var(--themeht-primary-color)",
 
                     }}
                   >
@@ -163,9 +163,8 @@ const BillPayUI = () => {
                     className="mb-0"
                     style={{
 
-                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "#6c757d",
-                      fontWeight: activeMenu === item.name ? "bold" : "normal",
-
+                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "var(--themeht-primary-color)",
+                      fontWeight: activeMenu === item.name ? "bold" : "bold",
                       position: "relative",
                       display: "inline-block",
                     }}
@@ -193,7 +192,7 @@ const BillPayUI = () => {
         </Container>
       </nav>
 
-      <Container>
+      <div>
         {activeMenu === "Mobile" && <MobileRechargeUI />}
         {activeMenu === "DTH" && <DTHRecharge />}
         {activeMenu === "Electricity" && <ElectricityBillPayment />}
@@ -211,7 +210,7 @@ const BillPayUI = () => {
         {activeMenu === "Challan" && <TrafficChallan />}
         {activeMenu === "Housing" && <HousingBillPayment />}
         {activeMenu === "LPG Booking" && <LpgBooking />}
-      </Container>
+      </div>
 
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Body>

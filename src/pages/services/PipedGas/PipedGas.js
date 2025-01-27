@@ -20,11 +20,11 @@ const PipedGas = () => {
 
   return (
     <>
-      <Container className="py-5">
+      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Your Convenient Gas Bill Solution</h2>
+            <h2 className="fw-bold" style={{color:"#872D67"}}>Your Convenient Gas Bill Solution</h2>
             <h3>
               Simplify your life with effortless gas bill payments, keeping your
               home comfortably energized.
@@ -35,9 +35,9 @@ const PipedGas = () => {
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Gas Bill Payment Online</h5>
+              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Gas Bill Payment Online</h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -81,7 +81,7 @@ const PipedGas = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
       <FAQGasBillPayment />
     </>
   );

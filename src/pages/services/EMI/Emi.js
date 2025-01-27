@@ -28,11 +28,11 @@ const Emi = () => {
 
   return (
     <>
-      <Container className="py-5">
+      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Seamless online EMI payments.</h2>
+            <h2 className="fw-bold" style={{color:"#872D67"}}>Seamless online EMI payments.</h2>
             <h3>
               Streamline your financial commitments with effortless online loan
               EMI payments.
@@ -43,9 +43,9 @@ const Emi = () => {
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Loan EMI Payment Online</h5>
+              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Loan EMI Payment Online</h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -88,7 +88,7 @@ const Emi = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
       <FAQLoanEMIPayments />
     </>
   );

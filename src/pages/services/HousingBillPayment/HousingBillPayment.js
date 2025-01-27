@@ -30,11 +30,11 @@ const HousingBillPayment = () => {
 
   return (
     <>
-      <Container className="py-5">
+      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Simplify Your Housing Bill Payments</h2>
+            <h2 className="fw-bold" style={{color:"#872D67"}}>Simplify Your Housing Bill Payments</h2>
             <h3>
               Enhance your living experience by managing housing bills with ease, ensuring comfort and convenience.
             </h3>
@@ -44,9 +44,9 @@ const HousingBillPayment = () => {
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Online Housing Society Electricity Bill Payment</h5>
+              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Online Housing Society Electricity Bill Payment</h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="city">
                   <Form.Label>City</Form.Label>
@@ -98,7 +98,7 @@ const HousingBillPayment = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
       <FAQHousingBillPayments />
     </>
   );

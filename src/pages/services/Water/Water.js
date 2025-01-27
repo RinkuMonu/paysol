@@ -20,11 +20,11 @@ const Water = () => {
 
   return (
     <>
-      <Container className="py-5">
+      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Online Water Bill Simplified</h2>
+            <h2 className="fw-bold" style={{color:"#872D67"}}>Online Water Bill Simplified</h2>
             <h3>
               Simplify your life with effortless online water bill payments, ensuring a continuous flow of convenience at your fingertips.
             </h3>
@@ -34,9 +34,9 @@ const Water = () => {
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Online Water Bill Payment</h5>
+              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Online Water Bill Payment</h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -80,7 +80,7 @@ const Water = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
       <FAQWaterBillPayment />
     </>
   );

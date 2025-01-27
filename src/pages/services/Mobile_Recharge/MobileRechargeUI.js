@@ -46,14 +46,14 @@ const MobileRechargeUI = () => {
 
   return (
     <>
-      <Container className="py-5">
+      <div className="py-5 px-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{ color: "#664A86" }}>
+            <h2 className="fw-bold" style={{ color: "#872D67" }}>
               Instant Prepaid Mobile Recharge Solution
             </h2>
-            <h3>
+            <h3> 
               Empower your connectivity with seamless prepaid mobile recharges,
               where convenience meets innovation.
             </h3>
@@ -63,9 +63,9 @@ const MobileRechargeUI = () => {
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Mobile Recharge</h5>
+              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Mobile Recharge</h3>
               <Form>
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
@@ -149,7 +149,7 @@ const MobileRechargeUI = () => {
                   className="w-100"
                   style={{ backgroundColor: "#872D67", color: "white" }}
                   disabled={!isFormValid}
-                  onClick={handleConfirmModalOpen} // Open Confirm Modal
+                  onClick={handleConfirmModalOpen} 
                 >
                   Confirm
                 </Button>
@@ -157,7 +157,7 @@ const MobileRechargeUI = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
 
       {/* FAQ Section */}
       <FAQMobileRecharge />
@@ -178,7 +178,7 @@ const MobileRechargeUI = () => {
         className="slide-in-right"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Browse Plans</Modal.Title>
+          <Modal.Title style={{fontSize:"25px"}}>Browse Plans</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <MobileBrowsePlans />
