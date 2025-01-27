@@ -140,7 +140,7 @@ const FAQCreditCardPayment = () => {
           ))}
         </Accordion>
       ) : (
-        <div>
+        <div className="p-5">
           {content.map((item, index) => (
             <div key={index} style={{ marginBottom: "1rem" }}>
               <h3>{item.title}</h3>

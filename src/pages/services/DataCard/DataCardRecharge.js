@@ -46,11 +46,11 @@ const DataCardRecharge = () => {
 
   return (
     <>
-      <Container className="py-5">
+      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Fuel Your Connectivity with Datacard Recharge</h2>
+            <h2 className="fw-bold" style={{color:"#872D67"}}>Fuel Your Connectivity with Datacard Recharge</h2>
             <h3>Energize Your Online Experience with Datacard Recharge.</h3>
           </Col>
 
@@ -58,9 +58,9 @@ const DataCardRecharge = () => {
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h5 className="mb-4 text-center">Data Card Recharge Online</h5>
+              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Data Card Recharge Online</h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
@@ -148,7 +148,7 @@ const DataCardRecharge = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
 
       <FAQDataCardRecharge />
 

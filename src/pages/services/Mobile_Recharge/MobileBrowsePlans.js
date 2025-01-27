@@ -51,7 +51,7 @@ const MobileBrowsePlans = () => {
       {/* Filters Section */}
       <div className="d-flex flex-wrap justify-content-between align-items-center mb-3">
         <Dropdown className="mb-2 mb-md-0">
-          <Dropdown.Toggle variant="outline-primary" id="dropdown-operator">
+          <Dropdown.Toggle  id="dropdown-operator" style={{backgroundColor:"var(--themeht-primary-color)"}}>
             {selectedOperator}
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -65,7 +65,7 @@ const MobileBrowsePlans = () => {
         </Dropdown>
 
         <Dropdown className="mb-2 mb-md-0">
-          <Dropdown.Toggle variant="outline-primary" id="dropdown-region">
+          <Dropdown.Toggle  id="dropdown-region"  style={{backgroundColor:"var(--themeht-primary-color)"}}>
             {selectedRegion}
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -77,14 +77,13 @@ const MobileBrowsePlans = () => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-<div className="align-items-center">
-<input
-          type="text"
-          className="form-control  mb-2 mb-md-0 mt-2 align-items-center"
-          placeholder="Search by Amount"
-        />
-</div>
-       
+        <div className="align-items-center">
+          <input
+            type="text"
+            className="form-control  mb-2 mb-md-0 mt-2 align-items-center"
+            placeholder="Search by Amount"
+          />
+        </div>
       </div>
 
       <div className="row">
@@ -97,13 +96,16 @@ const MobileBrowsePlans = () => {
                 href="#"
                 onClick={() => setSelectedCategory(category)}
                 className={`${
-                  selectedCategory === category ? "active bg-primary text-white" : "text-dark"
+                  selectedCategory === category
+                    ? "active text-white"
+                    : "text-dark"
                 }`}
                 style={{
                   fontSize: "16px",
                   padding: "10px 10px",
                   cursor: "pointer",
                   borderRadius: "5px",
+                  backgroundColor:selectedCategory ===category ? "var(--themeht-primary-color)":"#fff",
                 }}
               >
                 {category}
@@ -129,17 +131,21 @@ const MobileBrowsePlans = () => {
                   <tr key={index}>
                     <td>{plan.talktime}</td>
                     <td>{plan.validity}</td>
-                    <td style={{ whiteSpace: "pre-wrap" }}>{plan.description}</td>
+                    <td style={{ whiteSpace: "pre-wrap" }}>
+                      {plan.description}
+                    </td>
                     <td>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <span>{plan.price}</span>
-                        <button
-                          className="btn btn-primary btn-sm ms-2"
-                          onClick={() => alert(`Plan selected: ${plan.price}`)}
-                        >
-                          Select
-                        </button>
-                      </div>
+                      <button
+                        className=" align-items-center p-2 "
+                        style={{
+                          color: "white",
+                          backgroundColor: "#872D67",
+                          borderRadius: "8px",
+                          outline:"none"
+                        }}
+                      >
+                    {plan.price}
+                      </button>
                     </td>
                   </tr>
                 ))}
