@@ -27,7 +27,14 @@ const GooglePlay = () => {
             <h3>
               Empower your digital entertainment with seamless Google Play recharge.
             </h3>
-           
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/googe_play.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

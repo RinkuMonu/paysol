@@ -30,7 +30,14 @@ const Cable = () => {
               Streamline your entertainment with easy cable bill payments,
               ensuring endless viewing pleasure.
             </h3>
-           
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/cable.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}
