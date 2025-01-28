@@ -29,6 +29,14 @@ const CreditCardPayment = () => {
               Effortlessly manage your finances by settling credit card bills
               with ease, ensuring financial peace of mind.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/creditcard.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

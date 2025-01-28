@@ -14,7 +14,7 @@ const RedeemPayback = () => {
             The best reward for loyalty? Money.
           </h2>
           <h3>
-            Redeem your Payback Points at MobiKwik!
+            Redeem your Payback Points at Finunique small pvt ltd .!
           </h3>
         </Col>
 

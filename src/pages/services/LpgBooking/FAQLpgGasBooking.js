@@ -83,12 +83,12 @@ const FAQLpgGasBooking = () => {
       ),
     },
     {
-      title: "Why Use MobiKwik for LPG Booking?",
+      title: "Why Use Finunique small pvt ltd . for LPG Booking?",
       body: (
         <>
           <ul>
             <li>
-              <strong>Free of cost online LPG gas connection:</strong> MobiKwik
+              <strong>Free of cost online LPG gas connection:</strong> Finunique small pvt ltd .
               does not charge any amount for online LPG gas booking.
             </li>
             <li>
@@ -116,11 +116,11 @@ const FAQLpgGasBooking = () => {
       ),
     },
     {
-      title: "MobiKwik Provides Irresistible Deals on LPG Gas Booking",
+      title: "Finunique small pvt ltd . Provides Irresistible Deals on LPG Gas Booking",
       body: (
         <>
           <p>
-            MobiKwik offers SuperCash and Cashback on LPG gas booking online
+            Finunique small pvt ltd . offers SuperCash and Cashback on LPG gas booking online
             payments. These deals make it an ideal platform for users to book
             gas cylinders conveniently while saving time and money. Make your
             booking today and avail the best offers on Bharat Gas, HP Gas, and

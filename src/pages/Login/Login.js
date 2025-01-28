@@ -155,7 +155,7 @@ const Login = () => {
                     </form>
                     <hr style={{ margin: "100px 0 10px" }} />
                     <div className="already-account mt-auto">
-                      <h3>Already have a MobiKwik Wallet?</h3>
+                      <h3>Already have a Finunique small pvt ltd . Wallet?</h3>
                       <button className="btn border-0 bg-white px-0" onClick={() => setFlipState("login")}>
                         Login
                       </button>
@@ -214,7 +214,7 @@ const Login = () => {
                           <hr style={{ margin: "100px 0 10px" }} />
                           <div className="already-account mt-auto">
                             <h3>
-                              New to MobiKwik?</h3>
+                              New to Finunique small pvt ltd .?</h3>
                             <button className="btn border-0 bg-white px-0 d-block" onClick={() => setFlipState("signup")}>
                               Create Wallet
                             </button>

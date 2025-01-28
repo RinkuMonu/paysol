@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import {  Row, Col, Form, Button } from "react-bootstrap";
 import FAQMunicipality from './FAQMunicipality';
 
 const Municipality = () => {
@@ -35,6 +35,7 @@ const Municipality = () => {
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{color:"#872D67"}}>Simplify Municipal Bill Payments</h2>
             <h3>Simplify urban life with convenient municipality bill payments.</h3>
+           
           </Col>
 
           {/* Right Side Form */}

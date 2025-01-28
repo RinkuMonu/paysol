@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./ModalScrollbar.css"
+import { Link } from "react-router-dom";
 const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
@@ -50,7 +51,8 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button
+      <Link to="/paymentmode">
+      <Button
           variant="primary"
           className="w-100"
           style={{ backgroundColor: "#664A86", color: "white" }}
@@ -58,6 +60,8 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
         >
           Make Payment
         </Button>
+      </Link>
+        
       </Modal.Footer>
     </Modal>
   );

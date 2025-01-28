@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQCableBillPayments from "./FAQCableBillPayments";
 
 const Cable = () => {
@@ -30,6 +30,7 @@ const Cable = () => {
               Streamline your entertainment with easy cable bill payments,
               ensuring endless viewing pleasure.
             </h3>
+           
           </Col>
 
           {/* Right Side Form */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQGooglePlayPayments from './FAQGooglePlayPayments';
 
 const GooglePlay = () => {
@@ -27,6 +27,7 @@ const GooglePlay = () => {
             <h3>
               Empower your digital entertainment with seamless Google Play recharge.
             </h3>
+           
           </Col>
 
           {/* Right Side Form */}

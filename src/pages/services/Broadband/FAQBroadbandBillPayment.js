@@ -27,11 +27,11 @@ const FAQBroadbandBillPayment = () => {
             to pay their broadband bills online. Now there is no need to stand
             in the long queue to pay their broadband bills for hours. Finunique
             allows their consumers to pay BSNL Broadband, Tikona, Airtel
-            Broadband, Act Broadband,Hathway Broadband, MTNL Delhi Broadband,
+            Broadband, Act Broadband, Hathway Broadband, MTNL Delhi Broadband,
             MTNL Mumbai Broadband, Tata TeleServices (CDMA), Reliance
-            Communications, Connect Broadband bills online. Pay Broadband bills
+            Communications, Connect Broadband bills online. Pay broadband bills
             online using multiple payment options such as your debit cards,
-            credit cards, net banking.
+            credit cards, or net banking.
           </p>
         </>
       ),
@@ -42,109 +42,106 @@ const FAQBroadbandBillPayment = () => {
         <>
           <p>
             A user can easily make his/her broadband bill payment online within
-            a few minutes using the MobiKwik app or website and avail exciting
-            broadband bill payment offers. In order to make the broadband
-            payment, a user must follow the following simple steps.
+            a few minutes using the Finunique app or website and avail exciting
+            broadband bill payment offers. To make the broadband payment, a user
+            must follow these simple steps:
           </p>
           <ol>
             <li>
               Click on ‘Broadband’ in the ‘Recharges & Bill Payments’ section on
-              the MobiKwik app
+              the Finunique app or website.
             </li>
             <li>
-              Select your broadband provider from the ‘Operator’ dropdown menu
+              Select your broadband provider from the ‘Operator’ dropdown menu.
             </li>
             <li>
-              Enter your account number/ user name/ landline number (as the case
-              may be)
+              Enter your account number/username/landline number (as applicable).
             </li>
             <li>
-              Click on ‘Continue’, select a payment mode and confirm your online
-              broadband bill payment
+              Click on ‘Continue’, select a payment mode, and confirm your
+              online broadband bill payment.
             </li>
           </ol>
         </>
       ),
     },
     {
-      title: "Why Choose MobiKwik for Broadband Bill Payment",
+      title: "Why Choose Finunique for Broadband Bill Payment",
       body: (
         <>
           <p>
-            MobiKwik, the pioneer of online recharges and bill payments, aims to
-            offer a seamless and easy payment process that ensures instant
+            Finunique, the pioneer of online recharges and bill payments, aims
+            to offer a seamless and easy payment process that ensures instant
             broadband bill payment and also allows users to save on their
-            payments by availing broadband bill payment offers of SuperCash or
-            Cashback. Following are the key benefits of using MobiKwik for
-            broadband online payment.
+            payments by availing broadband bill payment offers. Following are
+            the key benefits of using Finunique for broadband online payment:
           </p>
           <ul>
             <li>
-              <strong>Instant Payment:</strong> User is required to only follow
-              a few simple steps to pay broadband bill online, using the
-              MobiKwik app
+              <strong>Instant Payment:</strong> Users only need to follow a few
+              simple steps to pay broadband bills online using the Finunique app.
             </li>
             <li>
-              <strong>Exciting Offers:</strong> A user can avail huge broadband
-              bill payment offers which include SuperCash and cashback offers.
-              This way, MobiKwik ensures that users save consistently on their
-              broadband payment
+              <strong>Exciting Offers:</strong> Users can avail huge broadband
+              bill payment offers, including cashback and discounts, ensuring
+              consistent savings.
             </li>
             <li>
-              <strong>Secure Transactions:</strong> Transactions on MobiKwik are
-              completely safe and any data provided by the user to pay broadband
-              bill online is not available to any third party
+              <strong>Secure Transactions:</strong> Transactions on Finunique
+              are completely secure, and user data is never shared with third
+              parties.
             </li>
           </ul>
         </>
       ),
     },
     {
-      title: "Frequently Asked Question on Broadband Bill Payment",
+      title: "Frequently Asked Questions on Broadband Bill Payment",
       body: (
         <ul>
           <li>
             <strong>How do I pay my broadband bill online?</strong>
             <br />
-            Users need to follow a few simple steps on the MobiKwik app to
-            complete their broadband bill payment. By clicking on ‘Broadband’ in
-            the ‘Recharges and Bill Payments’ section and populating the
-            necessary details. Different modes of payment are also available to
-            the users for their broadband bill.
+            Users need to follow a few simple steps on the Finunique app or
+            website to complete their broadband bill payment by clicking on
+            ‘Broadband’ in the ‘Recharges and Bill Payments’ section and
+            populating the necessary details. Various payment modes are
+            available.
           </li>
           <li>
             <strong>
               How long does it take to process the Broadband Bill Payment?
             </strong>
             <br />
-            On the MobiKwik app, payments are instant and easy. Once a user
-            confirms the broadband bill payment, it is instantly reflected in
-            their account. Processing by different broadband operators may vary.
+            Payments on Finunique are instant and easy. Once a user confirms the
+            broadband bill payment, it is instantly reflected in their account.
+            Processing times by different broadband operators may vary.
           </li>
           <li>
             <strong>
-              Does MobiKwik support all operators for Broadband Bill Payment?
+              Does Finunique support all operators for Broadband Bill Payment?
             </strong>
             <br />
-            MobiKwik allows users to make the online broadband bill payment
-            across a wide range of operators including ACT Fibernet, Airtel,
-            ASIANET, BSNL, Comway, Connect, DEN, ION and many more.
+            Finunique allows users to make online broadband bill payments across
+            a wide range of operators, including ACT Fibernet, Airtel, ASIANET,
+            BSNL, Comway, Connect, DEN, ION, and many more.
           </li>
           <li>
             <strong>
-              What offers and cashback MobiKwik is providing for Broadband Bill
+              What offers and cashback is Finunique providing for Broadband Bill
               Payment?
             </strong>
-            <br />A user can browse through the available broadband bill payment
-            offers while making the broadband payment or can check out the offer
-            section to know the ongoing broadband bill offers.
+            <br />
+            Users can browse through the available broadband bill payment offers
+            while making payments or check out the offer section for ongoing
+            broadband bill offers.
           </li>
           <li>
             <strong>How can I check my broadband bill?</strong>
             <br />
-            On selecting the ‘Broadband bill payment’ on MobiKwik and providing
-            the necessary details, the user will be able to check their
-            broadband bill.
+            By selecting the ‘Broadband Bill Payment’ option on Finunique and
+            providing the necessary details, users can check their broadband
+            bills.
           </li>
         </ul>
       ),

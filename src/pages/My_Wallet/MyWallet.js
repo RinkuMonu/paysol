@@ -200,7 +200,7 @@ function MyWallet() {
                                                 </div>
                                             </div>
 
-                                            <p>Designated bank account with MobiKwik</p>
+                                            <p>Designated bank account with Finunique small pvt ltd .</p>
                                         </div>
                                     </div>
                                 </div>

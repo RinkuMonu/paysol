@@ -1,30 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // Import necessary modules
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Form,
-  Button,
-  Nav,
-  Tab,
-  Image,
-} from "react-bootstrap";
+import {Container,Row,Col,Card,Form,Button,Nav,Tab,Image} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PaymentMode.css";
 
 function PaymentMode() {
   return (
-    <Container style={{ marginTop: "150px", paddingBottom: "20px" }}>
+    <div className="p-4" style={{ marginTop: "120px", paddingBottom: "20px" }}>
       <Row>
         {/* Right Section (Placed at top on mobile/tablet view) */}
         <Col lg={4} md={12} sm={12} className="mb-4 order-1 order-lg-2">
           <Card className="border rounded shadow">
             <Card.Body>
               <div className="col-md-12">
-                <h4>Mobile Recharge - 9852463851</h4>
+                <h4 className="fw-bold" style={{color:"black"}}>Mobile Recharge - 9852463851</h4>
               </div>
               <div className="d-flex justify-content-between">
                 <div>Total amount to be paid</div>
@@ -41,7 +31,7 @@ function PaymentMode() {
             </div>
           </Card>
           <div className="mt-4 p-3 border rounded accept shadow">
-            <h4 className="mb-2">We Accept</h4>
+            <h4 className="mb-2 fw-bold" style={{color:"#1854AE"}}>We Accept</h4>
             <div className="payment-methods d-flex flex-wrap gap-2">
               <Image
                 src="https://d28wu8o6itv89t.cloudfront.net/images/Visadebitcardpng-1599584312349.png"
@@ -74,7 +64,7 @@ function PaymentMode() {
                 height={20}
               />
             </div>
-            <h4 className="mt-3 fw-bol" style={{color:"#872D67"}}>Trusted By</h4>
+            <h4 className="mt-3 fw-bold" style={{color:"#1854AE"}}>Trusted By</h4>
             <div className="payment-methods d-flex flex-wrap gap-2">
               <Image
                 src="https://static-00.iconduck.com/assets.00/payment-visa-verified-icon-2048x878-1oes6l3d.png"
@@ -101,7 +91,8 @@ function PaymentMode() {
         </Col>
 
         {/* Left Section */}
-          <h3 className="mb-4" style={{color:"#664A86"}}>Select a Payment Mode</h3>
+        
+          <h3 className="mb-4 fw-bold" style={{color:"#872D67"}}>Select a Payment Mode</h3>
         <Col lg={8} md={12} sm={12} className="mb-4 order-2 order-lg-1">
           <div className="border p-4 rounded shadow">
             <Tab.Container defaultActiveKey="debit">
@@ -232,7 +223,7 @@ function PaymentMode() {
           </div>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 

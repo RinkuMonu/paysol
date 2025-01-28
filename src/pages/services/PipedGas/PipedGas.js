@@ -29,6 +29,14 @@ const PipedGas = () => {
               Simplify your life with effortless gas bill payments, keeping your
               home comfortably energized.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/onlinegas.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

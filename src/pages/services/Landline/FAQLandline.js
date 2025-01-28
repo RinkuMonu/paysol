@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+
 const FAQLandline = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -25,18 +26,19 @@ const FAQLandline = () => {
             Finunique Small Pvt Ltd introduces new service to their consumers to
             pay their landline bills online. Now there is no need to stand in
             the long queue to pay their landline bills for hours. Finunique
-            allow their consumers to pay Airtel Landline, MTNL Delhi, Reliance
+            allows their consumers to pay Airtel Landline, MTNL Delhi, Reliance
             Communications and Tata Teleservices bills online. Pay landline
             bills online using multiple payment options such as your debit
-            cards, credit cards, net banking. MobiKwik offers their consumers to
-            pay landline bills online anytime and from anywhere by using their
-            various channels such as online, mobile site, android app, iPhone
-            app, blackberry, SMS, IVRS etc.
+            cards, credit cards, net banking. Finunique Small Pvt Ltd offers
+            their consumers the ability to pay landline bills online anytime
+            and from anywhere by using their various channels such as online,
+            mobile site, android app, iPhone app, blackberry, SMS, IVRS etc.
           </p>
         </>
       ),
     },
   ];
+
   return (
     <>
       {isMobile ? (

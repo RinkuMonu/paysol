@@ -28,6 +28,14 @@ const Water = () => {
             <h3>
               Simplify your life with effortless online water bill payments, ensuring a continuous flow of convenience at your fingertips.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/waterbill.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}
