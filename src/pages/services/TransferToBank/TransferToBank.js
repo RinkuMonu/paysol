@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import FAQMoneyTransfer from "./FAQMoneyTransfer";
 
 const TransferToBank = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const TransferToBank = () => {
 
   return (
     <>
-      <Container className="py-5 marginTop">
+      <div className="p-5 marginTop" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
@@ -32,13 +33,21 @@ const TransferToBank = () => {
               Manage Funds with Speed, Security, and Simplicity – Wherever You
               Go!
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/loanemi.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "400px", margin: "0 auto" }}
+              style={{ maxWidth: "500px", margin: "0 auto" }}
             >
               <Form>
                 <Form.Group className="mb-3" controlId="beneficiaryName">
@@ -88,13 +97,14 @@ const TransferToBank = () => {
                   style={{ backgroundColor: "#664A86", color: "white" }}
                   disabled={!isFormValid}
                 >
-                  Confirm
+                  Go
                 </Button>
               </Form>
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
+        <FAQMoneyTransfer/>
     </>
   );
 };
