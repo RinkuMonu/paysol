@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import {  Row, Col, Form, Button } from "react-bootstrap";
 import FAQInsurancePayment from "./FAQInsurancePayment";
 
 const Insurance = () => {
@@ -37,6 +37,14 @@ const Insurance = () => {
               Secure your peace of mind through easy and timely insurance
               payments, ensuring your financial protection remains intact.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/insurance.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

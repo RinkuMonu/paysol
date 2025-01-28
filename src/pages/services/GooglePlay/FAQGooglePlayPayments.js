@@ -26,7 +26,7 @@ const FAQGooglePlayPayments = () => {
             Today, smartphones have replaced many devices that once had individual significance. Tasks like sending emails, taking photos, and much more can now be handled directly on your smartphone. Apps play a critical role in this functionality, available primarily on platforms like the Google Play Store for Android devices.
           </p>
           <p>
-            The Play Store offers a range of apps, music, books, and movies. To purchase premium content, you need to recharge your Google Play account. With MobiKwik, you can easily recharge your account anywhere between INR 100-1500. Plus, you get access to exciting Google Play recharge coupons.
+            The Play Store offers a range of apps, music, books, and movies. To purchase premium content, you need to recharge your Google Play account. With Finunique small pvt ltd ., you can easily recharge your account anywhere between INR 100-1500. Plus, you get access to exciting Google Play recharge coupons.
           </p>
         </>
       ),
@@ -36,10 +36,10 @@ const FAQGooglePlayPayments = () => {
       body: (
         <>
           <p>
-            MobiKwik ensures that your Google Play online recharge is fast, safe, and secure. We adhere to the highest safety standards, protecting your transactions and personal data. 
+            Finunique small pvt ltd . ensures that your Google Play online recharge is fast, safe, and secure. We adhere to the highest safety standards, protecting your transactions and personal data. 
           </p>
           <p>
-            You can recharge your Google Play account via the MobiKwik wallet, saving time and providing a hassle-free experience. Other payment options, such as credit cards, debit cards, and net banking, are also available for your convenience.
+            You can recharge your Google Play account via the Finunique small pvt ltd . wallet, saving time and providing a hassle-free experience. Other payment options, such as credit cards, debit cards, and net banking, are also available for your convenience.
           </p>
         </>
       ),
@@ -49,7 +49,7 @@ const FAQGooglePlayPayments = () => {
       body: (
         <>
           <p>
-            By recharging your Google Play account via MobiKwik, you can avail exciting deals and cashback offers. Some highlights include:
+            By recharging your Google Play account via Finunique small pvt ltd ., you can avail exciting deals and cashback offers. Some highlights include:
           </p>
           <ul>
             <li>Discounts on movie tickets and bus tickets.</li>
@@ -57,17 +57,17 @@ const FAQGooglePlayPayments = () => {
             <li>Special deals on online shopping platforms.</li>
           </ul>
           <p>
-            MobiKwik provides a seamless payment experience, making it one of the most trusted names for online transactions.
+            Finunique small pvt ltd . provides a seamless payment experience, making it one of the most trusted names for online transactions.
           </p>
         </>
       ),
     },
     {
-      title: 'How to Recharge Google Play Using MobiKwik',
+      title: 'How to Recharge Google Play Using Finunique small pvt ltd .',
       body: (
         <>
           <ol>
-            <li>Download & log in to the MobiKwik app.</li>
+            <li>Download & log in to the Finunique small pvt ltd . app.</li>
             <li>Select the 'Recharge and Bill Pay' option.</li>
             <li>Choose 'Google Play' as the category.</li>
             <li>Enter the recharge amount (between INR 100-1500).</li>
@@ -82,12 +82,12 @@ const FAQGooglePlayPayments = () => {
       body: (
         <ul>
           <li>
-            <strong>Is it safe to recharge Google Play via MobiKwik?</strong><br />
-            Yes, MobiKwik adheres to the highest safety standards to protect your data and transactions.
+            <strong>Is it safe to recharge Google Play via Finunique small pvt ltd .?</strong><br />
+            Yes, Finunique small pvt ltd . adheres to the highest safety standards to protect your data and transactions.
           </li>
           <li>
             <strong>Can I use any bank for payment?</strong><br />
-            Yes, MobiKwik supports payments from all major banks.
+            Yes, Finunique small pvt ltd . supports payments from all major banks.
           </li>
         </ul>
       ),

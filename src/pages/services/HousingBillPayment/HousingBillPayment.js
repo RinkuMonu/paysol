@@ -38,6 +38,14 @@ const HousingBillPayment = () => {
             <h3>
               Enhance your living experience by managing housing bills with ease, ensuring comfort and convenience.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/electricity.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

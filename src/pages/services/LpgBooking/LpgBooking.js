@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import {  Row, Col, Form, Button } from "react-bootstrap";
 import FAQLpgGasBooking from './FAQLpgGasBooking';
 
 const LpgBooking = () => {
@@ -36,6 +36,14 @@ const LpgBooking = () => {
             <h3>
               Effortlessly secure your fuel supply with swift and convenient gas booking services, ensuring uninterrupted energy for your needs.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/lpgbooking.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

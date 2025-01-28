@@ -52,6 +52,14 @@ const DataCardRecharge = () => {
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{color:"#872D67"}}>Fuel Your Connectivity with Datacard Recharge</h2>
             <h3>Energize Your Online Experience with Datacard Recharge.</h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/datacard.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

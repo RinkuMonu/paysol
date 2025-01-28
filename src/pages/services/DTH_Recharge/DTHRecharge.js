@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQDthRecharge from "./FAQDthRecharge";
 import DTHBrowsePlans from "./DTHBrowsePlans";
 
@@ -42,6 +42,14 @@ const DTHRecharge = () => {
               Elevate your entertainment with hassle-free DTH recharges that put
               you in control of your TV experience.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/dth.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           <Col md={6}>

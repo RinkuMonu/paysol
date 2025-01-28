@@ -27,7 +27,7 @@ const FAQGasBillPayment = () => {
             services, online gas bill payments are now easier than ever. Paying
             gas bills online is fast, easy and highly secured. There are
             multiple options available to make gas bill payment online through
-            website . No need to spend hours in long queues, Finunqiue is one of
+            website . No need to spend hours in long queues, Finunique Small Pvt. Ltd. is one of
             the best ways to complete online gas bill payment in less than a
             minute.
           </p>
@@ -35,21 +35,21 @@ const FAQGasBillPayment = () => {
       ),
     },
     {
-      title: "How to Make Gas Bill Payment Online at MobiKwik?",
+      title: "How to Make Gas Bill Payment Online at Finunique Small Pvt. Ltd.?",
       body: (
         <>
           <p>
             Timely gas bill payment is very important to ensure uninterrupted
             services. To avoid delays, paying gas bills online is the best way
-            out. A user can make the online gas payment using the MobiKwik app
-            or by visiting the website. MobiKwik completes the gas bill payment
+            out. A user can make the online gas payment using the Finunique Small Pvt. Ltd. app
+            or by visiting the website. Finunique Small Pvt. Ltd. completes the gas bill payment
             cycle in minimal steps. Below are the mentioned steps to pay gas
             bill online using the app:
           </p>
           <ol>
             <li>
               Go to the ‘Recharges & Bill payment’ section and select ‘Piped
-              Gas’ on the MobiKwik app.
+              Gas’ on the Finunique Small Pvt. Ltd. app.
             </li>
             <li>Choose your operator and enter the Customer ID.</li>
             <li>
@@ -71,14 +71,14 @@ const FAQGasBillPayment = () => {
           <p>
             The benefits of gas bill payment online are hard to ignore. In the
             busy life, paying gas bills online is the best and fastest way. With
-            instant online payment platforms like MobiKwik, online gas payment
+            instant online payment platforms like Finunique Small Pvt. Ltd., online gas payment
             is now easier than ever.
           </p>
           <ul>
             <li>
               <strong>Secured payments:</strong> Gone are the days when online
               transactions were the reason to be worried. With payment methods
-              like MobiKwik, user’s money, data, and transactions are highly
+              like Finunique Small Pvt. Ltd., user’s money, data, and transactions are highly
               protected.
             </li>
             <li>
@@ -97,31 +97,31 @@ const FAQGasBillPayment = () => {
       ),
     },
     {
-      title: "Why Use MobiKwik for Gas Bill Payment?",
+      title: "Why Use Finunique Small Pvt. Ltd. for Gas Bill Payment?",
       body: (
         <>
           <p>
-            MobiKwik, one of India’s largest digital payment apps, offers you
+            Finunique Small Pvt. Ltd., one of India’s largest digital payment apps, offers you
             fast, smooth, and hassle-free transactions. It not just saves time
             but also excites you with many gas bill payment offers. Gas payment
-            was never this easy before; using the MobiKwik app it is a few-step
-            process. Here are the few listed benefits of using the MobiKwik app
+            was never this easy before; using the Finunique Small Pvt. Ltd. app it is a few-step
+            process. Here are the few listed benefits of using the Finunique Small Pvt. Ltd. app
             to pay gas bills:
           </p>
           <ul>
             <li>
               <strong>Instant Payments:</strong> Pay gas bills quickly in almost
-              less than a minute using the MobiKwik app. It’s easy and with
+              less than a minute using the Finunique Small Pvt. Ltd. app. It’s easy and with
               multiple payment modes becomes convenient for a user.
             </li>
             <li>
-              <strong>More discounts:</strong> Using the MobiKwik app, a user
+              <strong>More discounts:</strong> Using the Finunique Small Pvt. Ltd. app, a user
               can get unlimited offers and discounts on every gas payment. One
               can avail of gas bill offers and save more on every checkout.
             </li>
             <li>
               <strong>Secured Transactions:</strong> While paying the gas bill
-              using MobiKwik, safety is guaranteed to the user. The user data
+              using Finunique Small Pvt. Ltd., safety is guaranteed to the user. The user data
               and account details are highly protected.
             </li>
           </ul>
@@ -135,7 +135,7 @@ const FAQGasBillPayment = () => {
           <li>
             <strong>How do I pay my gas bill online?</strong>
             <br />
-            To pay the gas bill, a user can simply visit the MobiKwik website or
+            To pay the gas bill, a user can simply visit the Finunique Small Pvt. Ltd. website or
             open the app. In the ‘Recharge and bill payments’ section, one has
             to select the option ‘Piped gas’. Select the operator name and add
             the customer id. The user will get the bill details automatically.
@@ -147,7 +147,7 @@ const FAQGasBillPayment = () => {
             <br />
             Yes. To make a gas bill payment using a credit card, a user has to
             select the mode of payment as ‘Credit card’ and enter their details.
-            The gas bill payment through the MobiKwik app will be successful.
+            The gas bill payment through the Finunique Small Pvt. Ltd. app will be successful.
           </li>
           <li>
             <strong>How do I calculate my gas bill?</strong>

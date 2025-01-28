@@ -36,7 +36,7 @@ const FAQDthRecharge = () => {
           </p>
           <ol>
             <li>
-              Go to the recharge and bill payment section on the MobiKwik
+              Go to the recharge and bill payment section on the Finunique
               website or app.
             </li>
             <li>Select ‘DTH’ as a category.</li>
@@ -51,7 +51,7 @@ const FAQDthRecharge = () => {
             </li>
           </ol>
           <p>
-            With this, your DTH recharge will be done within minutes. MobiKwik
+            With this, your DTH recharge will be done within minutes. Finunique
             provides multiple payment modes like UPI, wallet, credit card, debit
             card, Pay Later (ZIP), and net banking.
           </p>
@@ -59,12 +59,12 @@ const FAQDthRecharge = () => {
       ),
     },
     {
-      title: "Why Choose MobiKwik for DTH Recharge Online",
+      title: "Why Choose Finunique for DTH Recharge Online",
       body: (
         <>
           <p>
             If you seek to make DTH recharge online while enjoying exciting DTH
-            recharge offers, discounts, and cashback, then MobiKwik is the right
+            recharge offers, discounts, and cashback, then Finunique is the right
             platform. Benefits include:
           </p>
           <ul>
@@ -106,7 +106,7 @@ const FAQDthRecharge = () => {
           </li>
           <li>
             <strong>
-              Does MobiKwik support all operators for DTH recharge?
+              Does Finunique support all operators for DTH recharge?
             </strong>
             <br />
             Yes, it supports Airtel DTH, Dish TV, Tata Sky, Videocon D2H, and
@@ -119,7 +119,7 @@ const FAQDthRecharge = () => {
             website, app, or customer support.
           </li>
           <li>
-            <strong>What payment options are available on MobiKwik?</strong>
+            <strong>What payment options are available on Finunique?</strong>
             <br />
             Payment options include UPI, credit/debit cards, internet banking,
             and wallet balance.

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import {  Row, Col, Form, Button } from "react-bootstrap";
 import FAQElectricityBill from "./FAQElectricityBill";
 
 const ElectricityBillPayment = () => {
@@ -30,6 +30,14 @@ const ElectricityBillPayment = () => {
               bills, ensuring uninterrupted power supply for your world of
               possibilities.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/Electricity.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}

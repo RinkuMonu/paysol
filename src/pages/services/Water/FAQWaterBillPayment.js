@@ -31,7 +31,7 @@ const FAQWaterBillPayment = () => {
             Finunique Small Pvt Ltd.
           </p>
           <p>
-            MobiKwik is India’s No. 1 site for Online water bill payments like
+            Finunique small pvt ltd . is India’s No. 1 site for Online water bill payments like
             BWSSB, Delhi Jal Board, Kerala water Authority.
           </p>
         </>
@@ -64,7 +64,7 @@ const FAQWaterBillPayment = () => {
       body: (
         <>
           <p>
-            With multiple payment options, MobiKwik has become a popular choice
+            With multiple payment options, Finunique small pvt ltd . has become a popular choice
             for bill payments. The following methods are available:
           </p>
           <ul>
@@ -72,7 +72,7 @@ const FAQWaterBillPayment = () => {
             <li>Credit Card</li>
             <li>UPI Payment</li>
             <li>Net Banking</li>
-            <li>MobiKwik ZIP - Pay Later</li>
+            <li>Finunique small pvt ltd . ZIP - Pay Later</li>
           </ul>
         </>
       ),
@@ -83,7 +83,7 @@ const FAQWaterBillPayment = () => {
         <>
           <p>
             Water bill online payment is safe when using the right bill payment
-            service. Digital payment apps like MobiKwik are 100% trustworthy and
+            service. Digital payment apps like Finunique small pvt ltd . are 100% trustworthy and
             dependable, using encryption and multistep identity verification to
             keep your data secure.
           </p>
@@ -91,11 +91,11 @@ const FAQWaterBillPayment = () => {
       ),
     },
     {
-      title: "Steps to Pay Water Bills Online Through MobiKwik",
+      title: "Steps to Pay Water Bills Online Through Finunique small pvt ltd .",
       body: (
         <>
           <ol>
-            <li>Download & login on the MobiKwik UPI Payment app.</li>
+            <li>Download & login on the Finunique small pvt ltd . UPI Payment app.</li>
             <li>Click on the 'Recharge and Bill Pay' option.</li>
             <li>Select 'Water' as a category.</li>
             <li>Select your operator & enter your Consumer Number.</li>
@@ -114,17 +114,17 @@ const FAQWaterBillPayment = () => {
         <ul>
           <li>
             <strong>
-              Is it Safe to Pay Water Bills Online Through MobiKwik?
+              Is it Safe to Pay Water Bills Online Through Finunique small pvt ltd .?
             </strong>
             <br />
-            MobiKwik offers a safe and secured payment platform where you can
+            Finunique small pvt ltd . offers a safe and secured payment platform where you can
             make payments.
           </li>
           <li>
             <strong>Can we make payment from any bank?</strong>
             <br />
             Yes, you can pay your water bills from any bank listed on the
-            MobiKwik app.
+            Finunique small pvt ltd . app.
           </li>
         </ul>
       ),

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { Row, Col, Form, Button, Modal, Image } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans from "./MobileBrowsePlans";
 import ConfirmRechargeModal from "./ConfirmRechargeModal";
+// import MibileRecharge from "../../../../public/images/mobile_recharge.png"
 
 const MobileRechargeUI = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -46,17 +47,25 @@ const MobileRechargeUI = () => {
 
   return (
     <>
-      <div className="py-5 px-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="py-5 px-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#872D67" }}>
               Instant Prepaid Mobile Recharge Solution
             </h2>
-            <h3> 
+            <h3>
               Empower your connectivity with seamless prepaid mobile recharges,
               where convenience meets innovation.
             </h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="images/mobile_recharge.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}
@@ -65,7 +74,12 @@ const MobileRechargeUI = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Mobile Recharge</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#872D67", fontWeight: "bold" }}
+              >
+                Mobile Recharge
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
@@ -149,7 +163,7 @@ const MobileRechargeUI = () => {
                   className="w-100"
                   style={{ backgroundColor: "#872D67", color: "white" }}
                   disabled={!isFormValid}
-                  onClick={handleConfirmModalOpen} 
+                  onClick={handleConfirmModalOpen}
                 >
                   Confirm
                 </Button>
@@ -178,7 +192,7 @@ const MobileRechargeUI = () => {
         className="slide-in-right"
       >
         <Modal.Header closeButton>
-          <Modal.Title style={{fontSize:"25px"}}>Browse Plans</Modal.Title>
+          <Modal.Title style={{ fontSize: "25px" }}>Browse Plans</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <MobileBrowsePlans />
