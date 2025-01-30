@@ -98,6 +98,10 @@ function App() {
           element: <WalletTransfer />,
         },
         {
+          path: "/mywallet",
+          element: <MyWallet />,
+        },
+        {
           path: "/history",
           element: <History />,
         },

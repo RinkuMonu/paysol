@@ -75,7 +75,7 @@ const Login = () => {
             </div>
             <div className="col-md-6 bg-img d-none d-md-block my-3" style={{ borderRadius: "30px 0px 0px 30px", zIndex: "2" }}>
 
-              <div className="logo-img">
+              {/* <div className="logo-img">
                 <img
                   src="/assets/Home/logo.jpg"
                   alt=""
@@ -111,14 +111,14 @@ const Login = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="col-md-6 my-3 padding-md">
               <div className="form-container">
                 <ReactCardFlip isFlipped={flipState !== "signup"} flipDirection="horizontal">
                   {/* Front Side - Sign Up */}
                   <div className="form-box login-Heading d-flex flex-column h-100">
-                    <h2>Sign Up</h2>
+                    <h2>Login</h2>
                     <form className="row g-3 needs-validation" noValidate onSubmit={handleSubmitSignUp}>
                       <div className="mb-3">
                         <label htmlFor="mobileNumber" className="form-label">
