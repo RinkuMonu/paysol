@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AddMoney({ setIsOpen }) {
     const closeModal = () => setIsOpen(false);
@@ -47,7 +48,7 @@ export default function AddMoney({ setIsOpen }) {
                                             <button type="button" class="btn directaddmoney me-3">500+</button>
                                             <button type="button" class="btn directaddmoney">1000+</button>
                                         </div>
-                                        <button className="btn btn-primary d-block mt-4 w-100">Continue</button>
+                                        <Link to={'/paymentcheck'} className="btn btn-primary d-block mt-4 w-100">Continue</Link>
                                     </form>
                                 </div>
                             </section>

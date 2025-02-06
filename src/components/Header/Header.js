@@ -271,7 +271,7 @@ export default function Header({ onLoginClick }) {
                                                                 <button className="btn btn-primary btn-sm mt-2">Add</button>
                                                             </div>
 
-                                                            <button className="border-0 kycBtn btn-sm mt-2">Complete Your KYC</button>
+                                                            <Link to={'/kyc'} className="border-0 kycBtn btn-sm mt-2">Complete Your KYC</Link>
                                                         </div>
 
                                                         {/* List Items */}

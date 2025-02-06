@@ -1543,7 +1543,7 @@ p {
     height: 582px;
     object-fit: cover;
     position: relative;
-    z-index: 99;
+    z-index: 1;
 }
 @media (min-width: 992px) {
     .ps-lg-10, .px-lg-10 {
@@ -2053,4 +2053,14 @@ p {
 }
 .marginTop{
     margin-top: 118px;
+}
+/* ------------------------ 404 Page ------------------------ */
+.Image404{
+    width: 100%;
+    margin-top: 110px;
+    display: flex;
+}
+.Image404 img{
+    background-attachment: fixed;
+    margin: 0 auto;
 }
