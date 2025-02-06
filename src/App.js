@@ -22,6 +22,9 @@ import PaymentMode from './pages/services/PaymentMode/PaymentMode.js';
 import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
 import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
 import WalletTransfer from './pages/services/WalletTransfer/WalletTransfer.js';
+import Page404 from './pages/Page404.js';
+import KYC from './pages/Kyc/KYC.js';
+import AadharCard from './pages/Kyc/AadharCard.js';
 
 function App() {
   const router = createBrowserRouter([
@@ -104,6 +107,18 @@ function App() {
         {
           path: "/history",
           element: <History />,
+        },
+        {
+          path: "/404",
+          element: <Page404 />,
+        },
+        {
+          path: "/kyc",
+          element: <KYC />,
+        },
+        {
+          path: "/aadhar",
+          element: <AadharCard />,
         },
       ],
     },

@@ -1,0 +1,84 @@
+.kyc_section{
+    margin-top: 100px;
+}
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid #ddd;
+  }
+  
+  .step-line {
+    height: 4px;
+    width: 50%;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .step-line.bg-light{
+    background-color: #dedede !important;
+  }
+  .otpBtn, .submitBtn{
+    background-color: var(--themeht-primary-color);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 14px;
+  }
+  .aadhar_card, .bank_card, .pan_card  {
+    background-color: #fff;
+    padding: 25px 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 89px 0px;
+    border-radius: 9px;
+  }
+  .aadhar_card_details{
+    background-color: #fff;
+    padding: 25px 30px 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 89px 0px;
+    border-radius: 9px;
+  }
+  .aadhar_card_details .aadhar_box{
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  .aadhar_box h3{
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+  }
+  .aadhar_box p{
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
+  .aadhar_card_details .aadhar_box i{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #ccc;
+    cursor: pointer;
+    display: none;
+  }
+  .aadhar_card_details .aadhar_box:hover i{
+    display: block;
+    cursor: pointer;
+  }
+  .aadhar_card_details .aadhar_box i:hover{
+    color: #000;
+  }
+  .kyc_section h3{
+    font-size: 18px;
+    color: #000;
+  }
+  .kyc_section .BackBtn, .NextBtn {
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 6px 20px;
+}
+.kyc_section .NextBtn{
+    background-color: var(--themeht-primary-color);
+    color: #fff;
+}
