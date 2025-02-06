@@ -261,9 +261,9 @@ export default function Header({ onLoginClick }) {
                                                             <div className="float-end">
                                                                 <Link to={''} className="help_link p-0">Help?</Link>
                                                             </div>
-                                                            <h2 className="mb-1">Vijay Gupta</h2>
-                                                            <p className="mb-0">vg670616@gmail.com</p>
-                                                            <p>9358448803</p>
+                                                            <h2 className="mb-1">Test User</h2>
+                                                            <p className="mb-0">testuser@gmail.com</p>
+                                                            <p>0123456789</p>
 
 
                                                             <div className="d-flex align-items-baseline justify-content-between">

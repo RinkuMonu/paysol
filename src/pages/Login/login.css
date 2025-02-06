@@ -22,7 +22,7 @@
 
 } */
 .bg-img {
-  background: url(http://localhost:3000/static/media/auth-bg1.78c93e3….png) no-repeat 40%, linear-gradient(90deg, #872d67, #14263F);
+  background: url(/public/assets//login.jpg);
   background-size: cover;
   background-blend-mode: screen;
   padding: 0 50px;
