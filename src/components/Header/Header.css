@@ -501,9 +501,11 @@
     background-color: transparent;
     border: 0px;
     font-size: 14px;
-    color: #fff;
+    color: #fff !important;
     width: 100%;
     margin-top: 10px;
+    justify-content: center;
+    margin-bottom: 0px !important;
 }
 
 .balance_link {
