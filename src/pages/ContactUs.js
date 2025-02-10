@@ -106,10 +106,10 @@ const ContactUs = () => {
                       <div>
                         <span>Phone No.</span>
                         <a
-                          href="tel:9660339514"
+                          href="tel:+91 72970 26119"
                           className="text-decoration-none"
                         >
-                          9660339514
+                          +91 72970 26119
                         </a>
                       </div>
                     </li>
