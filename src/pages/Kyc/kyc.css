@@ -6,16 +6,36 @@
     height: 40px;
     border-radius: 50%;
     font-weight: bold;
-    font-size: 18px;
-    border: 2px solid #ddd;
-  }
-  
-  .step-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.step-line {
     height: 4px;
     width: 50%;
     border-radius: 10px;
     margin: 0 10px;
-  }
+    transition: background-color 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .step-line {
+        width: 30px; /* Shorter lines for smaller screens */
+    }
+
+    .step-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 14px; /* Adjust font size for smaller circles */
+    }
+
+    .d-flex.flex-md-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
   .step-line.bg-light{
     background-color: #dedede !important;
   }

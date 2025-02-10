@@ -355,9 +355,8 @@ export default function KYC() {
                                         )}
                                         {currentStep === 4 && (
                                             <div>
-                                                <h3>Submit KYC</h3>
+                                                <img src="/assets/Home/submit.jpeg" className="mb-3" />
                                                 <p>All details have been entered correctly.</p>
-                                                <button className="btn btn-success">Submit</button>
                                             </div>
                                         )}
                                     </div>
