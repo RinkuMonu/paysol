@@ -34,7 +34,7 @@ export default function Header({ onLoginClick }) {
                                     <Link className="navbar-brand logo" to={"/"}>
                                         <img
                                             className="img-fluid"
-                                            src="/assets/Home/logo.png"
+                                            src="/assets/Home/logo2.png"
                                             alt=""
                                         />
                                     </Link>

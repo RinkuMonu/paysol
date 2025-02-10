@@ -7,8 +7,9 @@ import axios from 'axios';
 // import ClipLoader from "react-spinners/ClipLoader";
 import Lottie from 'react-lottie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
+import Swal from "sweetalert2";
 import * as animation from '../../Assets/Animation.json'
+import { useNavigate } from "react-router-dom";
 // https://finpay-backend.onrender.com/api/auth/aadhar-verify
 const API_URL = "https://finpay-backend.onrender.com/api/auth/aadhar-verify"
 
@@ -42,6 +43,8 @@ export default function KYC() {
     });
 
     const [otpSent, setOtpSent] = useState(false);
+
+    const location =useNavigate()
 
     const steps = [
         { id: 1, label: "Aadhar Details" },
@@ -77,68 +80,73 @@ export default function KYC() {
         //     setOtpSent(true);
         // }
         if (!aadharNumber.match(/^\d{12}$/)) {
-            setMessage("कृपया सही 12 अंकों का आधार नंबर डालें");
-            return;
+          setMessage("Please enter 12 Digit Number of Adhar");
+          return;
         }
         setMessage("");
+
         setSendingOtp(true);
 
+
         try {
-            const response = await axios.post(
-                API_URL,
-                { aadharNumber },
-
-            );
-            console.log("responseeeeee", response)
-            console.log("data", response.data.data.data.client_id);
-
-            setClientId(response.data.data.data.client_id);
-            setMessage("OTP भेजा गया है, कृपया OTP दर्ज करें");
+          const response = await axios.post(API_URL, { aadharNumber });
+          console.log("responseeeeee", response);
+          console.log("data", response.data.data.data.client_id);
+    
+          setClientId(response.data.data.data.client_id);
+          setMessage("OTP Send sucessfully");
         } catch (error) {
-            setMessage("OTP भेजने में समस्या हुई, कृपया पुनः प्रयास करें");
+          setMessage("Please try again for OTP ");
         }
         setSendingOtp(false);
         setOtpSent(true);
-    };
-
-
-
-    const handleVerifyOTP = async () => {
+      };
+    
+      const handleVerifyOTP = async () => {
         if (!otp.match(/^\d{6}$/)) {
-            setMessage("कृपया सही 6 अंकों का OTP दर्ज करें");
-            return;
+          setMessage("Please Enter 6 Digit OTP");
+          return;
         }
         setMessage("");
+
         setColor("#ededed")
         setVerifyingOtp(true);
 
 
+
         try {
-            const response = await axios.post(
-                "https://finpay-backend.onrender.com/api/auth/submit-aadhar-otp",
-                { aadharNumber, otp, client_id: clientId ,userId},
-                {
-                    // headers: {
-                    //   "Content-Type": "application/json",
-                    //   Authorization: `Bearer YOUR_API_KEY`,
-                    // },
-                }
-            );
-            console.log("responseeeeee", response)
-            console.log("data", response.data.data.data.client_id);
-            setMessage("OTP सत्यापन सफल");
-            setData(response.data.data.data)
+          const response = await axios.post(
+            "https://finpay-backend.onrender.com/api/auth/submit-aadhar-otp",
+            { aadharNumber, otp, client_id: clientId, userId },
+            {
+              // headers: {
+              //   "Content-Type": "application/json",
+              //   Authorization: `Bearer YOUR_API_KEY`,
+              // },
+            }
+          );
+          console.log("responseeeeee", response);
+          console.log("data", response.data.data.data.client_id);
+          setMessage("OTP Sucessfull submited");
+          setData(response.data.data.data);
         } catch (error) {
-            setMessage("❌ OTP सत्यापन असफल, कृपया पुनः प्रयास करें");
+          setMessage("❌ OTP Failed");
         }
+
         setVerifyingOtp(false);
         setShowAadharDetails(true)
 
     };
 
     const handleSubmitBankDetails = async () => {
+        setLoading(false);
+        setShowAadharDetails(true);
+      };
+    
+      const handleSubmitBankDetails = async () => {
+
         if (formData.bankAccount.length >= 9) {
-            setShowBankDetails(true);
+          setShowBankDetails(true);
         }
         setLoading(true);
         try {
@@ -161,11 +169,37 @@ export default function KYC() {
     };
 
     const handleSubmitPANCardDetails = async () => {
+
+          const response = await axios.post(
+            "https://finpay-backend.onrender.com/api/auth/verifybank",
+            { id_number: bankAccount, ifsc, userId }
+          );
+          setBankData(response);
+          console.log(".....", response);
+          Swal.fire({
+            title: "! Sucessfully Verfiy your Bank",
+            text: "",
+            icon: "success"
+          });
+        } catch (error) {
+            Swal.fire({
+                title: "! error Verfiy your Bank",
+                text: "",
+                icon: "error"
+              });
+        }
+        setLoading(false);
+        setShowBankDetails(true);
+      };
+    
+      const handleSubmitPANCardDetails = async () => {
+
         if (formData.panCard.length === 10) {
-            setShowPanDetails(true);
+          setShowPanDetails(true);
         }
         setLoading(true);
         try {
+
             const response = await axios.post("https://finpay-backend.onrender.com/api/auth/verifyPAN",
                 { id_number: panCard ,userId}
             )
@@ -183,6 +217,62 @@ export default function KYC() {
         setShowPanDetails(true)
     }
 
+
+          const response = await axios.post(
+            "https://finpay-backend.onrender.com/api/auth/verifyPAN",
+            { id_number: panCard, userId }
+          );
+          console.log(".....pan", response);
+          setpandata(response);
+    
+          Swal.fire({
+            title: "! Sucessfully Verfiy your Pan",
+            text: "",
+            icon: "success"
+          });
+        } catch (error) {
+            Swal.fire({
+                title: "! Error Verfiy your Pan",
+                text: "",
+                icon: "error"
+              });
+        }
+        setLoading(false);
+        setShowPanDetails(true);
+      };
+    
+     
+    
+    const handleSubmiytKYC = async (e) => {
+      e.preventDefault();
+    
+      try {
+        const response = await axios.post("https://finpay-backend.onrender.com/api/auth/verifyUser", {
+         userId: userId  
+        });
+    
+        if (!response.data) {
+          console.log("User not found");
+          return "User not found";
+        }
+    
+        console.log("User verified successfully:", response.data);
+        Swal.fire({
+            title: "Kyc Submited!",
+            text: "",
+            icon: "success"
+          });
+           location("/")
+    
+        return "User verified successfully";
+        
+      } catch (error) {
+        console.error("Error verifying user:", error);
+        return "Error verifying user";
+      }
+    };
+    
+    
    
 
     return (
@@ -387,7 +477,7 @@ export default function KYC() {
                                             <div>
                                                 <h3>Submit KYC</h3>
                                                 <p>All details have been entered correctly.</p>
-                                                <button className="btn btn-success">Submit</button>
+                                                <button className="btn btn-success" onClick={handleSubmiytKYC}>Submit</button>
                                             </div>
                                         )}
                                     </div>
