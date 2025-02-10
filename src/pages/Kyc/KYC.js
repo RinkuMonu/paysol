@@ -26,6 +26,8 @@ export default function KYC() {
     const [panCard, setPanCard] = useState("")
     const [ifsc, setIfsc] = useState("")
     const [loading, setLoading] = useState(false)
+    const [sendingOtp, setSendingOtp] = useState(false);
+    const [verifyingOtp, setVerifyingOtp] = useState(false);
     const [clientId, setClientId] = useState(null)
     const [message, setMessage] = useState("")
     const [pandata, setpandata] = useState("")
@@ -79,7 +81,7 @@ export default function KYC() {
             return;
         }
         setMessage("");
-        setLoading(true);
+        setSendingOtp(true);
 
         try {
             const response = await axios.post(
@@ -95,7 +97,7 @@ export default function KYC() {
         } catch (error) {
             setMessage("OTP भेजने में समस्या हुई, कृपया पुनः प्रयास करें");
         }
-        setLoading(false);
+        setSendingOtp(false);
         setOtpSent(true);
     };
 
@@ -108,7 +110,7 @@ export default function KYC() {
         }
         setMessage("");
         setColor("#ededed")
-        setLoading(true);
+        setVerifyingOtp(true);
 
 
         try {
@@ -129,7 +131,7 @@ export default function KYC() {
         } catch (error) {
             setMessage("❌ OTP सत्यापन असफल, कृपया पुनः प्रयास करें");
         }
-        setLoading(false);
+        setVerifyingOtp(false);
         setShowAadharDetails(true)
 
     };
@@ -146,12 +148,15 @@ export default function KYC() {
             )
             setBankData(response)
             console.log(".....", response)
-            alert("Successful")
+            // alert("Successful")
         } catch (error) {
-            alert(error)
+            alert("Verification failed. Please try again.")
 
         }
-        setLoading(false);
+        finally {
+            setLoading(false); 
+          }
+        // setLoading(false);
         setShowBankDetails(true)
     };
 
@@ -167,23 +172,18 @@ export default function KYC() {
             console.log(".....pan", response)
             setpandata(response)
 
-            alert("success")
+            // alert("success")
         }
         catch (error) {
-            alert(error)
-        }
-        setLoading(false);
+            alert("Verification failed. Please try again.")
+        }finally {
+            setLoading(false);
+          }
+        // setLoading(false);
         setShowPanDetails(true)
     }
 
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animation,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        }
-    };
+   
 
     return (
         <>
@@ -230,64 +230,82 @@ export default function KYC() {
 
                                     {/* Dynamic Forms Based on Steps */}
                                     <div className="form-section">
-                                        {currentStep === 1 && (
-                                            <div className="container" style={{ textAlign: "left" }}>
-                                                <div className=" aadhar_card">
-                                                    <h3 className="mb-3">Aadhar Details</h3>
+                                    {currentStep === 1 && (
+        <div className="container text-left">
+            <div className="aadhar_card">
+                <h3 className="mb-3">Aadhar Details</h3>
 
-                                                    <div className="row">
-                                                        <div className="col-md-4">
-                                                            <input
-                                                                type="text"
-                                                                className="form-control"
-                                                                placeholder="Enter 12-digit Aadhar Number"
-                                                                maxLength={12}
-                                                                value={aadharNumber}
-                                                                onChange={(e) => setAadhaarNumber(e.target.value)
-                                                                }
-                                                            />
+                <div className="row">
+                    {/* Aadhar Input Section */}
+                    <div className="col-md-6 d-flex align-items-center gap-2">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter 12-digit Aadhar Number"
+                            maxLength={12}
+                            value={aadharNumber}
+                            onChange={(e) => setAadhaarNumber(e.target.value)}
+                        />
+                        <button 
+                            className="otpBtn d-flex align-items-center justify-content-center" 
+                            onClick={handleSendOTP} 
+                            disabled={loading}
+                            style={{ minWidth: "120px", height: "40px" }}
+                        >
+                            {sendingOtp ? (
+                                <DotLottieReact 
+                                    src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" 
+                                    height={30} 
+                                    width={30}
+                                    loop autoplay 
+                                />
+                            ) : (
+                                "Send OTP"
+                            )}
+                        </button>
+                    </div>
+                    {/* Display Message */}
+                    <p className="mt-2 d-flex align-items-start">{message}</p>
+                    
 
-                                                        </div>
-                                                        <p>{message}</p>
-                                                        {otpSent && (
-                                                            <>
-                                                                <div className="col-md-4">
-                                                                    <input
-                                                                        type="text"
-                                                                        className="form-control"
-                                                                        placeholder="Enter OTP"
-                                                                        maxLength={6}
-                                                                        value={otp}
-                                                                        onChange={(e) => setOtp(e.target.value)
-                                                                        }
-                                                                    />
-                                                                </div>
-                                                                <div className="col-md-1" style={{ "text-align-last": "start", alignSelf: "anchor-center" }}>
-                                                                    <button className="otpBtn" onClick={handleVerifyOTP} disabled={loading} >
-                                                                        {loading ? <div style={{ height: "20px", width: "20px" }}>
-                                                                            <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" height={30}
-                                                                                loop autoplay /></div> : " Verify "}
-                                                                    </button>
-                                                                    {/* {loading ? "Sending OTP..." : ""} */}
-                                                                </div>
-                                                          </>
-                                                        )}
-                                                        <div className="col-md-3" style={{ "text-align-last": "start", alignSelf: "anchor-center" }}>
-                                                            <button className="otpBtn d-flex justify-content-center" onClick={handleSendOTP} disabled={loading}
-                                                            >
-                                                                {loading ? <div style={{ height: "20px", width: "20px" }}>
-                                                                    <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" height={30}
-                                                                        loop autoplay /></div> : "  Send Otp "}
-                                                            </button>
-                                                            {/* {loading ? "Sending OTP..." : ""} */}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {showAadharDetails && (
-                                                    <AadharCard data={data} />
-                                                )}
-                                            </div>
-                                       )}
+                    {/* OTP Input Section */}
+                    {otpSent && (
+                        <div className="col-md-6 d-flex align-items-center gap-2">
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter OTP"
+                                maxLength={6}
+                                value={otp}
+                                onChange={(e) => setOtp(e.target.value)}
+                            />
+                            {/* <div>{message}</div> */}
+                            <button 
+                                className="otpBtn d-flex align-items-center justify-content-center" 
+                                onClick={handleVerifyOTP} 
+                                disabled={loading}
+                                style={{ minWidth: "100px", height: "40px" }}
+                            >
+                                {verifyingOtp ? (
+                                    <DotLottieReact 
+                                        src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" 
+                                        height={30} 
+                                        width={30}
+                                        loop autoplay 
+                                    />
+                                ) : (
+                                    "Verify"
+                                )}
+                            </button>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Aadhar Details Display */}
+            {showAadharDetails && <AadharCard data={data} />}
+        </div>
+    )}
                                         {currentStep === 2 && (
                                             <div className="container" style={{ textAlign: "left" }}>
                                                 <div className="bank_card">
@@ -316,7 +334,13 @@ export default function KYC() {
                                                             />
                                                         </div>
                                                         <div className="col-md-4 mt-1">
-                                                            <button className="submitBtn" onClick={handleSubmitBankDetails}>Submit</button>
+                                                        <button className="submitBtn" onClick={handleSubmitBankDetails} disabled={loading}>
+                  {loading ? (
+                    <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" autoplay loop style={{ width: 30, height: 30 }} />
+                  ) : (
+                    "Submit"
+                  )}
+                </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -344,7 +368,13 @@ export default function KYC() {
                                                             />
                                                         </div>
                                                         <div className="col-md-4 mt-1">
-                                                            <button className="submitBtn" onClick={handleSubmitPANCardDetails}>Submit</button>
+                                                        <button className="submitBtn" onClick={handleSubmitPANCardDetails} disabled={loading}>
+                  {loading ? (
+                    <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" autoplay loop style={{ width: 30, height: 30 }} />
+                  ) : (
+                    "Submit"
+                  )}
+                </button>
                                                         </div>
                                                     </div>
                                                 </div>

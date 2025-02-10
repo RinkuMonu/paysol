@@ -12,7 +12,7 @@ export default function AadharCard({data}) {
                     <div className='aadhar_card_details'>
                         <div className='row'>
                             <div className='col-md-3 mb-3'> 
-                                <div className='aadhar_box'>
+                                <div className='aadhar_box'> 
                                 <i class="bi bi-copy"></i>
                                     <h3>Aadhar Name</h3>
                                     <p>{data.full_name}</p>

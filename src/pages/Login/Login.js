@@ -166,7 +166,7 @@ const Login = ({closePopup}) => {
                         </label>
                       </div>
             
-                      <button className="btn OtpBtn px-0" type="submit" disabled={isLoading}>
+                      <button className="btn OtpBtn px-0" type="submit" disabled={isLoading} style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>
         {isLoading ? (
           <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" autoplay loop style={{ width: 30, height: 30 }} />
         ) : (
@@ -207,7 +207,7 @@ const Login = ({closePopup}) => {
                             {errorMessage && <div className="invalid-feedback">{errorMessage}</div>}
                           </div>
                         
-      <button className="btn  OtpBtn" type="submit" disabled={isLoading}>
+      <button className="btn  OtpBtn" type="submit" disabled={isLoading}  style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>
         {isLoading ? (
           <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" autoplay loop style={{ width: 30, height: 30 }} />
         ) : (
