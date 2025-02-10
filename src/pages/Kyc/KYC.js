@@ -3,7 +3,7 @@ import './kyc.css'
 import AadharCard from "./AadharCard";
 import BankDetails from "./BankDetails";
 import PanDetails from "./PanDetails";
-import axios from 'axios';
+import axios from 'axios'; 
 // import ClipLoader from "react-spinners/ClipLoader";
 import Lottie from 'react-lottie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
