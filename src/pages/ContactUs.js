@@ -154,8 +154,11 @@ const ContactUs = () => {
                       <i className="bi bi-telephone-outbound fs-3"></i>
                       <div>
                         <span>Phone No.</span>
-                        <a href="tel:9660339514" className="text-decoration-none">
-                          9660339514
+                        <a
+                          href="tel:+91 72970 26119"
+                          className="text-decoration-none"
+                        >
+                          +91 72970 26119
                         </a>
                       </div>
                     </li>
