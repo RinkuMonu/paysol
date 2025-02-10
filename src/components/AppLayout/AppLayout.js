@@ -18,7 +18,7 @@ const AppLayout = () => {
       <Footer/>
       {isPopupOpen && (
        <Popup closePopup={closePopup}>
-         <Login/>
+         <Login closePopup={closePopup}/>
       </Popup>)}
     </div>
   );

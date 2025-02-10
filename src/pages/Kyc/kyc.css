@@ -20,8 +20,8 @@
     background-color: #dedede !important;
   }
   .otpBtn, .submitBtn{
-    background-color: var(--themeht-primary-color);
-    color: #fff;
+    background-color: #f0e9e9;
+    color: #000000;
     border-radius: 5px;
     padding: 5px 10px;
     border: none;

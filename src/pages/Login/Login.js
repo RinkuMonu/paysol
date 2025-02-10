@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import "./login.css";
 import ReactCardFlip from "react-card-flip";
 import { Link, useNavigate } from "react-router-dom";
-const Login = () => {
+import {useDispatch} from "react-redux"
+import { login, verifyOtp } from '../../Features/Auth/authSlice';
+const Login = ({closePopup}) => {
   const [flipState, setFlipState] = useState("signup");
   const [mobileNumber, setMobileNumber] = useState("");
+  const [otp, setOtp] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
   const [isCheckboxValid, setIsCheckboxValid] = useState(true);
@@ -12,7 +15,7 @@ const Login = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const navigate = useNavigate();
-
+ const dispatch = useDispatch()
   const handleMobileChange = (e) => {
     const value = e.target.value;
     setMobileNumber(value);
@@ -30,10 +33,15 @@ const Login = () => {
     setIsChecked(e.target.checked);
   };
 
-  const handleSubmitSignUp = (e) => {
+  const handleOtpChange = (e) => {
+    setOtp(e.target.value);
+  };
+
+
+  const handleSubmitSignUp = async (e) => {
     e.preventDefault();
 
-    if (mobileNumber.trim().length !== 10) {
+    if (mobileNumber.length !== 10) {
       setIsValid(false);
       setErrorMessage("Please enter a valid 10-digit mobile number");
       return;
@@ -45,19 +53,44 @@ const Login = () => {
     }
 
     setIsCheckboxValid(true);
-    setFlipState("otp");
+
+    try {
+      const response = await dispatch(login(mobileNumber)).unwrap();
+      console.log("Login Success:", response);
+
+      if (response.message === "OTP sent successfully") {
+        setFlipState("otp");
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+      setErrorMessage(error || "Something went wrong!");
+    }
   };
 
-  const handleSubmitOTP = (e) => {
+  const handleSubmitOTP = async (e) => {
     e.preventDefault();
 
+    if (otp.length !== 6) {
+      setErrorMessage("Please enter a valid 6-digit OTP");
+      return;
+    }
 
-    setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-      navigate("/");
-    }, 5000);
+    try {
+      const response = await dispatch(verifyOtp({ mobileNumber, otp })).unwrap();
+      console.log("OTP Verified:", response);
+
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+        closePopup()
+        navigate("/"); 
+      }, 3000);
+    } catch (error) {
+      console.error("OTP Verification failed:", error);
+      setErrorMessage(error || "Invalid OTP, please try again!");
+    }
   };
+
   const handleBackToSignUp = () => {
     setFlipState("signup");
   };
@@ -149,7 +182,7 @@ const Login = () => {
                         </label>
                       </div>
 
-                      <button className="btn btn-primary OtpBtn px-0" type="submit">
+                      <button className="btn btn-primary OtpBtn px-0" type="submit" >
                         Get OTP
                       </button>
                     </form>
@@ -174,9 +207,11 @@ const Login = () => {
                               Enter OTP
                             </label>
                             <input
-                              type="number"
+                             type="number"
                               className="form-control"
                               id="otpField"
+                              value={otp}
+                              onChange={handleOtpChange}
                               placeholder="Enter OTP"
                               required
                             />

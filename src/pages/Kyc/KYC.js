@@ -3,18 +3,42 @@ import './kyc.css'
 import AadharCard from "./AadharCard";
 import BankDetails from "./BankDetails";
 import PanDetails from "./PanDetails";
+import axios from 'axios';
+// import ClipLoader from "react-spinners/ClipLoader";
+import Lottie from 'react-lottie';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
+import * as animation from '../../Assets/Animation.json'
+// https://finpay-backend.onrender.com/api/auth/aadhar-verify
+const API_URL = "https://finpay-backend.onrender.com/api/auth/aadhar-verify"
 
 export default function KYC() {
+    const userId=localStorage.getItem("id")
+    console.log(userId);
+    
     const [currentStep, setCurrentStep] = useState(1);
     const [showAadharDetails, setShowAadharDetails] = useState(false);
+    const [data, setData] = useState("")
     const [showBankDetails, setShowBankDetails] = useState(false);
     const [showPanDetails, setShowPanDetails] = useState(false);
+    const [aadharNumber, setAadhaarNumber] = useState("");
+    const [bankAccount, setBankAccount] = useState("");
+    const [panCard, setPanCard] = useState("")
+    const [ifsc, setIfsc] = useState("")
+    const [loading, setLoading] = useState(false)
+    const [clientId, setClientId] = useState(null)
+    const [message, setMessage] = useState("")
+    const [pandata, setpandata] = useState("")
+    const [bankData, setBankData] = useState("")
+    const [color, setColor] = useState('#872d67')
+    const [otp, setOtp] = useState("");
     const [formData, setFormData] = useState({
         aadharNumber: "",
         otp: "",
         bankAccount: "",
         panCard: "",
     });
+
     const [otpSent, setOtpSent] = useState(false);
 
     const steps = [
@@ -26,9 +50,9 @@ export default function KYC() {
 
     // Validation for Next Button
     const isStepValid = () => {
-        if (currentStep === 1) return formData.aadharNumber.length === 12 && formData.otp.length === 6;
-        if (currentStep === 2) return formData.bankAccount.length >= 9;
-        if (currentStep === 3) return formData.panCard.length === 10;
+        if (currentStep === 1) return aadharNumber.length === 12 && otp.length === 6;
+        if (currentStep === 2) return bankAccount.length >= 9;
+        if (currentStep === 3) return panCard.length === 10;
         return true;
     };
 
@@ -44,29 +68,123 @@ export default function KYC() {
         }
     };
 
-    const handleSendOTP = () => {
-        if (formData.aadharNumber.length === 12) {
-            setOtpSent(true);
+
+
+    const handleSendOTP = async () => {
+        // if (formData.aadharNumber.length === 12) {
+        //     setOtpSent(true);
+        // }
+        if (!aadharNumber.match(/^\d{12}$/)) {
+            setMessage("कृपया सही 12 अंकों का आधार नंबर डालें");
+            return;
         }
+        setMessage("");
+        setLoading(true);
+
+        try {
+            const response = await axios.post(
+                API_URL,
+                { aadharNumber },
+
+            );
+            console.log("responseeeeee", response)
+            console.log("data", response.data.data.data.client_id);
+
+            setClientId(response.data.data.data.client_id);
+            setMessage("OTP भेजा गया है, कृपया OTP दर्ज करें");
+        } catch (error) {
+            setMessage("OTP भेजने में समस्या हुई, कृपया पुनः प्रयास करें");
+        }
+        setLoading(false);
+        setOtpSent(true);
     };
 
-    const handleVerifyOTP = () => {
-        if (formData.otp.length === 6) {
-            setShowAadharDetails(true); // Show Aadhar details after verification
+
+
+    const handleVerifyOTP = async () => {
+        if (!otp.match(/^\d{6}$/)) {
+            setMessage("कृपया सही 6 अंकों का OTP दर्ज करें");
+            return;
         }
+        setMessage("");
+        setColor("#ededed")
+        setLoading(true);
+
+
+        try {
+            const response = await axios.post(
+                "https://finpay-backend.onrender.com/api/auth/submit-aadhar-otp",
+                { aadharNumber, otp, client_id: clientId ,userId},
+                {
+                    // headers: {
+                    //   "Content-Type": "application/json",
+                    //   Authorization: `Bearer YOUR_API_KEY`,
+                    // },
+                }
+            );
+            console.log("responseeeeee", response)
+            console.log("data", response.data.data.data.client_id);
+            setMessage("OTP सत्यापन सफल");
+            setData(response.data.data.data)
+        } catch (error) {
+            setMessage("❌ OTP सत्यापन असफल, कृपया पुनः प्रयास करें");
+        }
+        setLoading(false);
+        setShowAadharDetails(true)
+
     };
 
-    const handleSubmitBankDetails = () => {
+    const handleSubmitBankDetails = async () => {
         if (formData.bankAccount.length >= 9) {
             setShowBankDetails(true);
         }
+        setLoading(true);
+        try {
+            const response = await axios.post("https://finpay-backend.onrender.com/api/auth/verifybank",
+                { id_number: bankAccount, ifsc,userId }
+
+            )
+            setBankData(response)
+            console.log(".....", response)
+            alert("Successful")
+        } catch (error) {
+            alert(error)
+
+        }
+        setLoading(false);
+        setShowBankDetails(true)
     };
 
-    const handleSubmitPANCardDetails = () => {
+    const handleSubmitPANCardDetails = async () => {
         if (formData.panCard.length === 10) {
             setShowPanDetails(true);
         }
+        setLoading(true);
+        try {
+            const response = await axios.post("https://finpay-backend.onrender.com/api/auth/verifyPAN",
+                { id_number: panCard ,userId}
+            )
+            console.log(".....pan", response)
+            setpandata(response)
+
+            alert("success")
+        }
+        catch (error) {
+            alert(error)
+        }
+        setLoading(false);
+        setShowPanDetails(true)
     }
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animation,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
     return (
         <>
             <section className="hero-section-container">
@@ -115,7 +233,7 @@ export default function KYC() {
                                         {currentStep === 1 && (
                                             <div className="container" style={{ textAlign: "left" }}>
                                                 <div className=" aadhar_card">
-                                                <h3 className="mb-3">Aadhar Details</h3>
+                                                    <h3 className="mb-3">Aadhar Details</h3>
 
                                                     <div className="row">
                                                         <div className="col-md-4">
@@ -124,15 +242,13 @@ export default function KYC() {
                                                                 className="form-control"
                                                                 placeholder="Enter 12-digit Aadhar Number"
                                                                 maxLength={12}
-                                                                value={formData.aadharNumber}
-                                                                onChange={(e) =>
-                                                                    setFormData({
-                                                                        ...formData,
-                                                                        aadharNumber: e.target.value.replace(/\D/g, ""),
-                                                                    })
+                                                                value={aadharNumber}
+                                                                onChange={(e) => setAadhaarNumber(e.target.value)
                                                                 }
                                                             />
+
                                                         </div>
+                                                        <p>{message}</p>
                                                         {otpSent && (
                                                             <>
                                                                 <div className="col-md-4">
@@ -141,39 +257,41 @@ export default function KYC() {
                                                                         className="form-control"
                                                                         placeholder="Enter OTP"
                                                                         maxLength={6}
-                                                                        value={formData.otp}
-                                                                        onChange={(e) =>
-                                                                            setFormData({
-                                                                                ...formData,
-                                                                                otp: e.target.value.replace(/\D/g, ""),
-                                                                            })
+                                                                        value={otp}
+                                                                        onChange={(e) => setOtp(e.target.value)
                                                                         }
                                                                     />
                                                                 </div>
                                                                 <div className="col-md-1" style={{ "text-align-last": "start", alignSelf: "anchor-center" }}>
-                                                                    <button className="otpBtn" onClick={handleVerifyOTP}>Verify</button>
+                                                                    <button className="otpBtn" onClick={handleVerifyOTP} disabled={loading} >
+                                                                        {loading ? <div style={{ height: "20px", width: "20px" }}>
+                                                                            <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" height={30}
+                                                                                loop autoplay /></div> : " Verify "}
+                                                                    </button>
+                                                                    {/* {loading ? "Sending OTP..." : ""} */}
                                                                 </div>
-
-                                                            </>
+                                                          </>
                                                         )}
-
                                                         <div className="col-md-3" style={{ "text-align-last": "start", alignSelf: "anchor-center" }}>
-                                                            <button className="otpBtn" onClick={handleSendOTP}>
-                                                                Send Otp
+                                                            <button className="otpBtn d-flex justify-content-center" onClick={handleSendOTP} disabled={loading}
+                                                            >
+                                                                {loading ? <div style={{ height: "20px", width: "20px" }}>
+                                                                    <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" height={30}
+                                                                        loop autoplay /></div> : "  Send Otp "}
                                                             </button>
+                                                            {/* {loading ? "Sending OTP..." : ""} */}
                                                         </div>
                                                     </div>
                                                 </div>
                                                 {showAadharDetails && (
-                                                    <AadharCard />
+                                                    <AadharCard data={data} />
                                                 )}
                                             </div>
-                                        )}
-
+                                       )}
                                         {currentStep === 2 && (
                                             <div className="container" style={{ textAlign: "left" }}>
                                                 <div className="bank_card">
-                                                <h3>Bank Details</h3>
+                                                    <h3>Bank Details</h3>
 
                                                     <div className="row">
                                                         <div className="col-md-8">
@@ -181,12 +299,19 @@ export default function KYC() {
                                                                 type="text"
                                                                 className="form-control"
                                                                 placeholder="Enter Bank Account Number"
-                                                                value={formData.bankAccount}
-                                                                onChange={(e) =>
-                                                                    setFormData({
-                                                                        ...formData,
-                                                                        bankAccount: e.target.value.replace(/\D/g, ""),
-                                                                    })
+                                                                value={bankAccount}
+                                                                onChange={(e) => setBankAccount(e.target.value)
+                                                                }
+                                                            />
+                                                        </div>
+                                                        <div className="col-md-8">
+                                                            <input
+                                                                type="text"
+                                                                className="form-control"
+                                                                placeholder="Enter Ifsc"
+                                                                value={ifsc}
+                                                                onChange={(e) => setIfsc(e.target.value)
+
                                                                 }
                                                             />
                                                         </div>
@@ -196,16 +321,16 @@ export default function KYC() {
                                                     </div>
                                                 </div>
                                                 {showBankDetails && (
-                                                    <BankDetails />
+                                                    <BankDetails bankData={bankData} />
                                                 )}
                                             </div>
                                         )}
 
                                         {currentStep === 3 && (
                                             <div className="container" style={{ textAlign: "left" }}>
-                                              
+
                                                 <div className="pan_card">
-                                                <h3>PAN Card Details</h3>
+                                                    <h3>PAN Card Details</h3>
                                                     <div className="row">
                                                         <div className="col-md-8">
                                                             <input
@@ -213,12 +338,8 @@ export default function KYC() {
                                                                 className="form-control"
                                                                 placeholder="Enter PAN Card Number"
                                                                 maxLength={10}
-                                                                value={formData.panCard}
-                                                                onChange={(e) =>
-                                                                    setFormData({
-                                                                        ...formData,
-                                                                        panCard: e.target.value.toUpperCase(),
-                                                                    })
+                                                                value={panCard}
+                                                                onChange={(e) => setPanCard(e.target.value)
                                                                 }
                                                             />
                                                         </div>
@@ -228,7 +349,7 @@ export default function KYC() {
                                                     </div>
                                                 </div>
                                                 {showPanDetails && (
-                                                    <PanDetails />
+                                                    <PanDetails pandata={pandata} />
                                                 )}
                                             </div>
                                         )}
@@ -253,7 +374,7 @@ export default function KYC() {
                                         <button
                                             className="btn NextBtn"
                                             onClick={handleNext}
-                                            disabled={!isStepValid() || currentStep === steps.length}
+                                            disabled={!isStepValid || currentStep === steps.length}
                                         >
                                             Next
                                         </button>

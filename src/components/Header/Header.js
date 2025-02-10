@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AddMoney from "./AddMoney";
+import { useDispatch } from "react-redux";
+import { logout } from "../../Features/Auth/authSlice";
 export default function Header({ onLoginClick }) {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleMouseEnter = () => setIsDropdownOpen(true);
@@ -12,9 +16,15 @@ export default function Header({ onLoginClick }) {
 
     const openModal = () => setIsOpen(true);
 
+   const handlelogout =()=>{
+    dispatch(logout())
+    localStorage.removeItem("id")
+    navigate("/")
+   }
+
+
     return (
         <>
-    
             <header id="site-header" className="header">
                 <div id="header-wrap">
                     <div className="container-fluid">
@@ -220,13 +230,17 @@ export default function Header({ onLoginClick }) {
                                                     Contact Us
                                                 </Link>
                                             </li>
-                                            <li className="nav-item">
+                                            
+                                            {!localStorage.getItem("token") ? (
+                                                <li className="nav-item">
                                                 <div className="nav-link header-right d-lg-flex align-items-center">
                                                     <Link className="header-btn" onClick={onLoginClick}>
                                                         Login <i className="bi bi-arrow-right"></i>
                                                     </Link>
                                                 </div>
-                                            </li>
+                                            </li>):(
+                                             <>
+                                            
                                             <li className="nav-item">
                                                 {/* Trigger Button */}
                                                 <Link to={'#'} className="nav-link balance_link" onClick={openModal}>
@@ -248,8 +262,8 @@ export default function Header({ onLoginClick }) {
                                                     data-bs-toggle="dropdown"
                                                     aria-expanded={isDropdownOpen ? "true" : "false"}
                                                 >
-                                                    <img src="/assets/Home/user-logo-new.svg" width={27} />
-                                                    <img className="downimage" src="/assets/Home/menu-ham-icon.png" width={15} />
+                                                    <img src="/assets/Home/user-logo-new.svg" width={27} alt="" />
+                                                    <img className="downimage" src="/assets/Home/menu-ham-icon.png" width={15} alt=""/>
                                                 </Link>
                                                 <ul
                                                     className={`dropdown-menu profile-menu ${isDropdownOpen ? "show" : ""}`}
@@ -290,12 +304,14 @@ export default function Header({ onLoginClick }) {
                                                                 <Link to={'/profilesetting'}><i className="bi bi-gear"></i> Profile Settings</Link>
                                                             </li>
                                                             <li className="dropdown-item">
-                                                                <Link><i className="bi bi-box-arrow-right"></i> LogOut</Link>
+                                                                <Link onClick={handlelogout}><i className="bi bi-box-arrow-right"></i> LogOut</Link>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </ul>
                                             </li>
+                                            </>)
+                                        }
                                         </ul>
                                     </div>
                                 </nav>

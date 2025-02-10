@@ -1,6 +1,9 @@
 import React from 'react'
 
-export default function PanDetails() {
+export default function PanDetails({pandata}) {
+    console.log("pannnnnnnnSDFGHJHGFD",pandata);
+    // NEWPS7317H
+    
     return (
         <>
             <section className='container pt-4'>
@@ -12,21 +15,21 @@ export default function PanDetails() {
                                     <div className='aadhar_box'>
                                         <i class="bi bi-copy"></i>
                                         <h3>Pan Number</h3>
-                                        <p>1234 1234 1234</p>
+                                        <p>{pandata.data.data.data.pan_number}</p>
                                     </div>
                                 </div>
                                 <div className='col-md-4 mb-3'>
                                     <div className='aadhar_box'>
                                         <i class="bi bi-copy"></i>
                                         <h3>Name</h3>
-                                        <p>User Name</p>
+                                        <p>{pandata.data.data.data.full_name }</p>
                                     </div>
                                 </div>
                                 <div className='col-md-4 mb-3'>
                                     <div className='aadhar_box'>
                                         <i class="bi bi-copy"></i>
                                         <h3>Category</h3>
-                                        <p>Individual</p>
+                                        <p>{pandata.data.data.data.category}</p>
                                     </div>
                                 </div>
                             </div>

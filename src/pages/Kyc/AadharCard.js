@@ -1,7 +1,9 @@
 import React from 'react'
 import './kyc.css'
 
-export default function AadharCard() {
+export default function AadharCard({data}) {
+   
+
   return (
     <>
         <section className='container pt-4'>
@@ -13,28 +15,35 @@ export default function AadharCard() {
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Aadhar Name</h3>
-                                    <p>User Name</p>
+                                    <p>{data.full_name}</p>
+                                </div>
+                            </div>
+                            <div className='col-md-3 mb-3'> 
+                                <div className='aadhar_box'>
+                                <i class="bi bi-copy"></i>
+                                    <h3>Father Name</h3>
+                                    <p>{data.care_of}</p>
                                 </div>
                             </div>
                             <div className='col-md-3 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Aadhar Number</h3>
-                                    <p>1234 1234 1234 1234</p>
+                                    <p>{data.aadhaar_number}</p>
                                 </div>
                             </div>
                             <div className='col-md-3 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>DOB</h3>
-                                    <p>DD/MM/YYYY</p>
+                                    <p>{data.dob}</p>
                                 </div>
                             </div>
                             <div className='col-md-3 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Gender</h3>
-                                    <p>Female</p>
+                                    <p>{data.gender}</p>
                                 </div>
                             </div>
                         </div>

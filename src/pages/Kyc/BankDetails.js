@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function BankDetails() {
+export default function BankDetails({bankData}) {
+    console.log(bankData,"bank data")
+    
     return (
         <>
             {/* <div className="bank-details-card mt-3">
@@ -19,49 +21,49 @@ export default function BankDetails() {
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Name</h3>
-                                    <p>User Name</p>
+                                    <p>{bankData.data.name}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Account Existing</h3>
-                                    <p>True</p>
+                                    <p>{bankData.data.pandata.data.account_exists}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>IFSC</h3>
-                                    <p>HDFC000123</p>
+                                    <p>{bankData.data.pandata.data.ifsc_details.ifsc}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Micr Number</h3>
-                                    <p>123456789</p>
+                                    <p>{bankData.data.pandata.data.ifsc_details.micr}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Bank Name</h3>
-                                    <p>HDFC</p>
+                                    <p>{bankData.data.pandata.data.ifsc_details.bank_name}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Branch</h3>
-                                    <p>Jaipur</p>
+                                    <p>{bankData.data.pandata.data.ifsc_details.branch}</p>
                                 </div>
                             </div>
                             <div className='col-md-12 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Address</h3>
-                                    <p>A-122 Jaipur Rajsthan</p>
+                                    <p>{bankData.data.pandata.data.ifsc_details.address}</p>
                                 </div>
                             </div>
                         </div>
