@@ -84,8 +84,10 @@ export default function KYC() {
           return;
         }
         setMessage("");
-        setLoading(true);
-    
+
+        setSendingOtp(true);
+
+
         try {
           const response = await axios.post(API_URL, { aadharNumber });
           console.log("responseeeeee", response);
@@ -96,7 +98,7 @@ export default function KYC() {
         } catch (error) {
           setMessage("Please try again for OTP ");
         }
-        setLoading(false);
+        setSendingOtp(false);
         setOtpSent(true);
       };
     
@@ -106,9 +108,12 @@ export default function KYC() {
           return;
         }
         setMessage("");
-        setColor("#ededed");
-        setLoading(true);
-    
+
+        setColor("#ededed")
+        setVerifyingOtp(true);
+
+
+
         try {
           const response = await axios.post(
             "https://finpay-backend.onrender.com/api/auth/submit-aadhar-otp",
@@ -127,16 +132,44 @@ export default function KYC() {
         } catch (error) {
           setMessage("❌ OTP Failed");
         }
+
+        setVerifyingOtp(false);
+        setShowAadharDetails(true)
+
+    };
+
+    const handleSubmitBankDetails = async () => {
         setLoading(false);
         setShowAadharDetails(true);
       };
     
       const handleSubmitBankDetails = async () => {
+
         if (formData.bankAccount.length >= 9) {
           setShowBankDetails(true);
         }
         setLoading(true);
         try {
+            const response = await axios.post("https://finpay-backend.onrender.com/api/auth/verifybank",
+                { id_number: bankAccount, ifsc,userId }
+
+            )
+            setBankData(response)
+            console.log(".....", response)
+            // alert("Successful")
+        } catch (error) {
+            alert("Verification failed. Please try again.")
+
+        }
+        finally {
+            setLoading(false); 
+          }
+        // setLoading(false);
+        setShowBankDetails(true)
+    };
+
+    const handleSubmitPANCardDetails = async () => {
+
           const response = await axios.post(
             "https://finpay-backend.onrender.com/api/auth/verifybank",
             { id_number: bankAccount, ifsc, userId }
@@ -160,11 +193,31 @@ export default function KYC() {
       };
     
       const handleSubmitPANCardDetails = async () => {
+
         if (formData.panCard.length === 10) {
           setShowPanDetails(true);
         }
         setLoading(true);
         try {
+
+            const response = await axios.post("https://finpay-backend.onrender.com/api/auth/verifyPAN",
+                { id_number: panCard ,userId}
+            )
+            console.log(".....pan", response)
+            setpandata(response)
+
+            // alert("success")
+        }
+        catch (error) {
+            alert("Verification failed. Please try again.")
+        }finally {
+            setLoading(false);
+          }
+        // setLoading(false);
+        setShowPanDetails(true)
+    }
+
+
           const response = await axios.post(
             "https://finpay-backend.onrender.com/api/auth/verifyPAN",
             { id_number: panCard, userId }

@@ -4,18 +4,28 @@ import ReactCardFlip from "react-card-flip";
 import { Link, useNavigate } from "react-router-dom";
 import {useDispatch} from "react-redux"
 import { login, verifyOtp } from '../../Features/Auth/authSlice';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
+
+
+
 const Login = ({closePopup}) => {
+
+
   const [flipState, setFlipState] = useState("signup");
   const [mobileNumber, setMobileNumber] = useState("");
   const [otp, setOtp] = useState("");
+  // const [otpMessage, setOtpMessage] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
   const [isCheckboxValid, setIsCheckboxValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false); 
   const [showPopup, setShowPopup] = useState(false);
-
   const navigate = useNavigate();
  const dispatch = useDispatch()
+
+
   const handleMobileChange = (e) => {
     const value = e.target.value;
     setMobileNumber(value);
@@ -40,6 +50,7 @@ const Login = ({closePopup}) => {
 
   const handleSubmitSignUp = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
 
     if (mobileNumber.length !== 10) {
       setIsValid(false);
@@ -53,28 +64,36 @@ const Login = ({closePopup}) => {
     }
 
     setIsCheckboxValid(true);
+    setIsLoading(true); // Start loader
 
     try {
       const response = await dispatch(login(mobileNumber)).unwrap();
       console.log("Login Success:", response);
-
+  
       if (response.message === "OTP sent successfully") {
         setFlipState("otp");
       }
     } catch (error) {
       console.error("Login failed:", error);
       setErrorMessage(error || "Something went wrong!");
+    } finally {
+      setIsLoading(false); // Stop loader
     }
   };
 
   const handleSubmitOTP = async (e) => {
     e.preventDefault();
 
-    if (otp.length !== 6) {
-      setErrorMessage("Please enter a valid 6-digit OTP");
+    if (!otp) {
+      setErrorMessage("Please enter your OTP");
       return;
     }
 
+    if (otp.length !== 6) {
+      setErrorMessage("Please enter a valid 6-digit OTP");
+      return;
+    } 
+    setIsLoading(true);
     try {
       const response = await dispatch(verifyOtp({ mobileNumber, otp })).unwrap();
       console.log("OTP Verified:", response);
@@ -82,12 +101,14 @@ const Login = ({closePopup}) => {
       setShowPopup(true);
       setTimeout(() => {
         setShowPopup(false);
-        closePopup()
-        navigate("/"); 
+        closePopup();
+        navigate("/");
       }, 3000);
     } catch (error) {
       console.error("OTP Verification failed:", error);
       setErrorMessage(error || "Invalid OTP, please try again!");
+    } finally {
+      setIsLoading(false); 
     }
   };
 
@@ -104,47 +125,10 @@ const Login = ({closePopup}) => {
         <div className="container">
           <div className="row main-section">
             <div className='position-absolute bgImage  d-none d-md-block'>
-              <img src='/assets/Home/login-pattern.png' />
+              <img src='/assets/Home/login-pattern.png' alt='login-pattern' />
             </div>
             <div className="col-md-6 bg-img d-none d-md-block my-3" style={{ borderRadius: "30px 0px 0px 30px", zIndex: "2" }}>
 
-              {/* <div className="logo-img">
-                <img
-                  src="/assets/Home/logo.jpg"
-                  alt=""
-                  className="m-auto mt-4"
-                  style={{
-                    width: "100px",
-                  }}
-                />
-
-              </div>
-              <div className="center-div">
-                <div className="login-content">
-                  <h1>The new age way to pay!</h1>
-                  <p>Make payments, send & receive money
-                    instantly & all with a tap!</p>
-                  <div className="list-section">
-                    <ul>
-                      <li><i class="bi bi-check-circle-fill me-3"></i>Scan any QR</li>
-                      <li><i class="bi bi-check-circle-fill me-3"></i>Send/Receive from any app</li>
-                      <li><i class="bi bi-check-circle-fill me-3"></i>Pay any phone number</li>
-                    </ul>
-
-                  </div>
-                  <div className="QrCode_section">
-                    <div className="QrCode">
-                      <div className="content">
-                        <p className="mb-2">Scan to download our app</p>
-                        <p>For smooth & fast experience</p>
-                      </div>
-                      <div className="qr-code_img">
-                        <img className="img-fluid" src="/assets/Home/qr.jpg"  width={158}/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className="col-md-6 my-3 padding-md">
               <div className="form-container">
@@ -181,10 +165,15 @@ const Login = ({closePopup}) => {
                           I agree to the <Link to={"/term"}>Terms & Conditions</Link>
                         </label>
                       </div>
-
-                      <button className="btn btn-primary OtpBtn px-0" type="submit" >
-                        Get OTP
-                      </button>
+            
+                      <button className="btn OtpBtn px-0" type="submit" disabled={isLoading} style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>
+        {isLoading ? (
+          <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" autoplay loop style={{ width: 30, height: 30 }} />
+        ) : (
+          "Get OTP"
+        )}
+      </button>
+      {isLoading && <p className="text-success mt-2">OTP sent successfully...</p>}
                     </form>
                     <hr style={{ margin: "100px 0 10px" }} />
                     <div className="already-account mt-auto">
@@ -215,10 +204,16 @@ const Login = ({closePopup}) => {
                               placeholder="Enter OTP"
                               required
                             />
+                            {errorMessage && <div className="invalid-feedback">{errorMessage}</div>}
                           </div>
-                          <button className="btn btn-primary OtpBtn" type="submit">
-                            Submit OTP
-                          </button>
+                        
+      <button className="btn  OtpBtn" type="submit" disabled={isLoading}  style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>
+        {isLoading ? (
+          <DotLottieReact src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie" autoplay loop style={{ width: 30, height: 30 }} />
+        ) : (
+          "Submit OTP"
+        )}
+      </button>
                         </form>
                       </>
                     )}
