@@ -117,7 +117,6 @@ export default function KYC() {
         {
           // headers: {
           //   "Content-Type": "application/json",
-          //   Authorization: `Bearer YOUR_API_KEY`,
           // },
         }
       );
@@ -482,4 +481,7 @@ export default function KYC() {
       </section>
     </>
   );
+
 }
+
+
