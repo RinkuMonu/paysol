@@ -78,7 +78,7 @@ function App() {
         },
         {
           path: "/paymentmode",
-          element: <PaymentMode />,
+          element: <PaymentMode />, 
         },
         {
           path: "/transfer-to-bank",
@@ -89,7 +89,7 @@ function App() {
           element: <ProfileSetting />,
         },
         {
-          path: "/paymentcheck",
+          path: "/paymentcheck/:amount",
           element: <PaymentCheck />,
         },
         {

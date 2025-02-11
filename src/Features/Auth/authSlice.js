@@ -6,7 +6,7 @@ export const login = createAsyncThunk(
   "auth/login",
   async (mobileNumber, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post("/send-otp", { mobileNumber });
+      const response = await axiosInstance.post("/auth/send-otp", { mobileNumber });
       return response.data;
     } catch (error) {
       console.error("Login error:", error);
@@ -20,7 +20,7 @@ export const verifyOtp = createAsyncThunk(
   "auth/verifyOtp",
   async ({ mobileNumber, otp }, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post("/login", { mobileNumber, otp });
+      const response = await axiosInstance.post("/auth/login", { mobileNumber, otp });
       return response.data;
     } catch (error) {
       console.error("OTP Verification Error:", error);
@@ -75,6 +75,7 @@ const authSlice = createSlice({
         state.token = action.payload.token; 
         console.log(action.payload);
         localStorage.setItem("id",action.payload.user.id)
+        localStorage.setItem("USER",action.payload.user.isVerified)
         localStorage.setItem("token", action.payload.user.token);
       })
       .addCase(verifyOtp.rejected, (state, action) => {

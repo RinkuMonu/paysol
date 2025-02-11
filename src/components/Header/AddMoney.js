@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 export default function AddMoney({ setIsOpen }) {
+ 
+    const [amount, setAmount] = useState("");
+
     const closeModal = () => setIsOpen(false);
+
+    const handleAmountClick = (value) => {
+        setAmount(value); 
+    };
+
+   
+
     return (
         <>
-        
             <div className="cdk-overlay-container fade show">
                 <div
                     className="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"
@@ -35,20 +45,33 @@ export default function AddMoney({ setIsOpen }) {
                                     </div>
                                 </div>
 
-
                                 {/* Modal Form */}
                                 <div className="form-body">
                                     <form>
-                                        <div class="mb-3">
-                                            <label for="amount" class="form-label">Amount</label>
-                                            <input type="tel" class="form-control" id="amount" placeholder="₹ Enter Amount" />
+                                        <div className="mb-3">
+                                            <label htmlFor="amount" className="form-label">Amount</label>
+                                            <input 
+                                                type="tel" 
+                                                className="form-control" 
+                                                id="amount" 
+                                                placeholder="₹ Enter Amount" 
+                                                value={amount} 
+                                                onChange={(e) => setAmount(e.target.value)} 
+                                            />
                                         </div>
                                         <div className="money_btns">
-                                            <button type="button" class="btn directaddmoney me-3">100+</button>
-                                            <button type="button" class="btn directaddmoney me-3">500+</button>
-                                            <button type="button" class="btn directaddmoney">1000+</button>
+                                            <button type="button" className="btn directaddmoney me-3" onClick={() => handleAmountClick(100)}>100+</button>
+                                            <button type="button" className="btn directaddmoney me-3" onClick={() => handleAmountClick(500)}>500+</button>
+                                            <button type="button" className="btn directaddmoney" onClick={() => handleAmountClick(1000)}>1000+</button>
                                         </div>
-                                        <Link to={'/paymentcheck'} className="btn btn-primary d-block mt-4 w-100">Continue</Link>
+                                        {/* Pass the amount to the PaymentCheck page */}
+                                        <Link 
+                                            to={`/paymentcheck/${amount}`}
+                                            className="btn btn-primary d-block mt-4 w-100"
+                                           
+                                        >
+                                            Continue
+                                        </Link>
                                     </form>
                                 </div>
                             </section>
@@ -56,8 +79,6 @@ export default function AddMoney({ setIsOpen }) {
                     </div>
                 </div>
             </div>
-
-
         </>
-    )
+    );
 }
