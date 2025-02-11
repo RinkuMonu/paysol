@@ -5,7 +5,7 @@ import AddMoney from "../../components/Header/AddMoney.js";
 function MyWallet() {
     const [isOpen, setIsOpen] = useState(false);
 
-    const openModal = () => setIsOpen(true);
+    const openModal   = () => setIsOpen(true);
     return (
         <div className='w100'>
             <section className='hero-section-container'>

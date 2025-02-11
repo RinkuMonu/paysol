@@ -284,8 +284,12 @@ export default function Header({ onLoginClick }) {
                                                                 <span>Available Balance: ₹0</span>
                                                                 <button className="btn btn-primary btn-sm mt-2">Add</button>
                                                             </div>
-
+                                                            {
+                                                                localStorage.getItem("USER")?<>
+                                                                    <p>Your KYC Completed</p>
+                                                                </>:
                                                             <Link to={'/kyc'} className="border-0 kycBtn btn-sm mt-2">Complete Your KYC</Link>
+                                                            }
                                                         </div>
 
                                                         {/* List Items */}
