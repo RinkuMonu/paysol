@@ -5,10 +5,9 @@ import BankDetails from "./BankDetails";
 import PanDetails from "./PanDetails";
 import axios from 'axios'; 
 // import ClipLoader from "react-spinners/ClipLoader";
-import Lottie from 'react-lottie';
+
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-import * as animation from '../../Assets/Animation.json'
 // https://finpay-backend.onrender.com/api/auth/aadhar-verify
 const API_URL = "https://finpay-backend.onrender.com/api/auth/aadhar-verify"
 
@@ -217,7 +216,7 @@ export default function KYC() {
                                                     >
                                                         {step.label}
                                                     </div>
-                                                </div>
+                                                </div> 
                                                 {index !== steps.length - 1 && (
                                                     <div
                                                         className={`step-line ${step.id < currentStep ? "bg-success" : "bg-light"
