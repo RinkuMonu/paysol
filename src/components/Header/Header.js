@@ -286,7 +286,7 @@ export default function Header({ onLoginClick }) {
                                                             </div>
                                                             {
                                                                 localStorage.getItem("USER")?<>
-                                                                    <p>Your KYC Completed</p>
+                                                                    <p>Your KYC is Completed</p>
                                                                 </>:
                                                             <Link to={'/kyc'} className="border-0 kycBtn btn-sm mt-2">Complete Your KYC</Link>
                                                             }
