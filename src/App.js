@@ -119,7 +119,8 @@ function App() {
         {
           path: "/aadhar",
           element: <AadharCard />,
-        },
+        }
+       
       ],
     },
   ]);
