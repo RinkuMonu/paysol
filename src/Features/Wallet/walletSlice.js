@@ -3,16 +3,20 @@ import axiosInstance from "../../components/services/AxiosInstance";
 
 export const addWallet = createAsyncThunk(
   "wallet/addWallet", // Updated action type name
-  async ({ amount, reference, name, mobile, email }, { rejectWithValue }) => {
+  async ({userId, amount,  txnid, phone, productinfo, name, furl,surl, email }, { rejectWithValue }) => {
     try {
       const response = await axiosInstance.post("/payment/payIn", { 
-        amount, 
-        reference, 
-        name, 
-        mobile, 
-        email 
+        userId,
+            amount,
+            txnid,
+            name,
+            phone,
+            email, 
+            productinfo,
+            furl,
+            surl,
       });
-      return response.data;
+      return response.data; 
     } catch (error) {
       console.error("wallet", error);
       return rejectWithValue(error.response?.data || "Something went wrong");

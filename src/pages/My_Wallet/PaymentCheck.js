@@ -8,12 +8,16 @@ export default function PaymentCheck() {
 
     const handleOnPayment = async () => {
         const paymentData = {
-            amount,
-            reference: "1234567890",
-            name: "Ranjay Kumar",
-            mobile: "7479407010",
-            email: "ranjaykumar73.rk@gmail.com",
-        };
+            "userId":"67a72d8b9789b46e88399b50",
+            "amount":"100.00",
+            "txnid":"12465456456676223217466665",
+            "name":"Priyanshi",
+            "phone":"7062316137",
+            "email":"pateladarsh@gmail.com", 
+            "productinfo":"23456",
+            "furl":"http://localhost:3000/response",
+            "surl":"http://localhost:3000/responseeeeeeeee"
+        }
     
         try {
             const response = await dispatch(addWallet(paymentData)).unwrap();
@@ -80,7 +84,7 @@ export default function PaymentCheck() {
                                                         </div>
                                                     </div>
                                                     <div className='col-md-12 my-4' onClick={handleOnPayment}>
-                                                        <button className='btn btn-secondary' disabled>Proceed to pay  ₹{amount}</button>
+                                                        <button className='btn btn-secondary' >Proceed to pay  ₹{amount}</button>
 
                                                     </div>
                                                     <p style={{ color: "var(--themeht-primary-color)", fontSize: "12px", fontWeight: "400" }}>Apply a Coupon Code</p>

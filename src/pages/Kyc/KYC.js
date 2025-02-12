@@ -5,10 +5,10 @@ import BankDetails from "./BankDetails";
 import PanDetails from "./PanDetails";
 import axios from "axios";
 // import ClipLoader from "react-spinners/ClipLoader";
-import Lottie from "react-lottie";
+
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Swal from "sweetalert2";
-import * as animation from "../../Assets/Animation.json";
+
 import { useNavigate } from "react-router-dom";
 // https://finpay-backend.onrender.com/api/auth/aadhar-verify
 const API_URL = "https://finpay-backend.onrender.com/api/auth/aadhar-verify";
