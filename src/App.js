@@ -25,6 +25,8 @@ import WalletTransfer from './pages/services/WalletTransfer/WalletTransfer.js';
 import Page404 from './pages/Page404.js';
 import KYC from './pages/Kyc/KYC.js';
 import AadharCard from './pages/Kyc/AadharCard.js';
+import PaymentSuccessPage from './pages/PaymentSuccessPage/PaymentSuccessPage.js';
+import PaymentErrorPage from './pages/PaymentErrorPage/PaymentErrorPage.js';
 
 function App() {
   const router = createBrowserRouter([
@@ -119,6 +121,14 @@ function App() {
         {
           path: "/aadhar",
           element: <AadharCard />,
+        },
+        {
+          path:"/success",
+          element:<PaymentSuccessPage/>
+        },
+        {
+          path:"/failure",
+          element:<PaymentErrorPage/>
         }
        
       ],

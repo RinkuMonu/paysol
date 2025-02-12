@@ -16,8 +16,8 @@ export default function PaymentCheck() {
       phone: "7062316137",
       email: "pateladarsh@gmail.com",
       productinfo: "23456",
-      furl: "http://finuniques.in/response",
-      surl: "http://finuniques.in/responseeeeeeeee",
+      furl: "https://finuniques.in/failure",
+      surl: "https://finuniques.in/success",
     };
 
     try {
