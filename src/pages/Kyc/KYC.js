@@ -63,14 +63,14 @@ export default function KYC() {
   };
 
   const handleNext = () => {
-    if (isStepValid() && currentStep < steps.length) {
-      setCurrentStep(currentStep + 1);
+      if (isStepValid() && currentStep < steps.length) {
+        setCurrentStep(currentStep + 1);
     }
   };
 
   const handleBack = () => {
-    if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
+      if (currentStep > 1) {
+        setCurrentStep(currentStep - 1);
     }
   };
 
@@ -139,7 +139,6 @@ export default function KYC() {
       setShowBankDetails(true);
     }
     setLoading(true);
-   
 
     try {
       const response = await axios.post(
@@ -354,55 +353,58 @@ export default function KYC() {
                       </div>
                     )}
                     {currentStep === 2 && (
-  <div className="container p-3" style={{ textAlign: "left" }}>
-    <div className="bank_card p-4 shadow-sm rounded">
-      <h3 className="mb-4">Bank Details</h3>
+                      <div
+                        className="container p-3"
+                        style={{ textAlign: "left" }}
+                      >
+                        <div className="bank_card p-4 shadow-sm rounded">
+                          <h3 className="mb-4">Bank Details</h3>
 
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Bank Account Number"
-            value={bankAccount}
-            onChange={(e) => setBankAccount(e.target.value)}
-          />
-        </div>
-        <div className="col-md-6 mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter IFSC Code"
-            value={ifsc}
-            onChange={(e) => setIfsc(e.target.value)}
-          />
-        </div>
-        <div className="col-md-12 d-flex justify-content-center">
-          <button
-            className="submitBtn px-4"
-            onClick={handleSubmitBankDetails}
-            disabled={loading}
-          >
-            {loading ? (
-              <DotLottieReact
-                src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
-                autoplay
-                loop
-                style={{ width: 25, height: 25 }}
-              />
-            ) : (
-              "Submit"
-            )}
-          </button>
-        </div>
-      </div>
-    </div>
+                          <div className="row">
+      
+                            <div className="col-md-6 mb-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter Bank Account Number"
+                                value={bankAccount}
+                                onChange={(e) => setBankAccount(e.target.value)}
+                              />
+                            </div>
+                            <div className="col-md-6 mb-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter IFSC Code"
+                                value={ifsc}
+                                onChange={(e) => setIfsc(e.target.value)}
+                              />
+                            </div>
+                            <div className="col-md-12 d-flex justify-content-center">
+                              <button
+                                className="submitBtn px-4"
+                                onClick={handleSubmitBankDetails}
+                                disabled={loading}
+                              >
+                                {loading ? (
+                                  <DotLottieReact
+                                    src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
+                                    autoplay
+                                    loop
+                                    style={{ width: 25, height: 25 }}
+                                  />
+                                ) : (
+                                  "Submit"
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
 
-    {/* Display Bank Details if Available */}
-    {showBankDetails && <BankDetails bankData={bankData} />}
-  </div>
-)}
-
+                        {/* Display Bank Details if Available */}
+                        {showBankDetails && <BankDetails bankData={bankData} />}
+                      </div>
+                    )}
 
                     {currentStep === 3 && (
                       <div className="container" style={{ textAlign: "left" }}>
@@ -428,7 +430,7 @@ export default function KYC() {
                                 {loading ? (
                                   <DotLottieReact
                                     src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
-                                    autoplay
+                                   autoplay      
                                     loop
                                     style={{ width: 30, height: 30 }}
                                   />
@@ -481,7 +483,4 @@ export default function KYC() {
       </section>
     </>
   );
-
 }
-
-
