@@ -12,7 +12,7 @@ const PaymentErrorPage = () => {
                         <p className="card-text">
                             Unfortunately, there was an error processing your payment. Please try again later or contact support.
                         </p>
-                        {/* <a href="/" className="btn btn-danger">Try Again</a> */}
+                        <a href="/" className="btn btn-danger">Try Again</a>
                     </div>
                 </div>
             </div>

@@ -12,7 +12,7 @@ const PaymentSuccessPage = () => {
                         <p className="card-text">
                             Your payment has been successfully processed. Thank you for your purchase!
                         </p>
-                       
+                        {/* <a href="/" className="btn btn-success">Go to Dashboard</a> */}
                     </div>
                 </div>
             </div>
