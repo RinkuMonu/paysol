@@ -11,7 +11,7 @@ export default function PaymentCheck() {
     const paymentData = {
       userId: "67a72d8b9789b46e88399b50",
       amount: "100.00",
-      txnid: "12465456456676223217466665",
+      txnid: txnid,
       name: "Priyanshi",
       phone: "7062316137",
       email: "pateladarsh@gmail.com",
