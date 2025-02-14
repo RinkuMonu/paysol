@@ -1,11 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dropdown, Table, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const MobileBrowsePlans = () => {
-  const [selectedOperator, setSelectedOperator] = useState("Jio");
-  const [selectedRegion, setSelectedRegion] = useState("Panjab");
+import { useDispatch, useSelector } from "react-redux";
+import { planFetch, clearPlans } from "../../../Features/Recharge/rechargeSlice";
+
+const MobileBrowsePlans = ({ onPlanSelect }) => {
+  const [selectedOperator, setSelectedOperator] = useState("airtel");
+  const [selectedRegion, setSelectedRegion] = useState("1");
   const [selectedCategory, setSelectedCategory] = useState("Smart Phone");
+
+
+  const operators = [
+    { name: "Airtel", id: "1" },
+    { name: "Jio", id: "140" },
+    { name: "Vi", id: "4" },
+    { name: "BSNL", id: "5" },
+  ];
+const api_key = "987b141e5d6e46d4768d6617f8c753bb"
+
+console.log(api_key)
+
+  const circles = [
+    { name: "Andhra Pradesh", id: "1" },
+    { name: "Assam", id: "2" },
+    { name: "Bihar & Jharkhand", id: "3" },
+    { name: "Chennai", id: "4" },
+    { name: "Delhi & NCR", id: "5" },
+    { name: "Gujarat", id: "6" },
+    { name: "Haryana", id: "7" },
+    { name: "Himachal Pradesh", id: "8" },
+    { name: "Jammu & Kashmir", id: "9" },
+    { name: "Karnataka", id: "10" },
+    { name: "Kerala", id: "11" },
+    { name: "Kolkata", id: "12" },
+    { name: "Maharashtra & Goa (except Mumbai)", id: "13" },
+    { name: "MP & Chattisgarh", id: "14" },
+    { name: "Mumbai", id: "15" },
+    { name: "North East", id: "16" },
+    { name: "Orissa", id: "17" },
+    { name: "Punjab", id: "18" },
+    { name: "Rajasthan", id: "19" },
+    { name: "Tamilnadu", id: "20" },
+    { name: "UP(EAST)", id: "21" },
+    { name: "UP(WEST) & Uttarakhand", id: "22" },
+    { name: "West Bengal", id: "23" },
+    { name: "All India (except Delhi/Mumbai)", id: "51" },
+  ];
+  
 
   const categories = [
     "Smart Phone",
@@ -15,68 +57,57 @@ const MobileBrowsePlans = () => {
     "Special Offer",
   ];
 
-  const plans = [
-    {
-      talktime: "-",
-      validity: "14 days",
-      description:
-        "True 5G Unlimited Plan\nData: 2 GB/day\nVoice: Unlimited Calls\nSMS: 100 SMS/day\nComplimentary subscription to Jio Apps",
-      price: "₹198",
-    },
-    {
-      talktime: "-",
-      validity: "18 days",
-      description:
-        "Data: 1.5 GB/day\nVoice: Unlimited Calls\nSMS: 100 SMS/day\nComplimentary subscription to Jio Apps",
-      price: "₹199",
-    },
-    {
-      talktime: "-",
-      validity: "18 days",
-      description:
-        "Data: 1.5 GB/day\nVoice: Unlimited Calls\nSMS: 100 SMS/day\nComplimentary subscription to Jio Apps",
-      price: "₹199",
-    },
-    {
-      talktime: "-",
-      validity: "18 days",
-      description:
-        "Data: 1.5 GB/day\nVoice: Unlimited Calls\nSMS: 100 SMS/day\nComplimentary subscription to Jio Apps",
-      price: "₹199",
-    },
-  ];
+  const dispatch = useDispatch();
+const { plans} = useSelector((state) => state.plans);
+
+useEffect(() => {
+  dispatch(planFetch({ op_id: selectedOperator, cir_id: selectedRegion }));
+
+  return () => {
+    dispatch(clearPlans()); // Clear data on unmount
+  };
+}, [selectedOperator, selectedRegion, dispatch]);
+
+  
 
   return (
     <div className="container">
       {/* Filters Section */}
       <div className="d-flex flex-wrap justify-content-between align-items-center mb-3">
-        <Dropdown className="mb-2 mb-md-0">
-          <Dropdown.Toggle  id="dropdown-operator" style={{backgroundColor:"var(--themeht-primary-color)"}}>
-            {selectedOperator}
+      <Dropdown className="mb-2 mb-md-0">
+          <Dropdown.Toggle
+            id="dropdown-operator"
+            style={{ backgroundColor: "var(--themeht-primary-color)" }}
+          >
+            {operators.find((op) => op.id === selectedOperator)?.name || "Select Operator"}
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item onClick={() => setSelectedOperator("Jio")}>
-              Jio
-            </Dropdown.Item>
-            <Dropdown.Item onClick={() => setSelectedOperator("Airtel")}>
-              Airtel
-            </Dropdown.Item>
+            {operators.map((op) => (
+              <Dropdown.Item key={op.id} onClick={() => setSelectedOperator(op.id)}>
+                {op.name}
+              </Dropdown.Item>
+            ))}
           </Dropdown.Menu>
         </Dropdown>
 
-        <Dropdown className="mb-2 mb-md-0">
-          <Dropdown.Toggle  id="dropdown-region"  style={{backgroundColor:"var(--themeht-primary-color)"}}>
-            {selectedRegion}
+         {/* Circle Dropdown */}
+         <Dropdown className="mb-2 mb-md-0">
+          <Dropdown.Toggle
+            id="dropdown-region"
+            style={{ backgroundColor: "var(--themeht-primary-color)" }}
+          >
+            {circles.find((circle) => circle.id === selectedRegion)?.name || "Select Region"}
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item onClick={() => setSelectedRegion("Bihar/Jharkhand")}>
-              Bihar/Jharkhand
-            </Dropdown.Item>
-            <Dropdown.Item onClick={() => setSelectedRegion("Delhi NCR")}>
-              Delhi NCR
-            </Dropdown.Item>
+            {circles.map((circle) => (
+              <Dropdown.Item key={circle.id} onClick={() => setSelectedRegion(circle.id)}>
+                {circle.name}
+              </Dropdown.Item>
+            ))}
           </Dropdown.Menu>
         </Dropdown>
+
+   
         <div className="align-items-center">
           <input
             type="text"
@@ -105,7 +136,10 @@ const MobileBrowsePlans = () => {
                   padding: "10px 10px",
                   cursor: "pointer",
                   borderRadius: "5px",
-                  backgroundColor:selectedCategory ===category ? "var(--themeht-primary-color)":"#fff",
+                  backgroundColor:
+                    selectedCategory === category
+                      ? "var(--themeht-primary-color)"
+                      : "#fff",
                 }}
               >
                 {category}
@@ -132,7 +166,7 @@ const MobileBrowsePlans = () => {
                     <td>{plan.talktime}</td>
                     <td>{plan.validity}</td>
                     <td style={{ whiteSpace: "pre-wrap" }}>
-                      {plan.description}
+                      {plan.planDescription}
                     </td>
                     <td>
                       <button
@@ -141,10 +175,11 @@ const MobileBrowsePlans = () => {
                           color: "white",
                           backgroundColor: "#872D67",
                           borderRadius: "8px",
-                          outline:"none"
+                          outline: "none",
                         }}
+                        onClick={() => onPlanSelect(plan)}
                       >
-                    {plan.price}
+                        ₹{plan.amount}
                       </button>
                     </td>
                   </tr>

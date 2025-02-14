@@ -2,11 +2,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInstance from "../../components/services/AxiosInstance";
 
 export const addWallet = createAsyncThunk(
-  "wallet/addWallet", // Updated action type name
+  "wallet/addWallet", 
   async ({userId, amount,  txnid, phone, productinfo, name, furl,surl, email }, { rejectWithValue }) => {
     try {
       const response = await axiosInstance.post("/payment/payIn", { 
-        userId,
+            userId,
             amount,
             txnid,
             name,
@@ -14,7 +14,7 @@ export const addWallet = createAsyncThunk(
             email, 
             productinfo,
             furl,
-            surl,
+            surl, 
       });
       return response.data; 
     } catch (error) {
@@ -28,24 +28,20 @@ const initialState = {
   loading: false,
   error: null,
   token: localStorage.getItem("token") || null,
-  otpSent: false,
-  otpDetails: null,
 };
 
 const walletSlice = createSlice({
-  name: "wallet", // Updated slice name
+  name: "wallet",
   initialState,
-  reducers: {}, // Keeping reducers for future actions
+  reducers: {}, 
   extraReducers: (builder) => {
     builder
       .addCase(addWallet.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(addWallet.fulfilled, (state, action) => {
+      .addCase(addWallet.fulfilled, (state) => {
         state.loading = false;
-        state.otpSent = true;
-        state.otpDetails = action.payload;
       })
       .addCase(addWallet.rejected, (state, action) => {
         state.loading = false;

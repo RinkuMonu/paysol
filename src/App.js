@@ -121,8 +121,15 @@ function App() {
         {
           path: "/aadhar",
           element: <AadharCard />,
-        }
-       
+        },
+         {
+          path: "/success",
+          element:<PaymentSuccessPage/>
+         },
+         {
+          path: "/failure",
+          element: <PaymentErrorPage/>
+         }
       ],
     },
   ]);

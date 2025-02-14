@@ -29,7 +29,7 @@ export default function PaymentCheck() {
       console.error("Payment Error:", error);
     }
   };
-
+  
   return (
     <>
       <div className="payment_checkout ">
