@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import { Row, Col, Form, Button, Modal, Image } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
@@ -44,6 +45,18 @@ const MobileRechargeUI = () => {
     formData.circle &&
     formData.amount &&
     formData.connectionType;
+
+    const handlePlanSelect = (plan) => {
+      setFormData((prevData) => ({
+        ...prevData,
+        amount: plan.amount.toString(), // Store amount as string for input compatibility
+        planDescription: plan.planDescription,
+        validity: plan.validity,
+        talktime: plan.talktime,
+      }));
+     handlePlansModalClose()
+    };
+
 
   return (
     <>
@@ -123,8 +136,8 @@ const MobileRechargeUI = () => {
                     onChange={handleChange}
                   >
                     <option value="">Select Operator</option>
-                    <option value="Airtel">Airtel</option>
-                    <option value="Jio">Jio</option>
+                    <option value="1">Airtel</option>
+                    <option value="140">Jio</option>
                   </Form.Select>
                 </Form.Group>
 
@@ -195,7 +208,7 @@ const MobileRechargeUI = () => {
           <Modal.Title style={{ fontSize: "25px" }}>Browse Plans</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <MobileBrowsePlans />
+          <MobileBrowsePlans onPlanSelect={handlePlanSelect} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handlePlansModalClose}>

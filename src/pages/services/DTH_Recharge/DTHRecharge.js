@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQDthRecharge from "./FAQDthRecharge";
@@ -73,8 +74,11 @@ const DTHRecharge = () => {
                     onChange={handleChange}
                   >
                     <option value="">Select Operator</option>
-                    <option value="Airtel">Airtel</option>
-                    <option value="Jio">Jio</option>
+                    <option value="Airtel">Airtel DTH</option>
+                    <option value="DishTv">Dish TV</option>
+                    <option value="SunDirectTv">Sun Direct TV</option>
+                    <option value="TataPlay">TATA Play</option>
+                    <option value="d2h">d2h</option>
                   </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="customerId">

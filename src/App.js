@@ -122,15 +122,14 @@ function App() {
           path: "/aadhar",
           element: <AadharCard />,
         },
-        {
-          path:"/success",
+         {
+          path: "/success",
           element:<PaymentSuccessPage/>
-        },
-        {
-          path:"/failure",
-          element:<PaymentErrorPage/>
-        }
-       
+         },
+         {
+          path: "/failure",
+          element: <PaymentErrorPage/>
+         }
       ],
     },
   ]);

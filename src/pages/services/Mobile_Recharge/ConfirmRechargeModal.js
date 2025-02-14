@@ -1,8 +1,23 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./ModalScrollbar.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
+
+
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Function to handle the "Make Payment" button click
+  const handleMakePayment = () => {
+    // Navigate to the payment page and pass the amount and mobile number as state
+    navigate("/paymentcheck", {
+      state: {
+        amount: formData.amount,
+        mobileNumber: formData.mobileNumber,
+      },
+    });
+  };
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
@@ -20,16 +35,17 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
             <strong>Plan:</strong> <p>Smart Phone </p>
           </div>
           <div className="d-flex justify-content-between">
-            <strong>Validity:</strong><p> 14 days </p>
+            <strong>Validity:</strong><p> {formData.validity} </p>
           </div>
-          <div className="d-flex justify-content-between">
-            <strong>Talktime:</strong> <p>-</p>
+          <div className="d-flex justify-content-between"> 
+            <strong>Talktime:</strong><p>{formData.talktime}</p> 
           </div>
           <div className="">
             <strong>Plan Description:</strong>
-            <p>True 5G Unlimited Plan Data: 2 GB/day  Voice: Unlimited Calls SMS: 100 SMS/day Validity: 14 Days 2 GB/day high speed 4G data 
+              <p>{formData.planDescription}</p>
+            {/* <p>True 5G Unlimited Plan Data: 2 GB/day  Voice: Unlimited Calls SMS: 100 SMS/day Validity: 14 Days 2 GB/day high speed 4G data 
             Complimentary subscription to Jio Apps  Validity: 14 Days 2 GB/day high speed 4G data 
-            Complimentary subscription to Jio Apps</p> 
+            Complimentary subscription to Jio Apps</p>  */}
           
         
            
@@ -51,12 +67,12 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-      <Link to="/paymentmode">
+      <Link to="/paymentcheck">
       <Button
           variant="primary"
           className="w-100"
           style={{ backgroundColor: "#664A86", color: "white" }}
-          
+          onClick={handleMakePayment} 
         >
           Make Payment
         </Button>
