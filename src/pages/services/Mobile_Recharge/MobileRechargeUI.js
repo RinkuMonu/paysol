@@ -5,16 +5,21 @@ import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans from "./MobileBrowsePlans";
 import ConfirmRechargeModal from "./ConfirmRechargeModal";
 // import MibileRecharge from "../../../../public/images/mobile_recharge.png"
+import axios from "axios"; 
 
 const MobileRechargeUI = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showPlansModal, setShowPlansModal] = useState(false);
+  const [operatorcheck, setoperatorCheck]=useState()
+  const [operatorInfo, setOperatorInfo] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleConfirmModalOpen = () => setShowConfirmModal(true);
   const handleConfirmModalClose = () => setShowConfirmModal(false);
 
   const handlePlansModalOpen = () => setShowPlansModal(true);
   const handlePlansModalClose = () => setShowPlansModal(false);
+  
 
   const [formData, setFormData] = useState({
     mobileNumber: "",
@@ -55,6 +60,22 @@ const MobileRechargeUI = () => {
         talktime: plan.talktime,
       }));
      handlePlansModalClose()
+    };
+    
+    const handleCheckOperator = () => {
+     
+      const url = `http://operatorcheck.mplan.in/api/operatorinfo.php?apikey=987b141e5d6e46d4768d6617f8c753bb&tel=9460129249`;
+      
+      axios.get(url)
+        .then((response) => {
+          setOperatorInfo(response.data);
+          setError(null);
+        })
+        .catch((err) => {
+          console.error("Error fetching operator info:", err);
+          setOperatorInfo(null);
+          setError("Failed to fetch operator info.");
+        });
     };
 
 
@@ -99,10 +120,12 @@ const MobileRechargeUI = () => {
                   <Form.Control
                     type="text"
                     placeholder="Mobile Number"
-                    value={formData.mobileNumber}
-                    onChange={handleChange}
+                    value={operatorcheck}
+                    onChange={(e)=>setoperatorCheck(e.target.value)}
                   />
                 </Form.Group>
+                <button onClick={handleCheckOperator}></button>
+                {operatorInfo}
 
                 {formData.mobileNumber && (
                   <Form.Group className="mb-3">

@@ -9,11 +9,24 @@ export const planFetch = createAsyncThunk(
       const response = await axiosInstance.post("/plan/plansAPI", { op_id, cir_id });
       console.log("Fetched Plans Data:", response.data);
 
-      // Ensure correct data extraction
       return response.data.data.plans || [];
     } catch (error) {
       console.error("Plan Fetch Error:", error);
       return rejectWithValue(error.response?.data?.message || "Failed to fetch plans");
+    }
+  }
+);
+
+export const planFetch1 = createAsyncThunk(
+  "plans/fetchPlansByType",
+  async ({ op_id, cir_id, plan_type }, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance.post("/plan/plansTypeAPI", { op_id, cir_id, plan_type });
+      console.log(response.data.data.plans,"hhhhhhhhhhhhhhh")
+      return response.data.data.plans || [];
+    } catch (error) {
+      console.error("Plans Fetch Error:", error);
+      return rejectWithValue(error.response?.data?.message || "Failed to fetch PlansType");
     }
   }
 );
@@ -35,6 +48,7 @@ const planSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+     
       .addCase(planFetch.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -45,12 +59,26 @@ const planSlice = createSlice({
       })
       .addCase(planFetch.rejected, (state, action) => {
         state.loading = false;
-        state.plans = []; 
+        state.plans = [];
+        state.error = action.payload;
+      })
+
+      .addCase(planFetch1.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(planFetch1.fulfilled, (state, action) => {
+        state.loading = false;
+        state.plans = action.payload;
+      })
+      .addCase(planFetch1.rejected, (state, action) => {
+        state.loading = false;
+        state.plans = [];
         state.error = action.payload;
       });
   },
 });
 
-export const { clearPlans } = planSlice.actions; 
+export const { clearPlans } = planSlice.actions;
 
 export default planSlice.reducer;
