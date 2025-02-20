@@ -11,7 +11,7 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
   // Function to handle the "Make Payment" button click
   const handleMakePayment = () => {
     // Navigate to the payment page and pass the amount and mobile number as state
-    navigate("/paymentcheck", {
+    navigate("/paymentmode", {
       state: {
         amount: formData.amount,
         mobileNumber: formData.mobileNumber,
@@ -67,7 +67,7 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-      <Link to="/paymentcheck">
+      
       <Button
           variant="primary"
           className="w-100"
@@ -76,7 +76,7 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
         >
           Make Payment
         </Button>
-      </Link>
+    
         
       </Modal.Footer>
     </Modal>

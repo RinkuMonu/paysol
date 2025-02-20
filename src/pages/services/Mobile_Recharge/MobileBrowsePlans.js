@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { planFetch, clearPlans } from "../../../Features/Recharge/rechargeSlice";
 
 const MobileBrowsePlans = ({ onPlanSelect }) => {
-  const [selectedOperator, setSelectedOperator] = useState("airtel");
+  const [selectedOperator, setSelectedOperator] = useState("1");
   const [selectedRegion, setSelectedRegion] = useState("1");
-  const [selectedCategory, setSelectedCategory] = useState("Smart Phone");
+  const [selectedCategory, setSelectedCategory] = useState("1");
 
 
   const operators = [
@@ -119,7 +119,7 @@ useEffect(() => {
 
       <div className="row">
         {/* Sidebar */}
-        <div className="col-md-3 mb-3">
+        <div className="col-md-3 mb-3" style={{ maxHeight: "50vh", overflowY: "auto" }}>
           <Nav className="flex-column p-2 ">
             {categories.map((category, index) => (
               <Nav.Link
@@ -162,12 +162,13 @@ useEffect(() => {
               </thead>
               <tbody>
                 {plans.map((plan, index) => (
-                  <tr key={index}>
+                  <tr key={index} onClick={() => onPlanSelect(plan)} style={{cursor:"pointer"}}>
                     <td>{plan.talktime}</td>
                     <td>{plan.validity}</td>
                     <td style={{ whiteSpace: "pre-wrap" }}>
                       {plan.planDescription}
                     </td>
+                   
                     <td>
                       <button
                         className=" align-items-center p-2 "
@@ -177,7 +178,7 @@ useEffect(() => {
                           borderRadius: "8px",
                           outline: "none",
                         }}
-                        onClick={() => onPlanSelect(plan)}
+                        
                       >
                         ₹{plan.amount}
                       </button>
