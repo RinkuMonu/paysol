@@ -1,11 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // Import necessary modules
 import React from "react";
-import {Container,Row,Col,Card,Form,Button,Nav,Tab,Image} from "react-bootstrap";
+import {Row,Col,Card,Form,Button,Nav,Tab,Image} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PaymentMode.css";
+import { useLocation } from "react-router-dom";
 
 function PaymentMode() {
+
+  const location = useLocation();
+  const { amount, mobileNumber } = location.state || {};
+
+  const handleOnSubmit =(e)=>{
+    e.preventDefault()
+    console.log("Payment Mode selected");
+  }
   return (
     <div className="p-4" style={{ marginTop: "120px", paddingBottom: "20px" }}>
       <Row>
@@ -14,11 +23,11 @@ function PaymentMode() {
           <Card className="border rounded shadow">
             <Card.Body>
               <div className="col-md-12">
-                <h4 className="fw-bold" style={{color:"black"}}>Mobile Recharge - 9852463851</h4>
+                <h4 className="fw-bold" style={{color:"black"}}>Mobile Recharge - {mobileNumber}</h4>
               </div>
               <div className="d-flex justify-content-between">
                 <div>Total amount to be paid</div>
-                <div className="fw-bold">₹198</div>
+                <div className="fw-bold">₹{amount}</div>
               </div>
               <div className="d-flex justify-content-between">
                 <div>To be paid from wallet</div>
@@ -27,7 +36,7 @@ function PaymentMode() {
             </Card.Body>
             <div className="d-flex justify-content-between px-3 paybalance text-center w-100 py-4 fw-bold">
               <div>Pay Balance Amount</div>
-              <div>₹198</div>
+              <div>₹{amount}</div>
             </div>
           </Card>
           <div className="mt-4 p-3 border rounded accept shadow">
@@ -154,8 +163,8 @@ function PaymentMode() {
                         </Form.Group>
                       </Col>
                     </Row>
-                    <Button variant="primary" type="submit" className="w-100 py-2" style={{backgroundColor:"#872D67"}}>
-                      Proceed to Pay ₹198
+                    <Button variant="primary" type="submit" onClick={handleOnSubmit} className="w-100 py-2" style={{backgroundColor:"#872D67"}}>
+                      Proceed to Pay ₹{amount}
                     </Button>
                   </Form>
                   <a href="#" className="d-block mt-3 text-decoration-none">

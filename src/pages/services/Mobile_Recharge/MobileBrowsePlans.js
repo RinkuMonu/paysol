@@ -128,6 +128,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
   useEffect(() => {
     let filteredData = allData;
 
+
     // Filter by Category
     if (selectedCategory?.id) {
       filteredData = allData.filter(
@@ -262,7 +263,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
 
       <div className="row">
         {/* Sidebar */}
-        <div className="col-md-3 mb-3">
+        <div className="col-md-3 mb-3" style={{ maxHeight: "50vh", overflowY: "auto" }}>
           <Nav className="flex-column p-2 ">
             {selectedCategories?.map((category, index) => (
               <Nav.Link
@@ -304,6 +305,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
                 </tr>
               </thead>
               <tbody>
+
                 {showData.map((plan, index) => (
                   <tr key={index}>
                     <td>{plan.talktime}</td>
@@ -311,6 +313,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
                     <td style={{ whiteSpace: "pre-wrap" }}>
                       {plan.planDescription}
                     </td>
+                   
                     <td>
                       <button
                         className=" align-items-center p-2 "
@@ -320,7 +323,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
                           borderRadius: "8px",
                           outline: "none",
                         }}
-                        onClick={() => onPlanSelect(plan)}
+                        
                       >
                         ₹{plan.amount}
                       </button>

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
-import { Row, Col, Form, Button, Modal, Image } from "react-bootstrap";
+import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans from "./MobileBrowsePlans";
 import ConfirmRechargeModal from "./ConfirmRechargeModal";
@@ -35,8 +35,9 @@ const MobileRechargeUI = () => {
       ...prevData,
       [id]: value,
     }));
+    
   };
-
+    
   const handleRadioChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -151,9 +152,19 @@ const MobileRechargeUI = () => {
                     </div>
                   </Form.Group>
                 )}
-
+                
                 <Form.Group className="mb-3" controlId="operator">
+                <div className="d-flex justify-content-between align-items-center">
                   <Form.Label>Operator</Form.Label>
+                  {formData.connectionType === "Postpaid" && (
+    <img
+      height={20}
+      src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+      alt="BBPS"
+      className="mt-2"
+    />
+  )}
+  </div>
                   <Form.Select
                     value={formData.operator}
                     onChange={handleChange}
@@ -174,24 +185,27 @@ const MobileRechargeUI = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="amount">
-                  <Form.Label>Amount</Form.Label>
-                  <div className="input-group">
-                    <Form.Control
-                      type="number"
-                      placeholder="₹ Amount"
-                      value={formData.amount}
-                      onChange={handleChange}
-                    />
-                    <button
-                      className="btn btn-outline-secondary"
-                      type="button"
-                      aria-label="Check Plans"
-                      onClick={handlePlansModalOpen}
-                    >
-                      Check Plans
-                    </button>
-                  </div>
-                </Form.Group>
+  <Form.Label>Amount</Form.Label>
+  <div className="input-group">
+    <Form.Control
+      type="number"
+      placeholder="₹ Amount"
+      value={formData.amount}
+      onChange={handleChange}
+    />
+    {formData.connectionType !== "Postpaid" && (
+      <button
+        className="btn btn-outline-secondary"
+        type="button"
+        aria-label="Check Plans"
+        onClick={handlePlansModalOpen}
+      >
+        Check Plans
+      </button>
+    )}
+  </div>
+</Form.Group>
+
 
                 <Button
                   variant="primary"
