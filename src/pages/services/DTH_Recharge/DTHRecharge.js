@@ -7,7 +7,7 @@ import DTHBrowsePlans from "./DTHBrowsePlans";
 const DTHRecharge = () => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    operator: "Airtel", 
+    operator: "Airtel",
     customerId: "",
     amount: "",
   });
@@ -28,8 +28,8 @@ const DTHRecharge = () => {
     console.log("Form Submitted:", formData);
   };
 
-  const isFormValid = formData.operator && formData.customerId && formData.amount;
-
+  const isFormValid =
+    formData.operator && formData.customerId && formData.amount;
 
   const getCustomerIdLabel = () => {
     switch (formData.operator) {
@@ -48,7 +48,6 @@ const DTHRecharge = () => {
     }
   };
 
-  
   const renderCustomerIdField = () => {
     switch (formData.operator) {
       case "Airtel":
@@ -130,17 +129,32 @@ const DTHRecharge = () => {
           </Col>
 
           <Col md={6}>
-            <div className="p-4 rounded bg-white shadow" style={{ maxWidth: "500px", margin: "0 auto" }}>
-              <h3 className="mb-4" style={{ color: "#872D67", fontWeight: "bold" }}>DTH Recharge</h3>
+            <div
+              className="p-4 rounded bg-white shadow"
+              style={{ maxWidth: "500px", margin: "0 auto" }}
+            >
+              <h3
+                className="mb-4"
+                style={{ color: "#872D67", fontWeight: "bold" }}
+              >
+                DTH Recharge
+              </h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
                     <Form.Label>Operator</Form.Label>
                     {formData.operator === "Airtel" && (
-      <img height={20} src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png" alt="BBPS" />
-    )}
+                      <img
+                        height={20}
+                        src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                        alt="BBPS"
+                      />
+                    )}
                   </div>
-                  <Form.Select value={formData.operator} onChange={handleChange}>
+                  <Form.Select
+                    value={formData.operator}
+                    onChange={handleChange}
+                  >
                     <option value="Airtel">Airtel DTH</option>
                     <option value="DishTv">Dish TV</option>
                     <option value="SunDirectTv">Sun Direct TV</option>
@@ -163,15 +177,26 @@ const DTHRecharge = () => {
                       value={formData.amount}
                       onChange={handleChange}
                     />
-                   {(formData.operator === "Airtel" || formData.operator === "SunDirectTv") && (
-      <button className="btn btn-outline-secondary" type="button" onClick={handleModalOpen}>
-        Check Plans
-      </button>
-    )}  
+                    {(formData.operator === "Airtel" ||
+                      formData.operator === "SunDirectTv") && (
+                      <button
+                        className="btn btn-outline-secondary"
+                        type="button"
+                        onClick={handleModalOpen}
+                      >
+                        Check Plans
+                      </button>
+                    )}
                   </div>
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="w-100" style={{ backgroundColor: "#872D67" }} disabled={!isFormValid}>
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-100"
+                  style={{ backgroundColor: "#872D67" }}
+                  disabled={!isFormValid}
+                >
                   Confirm
                 </Button>
               </Form>

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
-import { Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { Row, Col, Form, Button, Modal, Image } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans from "./MobileBrowsePlans";
 import ConfirmRechargeModal from "./ConfirmRechargeModal";
@@ -231,6 +231,19 @@ const MobileRechargeUI = () => {
         show={showConfirmModal}
         handleClose={handleConfirmModalClose}
         formData={formData} // Pass form data for displaying
+        modalTitle={
+          <div className="d-flex justify-content-between align-items-center w-100">
+      <span>Confirm Recharge</span>
+      {formData.connectionType === "Postpaid" && (
+        <img
+          height={20}
+          src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+          alt="BBPS"
+          className="mt-1"
+        />
+      )}
+    </div>
+  }
       />
 
       {/* Plans Modal */}
@@ -242,7 +255,8 @@ const MobileRechargeUI = () => {
         className="slide-in-right"
       >
         <Modal.Header closeButton>
-          <Modal.Title style={{ fontSize: "25px" }}>Browse Plans</Modal.Title>
+          <Modal.Title style={{ fontSize: "25px" }}>Browse Plans </Modal.Title>
+         
         </Modal.Header>
         <Modal.Body>
           <MobileBrowsePlans onPlanSelect={handlePlanSelect} />
