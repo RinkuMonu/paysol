@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import "./ModalScrollbar.css"
 import { Link, useNavigate } from "react-router-dom";
 
-const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
+const ConfirmRechargeModal = ({ show, handleClose, formData ,modalTitle}) => {
 
 
   const navigate = useNavigate(); // Initialize useNavigate
@@ -21,7 +21,7 @@ const ConfirmRechargeModal = ({ show, handleClose, formData }) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Confirm Recharge</Modal.Title>
+        <Modal.Title className="w-100">{modalTitle}</Modal.Title>
       </Modal.Header>
       <Modal.Body style={{ maxHeight: "400px", overflowY: "auto" }} className="custom-scrollbar">
         <div>
