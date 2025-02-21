@@ -25,7 +25,7 @@ const ContactUs = () => {
     setResponseMessage(null);
 
     try {
-      const response = await fetch("https://finpay-backend.onrender.com/api/query/submit-form", {
+      const response = await fetch("https://finpay-b2c-backend.onrender.com/api/query/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

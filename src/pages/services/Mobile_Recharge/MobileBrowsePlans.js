@@ -72,7 +72,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
   //         cir_id:selectedRegion,
   //         plan_type:Number(selectedCategory?.id)
   //       }
-  //       const response = await axios.post('https://finpay-backend.onrender.com/api/plan/plansAPI', body)
+  //       const response = await axios.post('https://finpay-b2c-backend.onrender.com/api/plan/plansAPI', body)
   //       console.log('........... RR', response);
   //       // const filteredCategories = categories.filter(category =>
   //       //   response.data.data.plans.find(item => category.id === item.planType.toString())
@@ -101,7 +101,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
           op_id:selectedOperator,
           cir_id:selectedRegion
         }
-        const response = await axios.post('https://finpay-backend.onrender.com/api/plan/plansAPI', body)
+        const response = await axios.post('https://finpay-b2c-backend.onrender.com/api/plan/plansAPI', body)
         console.log('........... LL', response);
         setAllData(response.data.data.plans);
         const filteredCategories = categories.filter(category =>

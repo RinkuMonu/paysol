@@ -1,8 +1,43 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap"; // Corrected Button import
 import "bootstrap/dist/css/bootstrap.min.css";
+import axiosInstance from "../../../components/services/AxiosInstance";
+import axios from "axios";
 
 const ViewBillModal = ({ show, handleClose, billdata }) => {
+
+  const handlePayment =  async ()=>{
+  
+    try {
+       const response = await axios.post("https://finpay-backend.onrender.com/api/payment/payIn",
+        {
+          amount:"2",
+          reference:"354346456599679",
+          name:"Rinku",
+          mobile:"9460129249",
+          email:"Rinku@gmail.com",
+          userId:"67b6f05e6a935705d8fc54ee"
+       })
+          console.log("responseeeeee", response)
+
+  if (
+    response.data?.data?.status === "success" &&
+    response.data?.data?.data?.payment_link
+  ) {
+    const paymentLink = response.data.data.data.payment_link;
+    window.location.href = paymentLink; 
+  } else {
+    console.log("Payment link not found in the response.");
+  }
+
+     return response
+
+
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
   return (
     <>
       <Modal show={show} onHide={handleClose} centered>
@@ -36,6 +71,7 @@ const ViewBillModal = ({ show, handleClose, billdata }) => {
               <p><strong>User Name:</strong> {billdata?.userName !== "NA" ? billdata?.userName : "Not Available"}</p>
 
               <Button 
+              onClick={handlePayment}
                 style={{ backgroundColor: "#872D67", color: "white" }} 
                 className="w-100 mt-3"
               >

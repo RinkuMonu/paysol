@@ -10,8 +10,8 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";
-// https://finpay-backend.onrender.com/api/auth/aadhar-verify
-const API_URL = "https://finpay-backend.onrender.com/api/auth/aadhar-verify";
+// https://finpay-b2c-backend.onrender.com/api/auth/aadhar-verify
+const API_URL = "https://finpay-b2c-backend.onrender.com/api/auth/aadhar-verify";
 
 export default function KYC() {
   const userId = localStorage.getItem("id");
@@ -112,7 +112,7 @@ export default function KYC() {
 
     try {
       const response = await axios.post(
-        "https://finpay-backend.onrender.com/api/auth/submit-aadhar-otp",
+        "https://finpay-b2c-backend.onrender.com/api/auth/submit-aadhar-otp",
         { aadharNumber, otp, client_id: clientId, userId },
         {
           // headers: {
@@ -142,7 +142,7 @@ export default function KYC() {
 
     try {
       const response = await axios.post(
-        "https://finpay-backend.onrender.com/api/auth/verifybank",
+        "https://finpay-b2c-backend.onrender.com/api/auth/verifybank",
         { id_number: bankAccount, ifsc, userId }
       );
       setBankData(response);
@@ -170,7 +170,7 @@ export default function KYC() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://finpay-backend.onrender.com/api/auth/verifyPAN",
+        "https://finpay-b2c-backend.onrender.com/api/auth/verifyPAN",
         { id_number: panCard, userId }
       );
       console.log(".....pan", response);
@@ -197,7 +197,7 @@ export default function KYC() {
 
     try {
       const response = await axios.post(
-        "https://finpay-backend.onrender.com/api/auth/verifyUser",
+        "https://finpay-b2c-backend.onrender.com/api/auth/verifyUser",
         {
           userId: userId,
         }
