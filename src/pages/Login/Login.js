@@ -173,7 +173,7 @@ const Login = ({closePopup}) => {
           "Get OTP"
         )}
       </button>
-      {isLoading && <p className="text-success mt-2">OTP sent successfully...</p>}
+      {isLoading && <p className="text-success mt-2">OTP sending...</p>}
                     </form>
                     <hr style={{ margin: "100px 0 10px" }} />
                     <div className="already-account mt-auto">

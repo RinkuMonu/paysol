@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import "./style/Home.css";
-
+// import bbps from "../../public/images/bbps.png"c:\Users\Administrator\Downloads\bbps.svg
 function PageContent() {
     return (
         <div className="page-content">
@@ -245,7 +245,7 @@ function PageContent() {
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
-                                                <img src="/assets/Home/b.svg" width="40" alt="bbps1" />
+                                                <img src="/assets/Home/bbps.svg" width="40" alt="bbps1" />
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
@@ -253,7 +253,7 @@ function PageContent() {
                                                 </div>
                                                 <p>
                                                     Finuniques offers its customers to pay their bills with just a click. No need to stand in queue at the operator’s office anymore.
-                                                </p>
+                                                </p> 
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
                                                 </a>
