@@ -36,7 +36,7 @@ const walletSlice = createSlice({
   reducers: {}, 
   extraReducers: (builder) => {
     builder
-      .addCase(addWallet.pending, (state) => {
+      .addCase(addWallet.pending, (state) => { 
         state.loading = true;
         state.error = null;
       })
