@@ -30,9 +30,8 @@ const MobileRechargeUI = () => {
       ...prevData,
       [id]: value,
     }));
-    
   };
-    
+
   const handleRadioChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -40,24 +39,23 @@ const MobileRechargeUI = () => {
     }));
   };
 
-  constisFormValid =
+  const isFormValid =
     formData.mobileNumber &&
     formData.operator &&
     formData.circle &&
     formData.amount &&
     formData.connectionType;
 
-    const handlePlanSelect = (plan) => {
-      setFormData((prevData) => ({
-        ...prevData,
-        amount: plan.amount.toString(), // Store amount as string for input compatibility
-        planDescription: plan.planDescription,
-        validity: plan.validity,
-        talktime: plan.talktime,
-      }));
-     handlePlansModalClose()
-    };
-
+  const handlePlanSelect = (plan) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      amount: plan.amount.toString(), // Store amount as string for input compatibility
+      planDescription: plan.planDescription,
+      validity: plan.validity,
+      talktime: plan.talktime,
+    }));
+    handlePlansModalClose();
+  };
 
   return (
     <>
@@ -129,19 +127,19 @@ const MobileRechargeUI = () => {
                     </div>
                   </Form.Group>
                 )}
-                
+
                 <Form.Group className="mb-3" controlId="operator">
-                <div className="d-flex justify-content-between align-items-center">
-                  <Form.Label>Operator</Form.Label>
-                  {formData.connectionType === "Postpaid" && (
-    <img
-      height={20}
-      src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
-      alt="BBPS"
-      className="mt-2"
-    />
-  )}
-  </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Form.Label>Operator</Form.Label>
+                    {formData.connectionType === "Postpaid" && (
+                      <img
+                        height={20}
+                        src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                        alt="BBPS"
+                        className="mt-2"
+                      />
+                    )}
+                  </div>
                   <Form.Select
                     value={formData.operator}
                     onChange={handleChange}
@@ -162,27 +160,26 @@ const MobileRechargeUI = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="amount">
-  <Form.Label>Amount</Form.Label>
-  <div className="input-group">
-    <Form.Control
-      type="number"
-      placeholder="₹ Amount"
-      value={formData.amount}
-      onChange={handleChange}
-    />
-    {formData.connectionType !== "Postpaid" && (
-      <button
-        className="btn btn-outline-secondary"
-        type="button"
-        aria-label="Check Plans"
-        onClick={handlePlansModalOpen}
-      >
-        Check Plans
-      </button>
-    )}
-  </div>
-</Form.Group>
-
+                  <Form.Label>Amount</Form.Label>
+                  <div className="input-group">
+                    <Form.Control
+                      type="number"
+                      placeholder="₹ Amount"
+                      value={formData.amount}
+                      onChange={handleChange}
+                    />
+                    {formData.connectionType !== "Postpaid" && (
+                      <button
+                        className="btn btn-outline-secondary"
+                        type="button"
+                        aria-label="Check Plans"
+                        onClick={handlePlansModalOpen}
+                      >
+                        Check Plans
+                      </button>
+                    )}
+                  </div>
+                </Form.Group>
 
                 <Button
                   variant="primary"
@@ -209,18 +206,25 @@ const MobileRechargeUI = () => {
         handleClose={handleConfirmModalClose}
         formData={formData} // Pass form data for displaying
         modalTitle={
-          <div className="d-flex justify-content-between align-items-center w-100">
-      <span>Confirm Recharge</span>
-      {formData.connectionType === "Postpaid" && (
-        <img
-          height={20}
-          src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
-          alt="BBPS"
-          className="mt-1"
-        />
-      )}
-    </div>
-  }
+          <div
+            className="d-flex justify-content-between align-items-center w-100"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <span>Confirm Recharge</span>
+            {formData.connectionType === "Postpaid" && (
+              <img
+                height={20}
+                src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                alt="BBPS"
+                className="mt-1"
+              />
+            )}
+          </div>
+        }
       />
 
       {/* Plans Modal */}
@@ -233,7 +237,6 @@ const MobileRechargeUI = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title style={{ fontSize: "25px" }}>Browse Plans </Modal.Title>
-         
         </Modal.Header>
         <Modal.Body>
           <MobileBrowsePlans onPlanSelect={handlePlanSelect} />
