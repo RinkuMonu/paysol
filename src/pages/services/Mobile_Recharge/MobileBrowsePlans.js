@@ -322,7 +322,9 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
                           backgroundColor: "#872D67",
                           borderRadius: "8px",
                           outline: "none",
+                          
                         }}
+                        onClick={()=> onPlanSelect(plan)}
                         
                       >
                         ₹{plan.amount}
