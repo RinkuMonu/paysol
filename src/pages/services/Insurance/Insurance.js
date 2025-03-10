@@ -59,7 +59,7 @@ const Insurance = () => {
                   <div className="d-flex justify-content-between align-items-center">
                     <Form.Label>Operator</Form.Label>
                     <img
-                      height={20}
+                      height={25}
                       src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
                       alt="BBPS"
                     />
