@@ -220,7 +220,7 @@ function PaymentMode() {
                       </Col>
                     </Row>
                     <Button variant="primary" type="submit" className="w-100 py-2" style={{backgroundColor:"#872D67"}}>
-                      Proceed to Pay ₹198
+                      Proceed to Pay ₹{amount}
                     </Button>
                   </Form>
                   <a href="#" className="d-block mt-3 text-decoration-none">

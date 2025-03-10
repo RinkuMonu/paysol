@@ -11,10 +11,12 @@ import axios from "axios";
 
 
 const MobileRechargeUI = () => {
+
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showPlansModal, setShowPlansModal] = useState(false);
   const [showViewBillModal, setShowViewBillModal] = useState(false)
   const[billdata,  setBillData] = useState(null)
+  
   const handleConfirmModalOpen = () => setShowConfirmModal(true);
   const handleConfirmModalClose = () => setShowConfirmModal(false);
 
@@ -244,7 +246,7 @@ const MobileRechargeUI = () => {
             <span>Confirm Recharge</span>
             {formData.connectionType === "Postpaid" && (
               <img
-                height={20}
+                height={25}
                 src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
                 alt="BBPS"
                 className="mt-1"

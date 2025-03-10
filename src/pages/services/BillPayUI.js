@@ -136,6 +136,14 @@ const BillPayUI = () => {
   return (
     <>
       <nav className="py-4 bg-light border-bottom" style={{marginTop:"95px"}}>
+          {/* <div className="d-flex justify-content-end">
+          <img
+                height={40}
+                src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                alt="BBPS logo"
+                className="mt-1"
+              />
+          </div> */}
         <Container>
           <Row className="text-center">
             {menuItems.map((item) => (
@@ -188,10 +196,20 @@ const BillPayUI = () => {
                 </div>
               </Col>
             ))}
+            <Col xs="auto">
+            
+        <img
+          height={40}
+          src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+          alt="BBPS logo"
+          className="mt-1"
+        />
+      </Col>
           </Row>
         </Container>
+        
       </nav>
-
+              
       <div>
         {activeMenu === "Mobile" && <MobileRechargeUI />}
         {activeMenu === "DTH" && <DTHRecharge />}
@@ -210,8 +228,8 @@ const BillPayUI = () => {
         {activeMenu === "Challan" && <TrafficChallan />}
         {activeMenu === "Housing" && <HousingBillPayment />}
         {activeMenu === "LPG Booking" && <LpgBooking />}
+      
       </div>
-
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Body>
           <Container>

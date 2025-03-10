@@ -145,7 +145,7 @@ const DTHRecharge = () => {
                     <Form.Label>Operator</Form.Label>
                     {formData.operator === "Airtel" && (
                       <img
-                        height={20}
+                        height={25}
                         src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
                         alt="BBPS"
                       />
