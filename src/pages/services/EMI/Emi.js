@@ -39,7 +39,7 @@ const Emi = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/loanemi.png"
+                src="/images/loanemi.png"
                 alt="Image"
                 height="300"
                 className="item-center"

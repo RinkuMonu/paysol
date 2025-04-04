@@ -29,7 +29,7 @@ const GooglePlay = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/googe_play.png"
+                src="/images/googe_play.png"
                 alt="Image"
                 height="300"
                 className="item-center"
