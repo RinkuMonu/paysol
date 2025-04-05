@@ -37,7 +37,7 @@ const Municipality = () => {
             <h3>Simplify urban life with convenient municipality bill payments.</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/municipality.png"
+                src="/images/municipality.png"
                 alt="Image"
                 height="300"
                 className="item-center"

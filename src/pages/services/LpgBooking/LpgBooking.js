@@ -38,7 +38,7 @@ const LpgBooking = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/lpgbooking.png"
+                src="/images/lpgbooking.png"
                 alt="Image"
                 height="300"
                 className="item-center"
