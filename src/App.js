@@ -28,6 +28,7 @@ import AadharCard from './pages/Kyc/AadharCard.js';
 import PaymentSuccessPage from './pages/PaymentSuccessPage/PaymentSuccessPage.js';
 import PaymentErrorPage from './pages/PaymentErrorPage/PaymentErrorPage.js';
 import PaymentRecipt from './pages/services/PaymentReciptPage/PaymentRecipt.js';
+import UserData from './components/UserData/UserData.js';
 
 
 
@@ -143,9 +144,10 @@ function App() {
     },
   ]);
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <UserData>
+    {/* Router ko Provider ke andar wrap kiya */}
+    <RouterProvider router={router} />
+  </UserData>
   );
 }
 

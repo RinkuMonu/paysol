@@ -14,8 +14,6 @@ export const login = createAsyncThunk(
     }
   }
 );
-
-
 export const verifyOtp = createAsyncThunk(
   "auth/verifyOtp",
   async ({ mobileNumber, otp }, { rejectWithValue }) => {
@@ -28,7 +26,6 @@ export const verifyOtp = createAsyncThunk(
     }
   }
 );
-
 const initialState = {
   loading: false,
   error: null,
@@ -50,7 +47,7 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      
+
       .addCase(login.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -58,24 +55,24 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
         state.otpSent = true;
-        state.otpDetails = action.payload; 
+        state.otpDetails = action.payload;
       })
       .addCase(login.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       })
 
-      
+
       .addCase(verifyOtp.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addCase(verifyOtp.fulfilled, (state, action) => {
         state.loading = false;
-        state.token = action.payload.token; 
+        state.token = action.payload.token;
         console.log(action.payload);
-        localStorage.setItem("id",action.payload.user.id)
-        localStorage.setItem("USER",action.payload.user.isVerified)
+        localStorage.setItem("id", action.payload.user.id)
+        localStorage.setItem("USER", action.payload.user.isVerified)
         localStorage.setItem("token", action.payload.user.token);
       })
       .addCase(verifyOtp.rejected, (state, action) => {
