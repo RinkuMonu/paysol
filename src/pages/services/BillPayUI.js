@@ -41,7 +41,7 @@ const BillPayUI = () => {
   const allItems = [
     { name: "Prepaid", icon: <FaMobileAlt size={24} />, path: "mobile", link: "/Mobile" },
     { name: "Prepaid", icon: <FaMobileAlt size={24} />, path: "mobile", link: "/mobile" },
-    { name: "DTH", icon: <FaSatelliteDish size={24} />, path: "dth", link: "/DTH" },
+    { name: "DTH", icon: <FaSatelliteDish size={24} />, path: "DTH", link: "/DTH" },
     { name: "Electricity", icon: <MdElectricBolt size={24} />, path: "electricity", link: "/Electricity" },
     { name: "Credit Card", icon: <MdCreditCard size={24} />, path: "credit-card", link: "/credit-card" },
     { name: "Datacard", icon: <GiUsbKey size={24} />, path: "datacard", link: "/datacard" },

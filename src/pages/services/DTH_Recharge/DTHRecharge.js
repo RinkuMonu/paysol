@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQDthRecharge from "./FAQDthRecharge";
 import DTHBrowsePlans from "./DTHBrowsePlans";
+// import EducationFees from "../../../components/EducationFees/EducationFees";
+import Services from "../Services";
 
 const DTHRecharge = () => {
   const [showModal, setShowModal] = useState(false);
@@ -116,6 +118,7 @@ const DTHRecharge = () => {
 
   return (
     <>
+   
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           <Col md={6} className="text-center text-md-start">
@@ -139,7 +142,7 @@ const DTHRecharge = () => {
               >
                 DTH Recharge
               </h3>
-              <Form onSubmit={handleSubmit}>
+              {/* <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
                     <Form.Label>Operator</Form.Label>
@@ -199,7 +202,8 @@ const DTHRecharge = () => {
                 >
                   Confirm
                 </Button>
-              </Form>
+              </Form> */}
+               <Services />
             </div>
           </Col>
         </Row>

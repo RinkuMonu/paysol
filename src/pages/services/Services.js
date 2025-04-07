@@ -35,14 +35,21 @@ const Services = () => {
   });
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
 
+  const getLastSegment = (path) => {
+    if (!path) return '';
+    const segments = path.split('/');
+    return segments[segments.length - 1] || '';
+  }
+
   useEffect(() => {
     const fetchBillers = async () => {
       try {
         setLoading((prev) => ({ ...prev, billers: true }));
         setError(null);
-
+        console.log('............ sachin', location)
+        const postAPIName = getLastSegment(location.pathname);
         const response = await axios.get(
-          `https://finpay-backend.onrender.com/api/biller${location.pathname}`
+          `https://finpay-backend.onrender.com/api/biller${'/' + postAPIName}`
         );
         setBillers(response.data);
       } catch (err) {
@@ -491,6 +498,7 @@ const Services = () => {
       <div className="card">
         <div className="card-body">
           <h4 className="card-title text-primary mb-4 fw-bold">Details</h4>
+   
 
           <div className="row mb-2">
             <div className="col-6 font-weight-bold fw-bold text-primary">Name</div>
