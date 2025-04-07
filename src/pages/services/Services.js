@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
-import { PaymentSuccessModal } from './PaymentSuccessModal'; 
+import { PaymentSuccessModal } from './PaymentSuccessModal';
 
 const Services = () => {
   const [searchParams] = useSearchParams();
@@ -166,8 +166,8 @@ const Services = () => {
       );
 
       setFetchedBillData(response.data);
-      console.log("Fech fafa",response.data)
-      console.log("Fetch Bill Data:-",fetchedBillData)
+      console.log("Fech fafa", response.data)
+      console.log("Fetch Bill Data:-", fetchedBillData)
       setShowBill(true);
 
       // Update the amount with the bill amount from response
@@ -337,7 +337,7 @@ const Services = () => {
           "customerName": "BBPS",
           "dueDate": "2015-06-20",
           "amountOptions": {
-            "option" : [{
+            "option": [{
               "amountName": "Late Payment Fee",
               "amountValue": 40
             },
@@ -391,14 +391,13 @@ const Services = () => {
           ]
         }
       }
-      
+
       const response = await axios.post(
         "https://finpay-backend.onrender.com/api/biller/billpayment",
         paymentData
       );
 
       console.log("respose is", response)
-      
 
       if (response.status === 200) {
         // Open success modal only on successful payment
@@ -424,6 +423,8 @@ const Services = () => {
           className="btn btn-primary mt-3 w-100"
           onClick={fetchBill}
           disabled={loading.fetchingBill}
+          data-bs-target="#validationModal"
+          data-bs-toggle="modal"
         >
           {loading.fetchingBill ? (
             <>
@@ -447,6 +448,8 @@ const Services = () => {
           className="btn btn-primary mt-3 w-100"
           onClick={billValidation}
           disabled={loading.validatingBill}
+          data-bs-target="#validationModal"
+          data-bs-toggle="modal"
         >
           {loading.validatingBill ? (
             <>
@@ -498,8 +501,6 @@ const Services = () => {
       <div className="card">
         <div className="card-body">
           <h4 className="card-title text-primary mb-4 fw-bold">Details</h4>
-   
-
           <div className="row mb-2">
             <div className="col-6 font-weight-bold fw-bold text-primary">Name</div>
             <div className="col-6">
@@ -710,7 +711,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="col-md-6">
+        <div className="col-md-12">
           <div className="card">
             <div className="card-body">
               <h5 className="card-title text-primary mb-4 fw-bold text-primary">
@@ -792,7 +793,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="col-md-6">
+        {/* <div className="col-md-6">
           {showBill ? (
             // Show bill details when viewing bill information
             renderBillDetails()
@@ -809,19 +810,61 @@ const Services = () => {
                 {selectedBiller
                   ? billerDetails?.billerFetchRequiremet === "NOT_SUPPORTED" &&
                     billerDetails?.billerSupportBillValidation ===
-                      "NOT_SUPPORTED"
+                    "NOT_SUPPORTED"
                     ? "Fill the form and click 'Quick Pay' to proceed"
                     : "Fill the form and click 'Validate Bill' to continue"
                   : "Select a service provider to continue"}
               </div>
             </div>
           )}
+        </div> */}
+      </div>
+
+      {/* Validation Modal */}
+      <div className="modal fade" id="validationModal" aria-hidden="true" aria-labelledby="validationModalLabel" tabIndex="-1">
+        <div className="modal-dialog modal-dialog-centered modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="validationModalLabel">Payment Details</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              {/* {renderValidationResult()}
+              {renderBillForm()} */}
+              {showBill ? (
+            // Show bill details when viewing bill information
+            renderBillDetails()
+          ) : billValidationData ? (
+            // Show validation result and payment form when validation is complete
+            <>
+              {renderValidationResult()}
+              {renderBillForm()}
+            </>
+          ) : (
+            // Default view when nothing is selected
+            <div className="card">
+              <div className="card-body text-center text-muted py-5">
+                {selectedBiller
+                  ? billerDetails?.billerFetchRequiremet === "NOT_SUPPORTED" &&
+                    billerDetails?.billerSupportBillValidation ===
+                    "NOT_SUPPORTED"
+                    ? "Fill the form and click 'Quick Pay' to proceed"
+                    : "Fill the form and click 'Validate Bill' to continue"
+                  : "Select a service provider to continue"}
+              </div>
+            </div>
+          )}
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <PaymentSuccessModal 
-        openModal={openSuccessModal} 
-        onClose={() => setOpenSuccessModal(false)} 
+      <PaymentSuccessModal
+        openModal={openSuccessModal}
+        onClose={() => setOpenSuccessModal(false)}
       />
     </div>
   );
