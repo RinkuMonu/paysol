@@ -39,8 +39,8 @@ const BillPayUI = () => {
   
   // All available menu items with unique icons
   const allItems = [
-    { name: "Prepaid", icon: <FaMobileAlt size={24} />, path: "mobile", link: "/Mobile" },
-    { name: "Prepaid", icon: <FaMobileAlt size={24} />, path: "mobile", link: "/mobile" },
+    { name: "Postpaid", icon: <FaMobileAlt size={24} />, path: "Mobile", link: "/Mobile" },
+    { name: "Prepaid", icon: <FaMobileAlt size={24} />, path: "Mobile", link: "/Mobile" },
     { name: "DTH", icon: <FaSatelliteDish size={24} />, path: "DTH", link: "/DTH" },
     { name: "Electricity", icon: <MdElectricBolt size={24} />, path: "electricity", link: "/Electricity" },
     { name: "Credit Card", icon: <MdCreditCard size={24} />, path: "credit-card", link: "/credit-card" },

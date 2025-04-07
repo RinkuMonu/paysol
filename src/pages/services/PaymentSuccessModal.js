@@ -17,7 +17,7 @@ export function PaymentSuccessModal({ openModal, onClose }) {
       <Modal.Header closeButton />
       <Modal.Body className="text-center">
         <div className="mb-4">
-          <img src="/image/bbps_assured.png" alt="assured" className="w-44 mx-auto" />
+          <img src="/images/bbps_assured.png" alt="assured" className="w-5 " style={{width:"150px"}}/>
         </div>
         <h3 className="text-2xl font-bold text-success mb-2 d-flex align-items-center justify-content-center">
           ✅ Payment Successful

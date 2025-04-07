@@ -6,6 +6,7 @@ import MobileBrowsePlans from "./MobileBrowsePlans";
 import ConfirmRechargeModal from "./ConfirmRechargeModal";
 import ViewBillModal from "./ViewBillModal";
 import axios from "axios";
+import Services from "../Services";
 
 
 
@@ -124,7 +125,7 @@ const MobileRechargeUI = () => {
               >
                 Mobile Recharge
               </h3>
-              <Form>
+              {/* <Form>
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
                   <Form.Control
@@ -224,7 +225,8 @@ const MobileRechargeUI = () => {
                   Confirm
                 </Button>}
                {formData.connectionType === "Postpaid" && <Button   disabled={!isFormValid} style={{ backgroundColor: "#872D67", color: "white" }} className="w-100" onClick={handleViewBill}>Confirm</Button>}
-              </Form>
+              </Form> */}
+               <Services />
             </div>
           </Col>
         </Row>
