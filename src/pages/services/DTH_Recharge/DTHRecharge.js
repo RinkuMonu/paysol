@@ -136,12 +136,12 @@ const DTHRecharge = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3
+              {/* <h3
                 className="mb-4"
                 style={{ color: "#872D67", fontWeight: "bold" }}
               >
                 DTH Recharge
-              </h3>
+              </h3> */}
               {/* <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
