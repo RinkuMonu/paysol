@@ -106,7 +106,7 @@ function Footer() {
           <div className="copyright">
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
-                © 2024 @Finuniques. All rights reserved.
+                © { new Date().getFullYear()} @Finuniques. All rights reserved.
               </div>
             </div>
           </div>

@@ -57,7 +57,7 @@ const BillPayUI = () => {
     { name: "Housing", icon: <BsHouses size={24} />, path: "housing", link: "/housing" },
     { name: "LPG Booking", icon: <GiGasStove size={24} />, path: "lpg-booking", link: "/lpg-booking" },
     { name: "Challan", icon: <FaTrafficLight size={24} />, path: "challan", link: "/challan" },
-    { name: "Education Fees", icon: <MdCastForEducation size={24} />, path: "education-fees", link: "/Education Fees" },
+    { name: "Education Fees", icon: <MdCastForEducation size={24} />, path: "Education Fees", link: "/Education Fees" },
     { name: "Fastag", icon: <CiCreditCard2 size={24} />, path: "fastag", link: "/fastag" },
     { name: "Hospital", icon: <PiHospitalLight size={24} />, path: "hospital", link: "/hospital" },
     { name: "Donation", icon: <GiPayMoney size={24} />, path: "donation", link: "/donation" },

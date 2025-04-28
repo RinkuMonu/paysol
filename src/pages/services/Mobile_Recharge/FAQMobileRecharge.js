@@ -5,7 +5,7 @@ const FAQMobileRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Handle screen size change
-  useEffect(() => {
+  useEffect(() => { 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as per your design
     };
