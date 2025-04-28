@@ -1,11 +1,37 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import './MyWallet.css'
 import AddMoney from "../../components/Header/AddMoney.js";
+import axiosInstance from "../../components/services/AxiosInstance.js";
 
 function MyWallet() {
     const [isOpen, setIsOpen] = useState(false);
+    const userId = localStorage.getItem("id");
+     const [userWallet, setuserWallet] = useState()
 
     const openModal   = () => setIsOpen(true);
+    const getuserWalletData = async () => {
+        try {
+            const response = await axiosInstance.get(`admin/userwallet/${userId}`);
+            setuserWallet(response.data?.data?.availableBalance)
+        } catch (error) {
+            if (error.response) {
+                // Server responded with a status code out of the 2xx range
+                console.error('Error Response:', error.response.data);
+                console.error('Status Code:', error.response.status);
+                console.error('Headers:', error.response.headers);
+            } else if (error.request) {
+                // Request was made but no response received
+                console.error('No response received:', error.request);
+            } else {
+                // Something happened setting up the request
+                console.error('Error Message:', error.message);
+            }
+            throw error; // Re-throw the error for handling at the calling function
+        }
+    };
+    useEffect(()=>{
+        getuserWalletData()
+    },[])
     return (
         <div className='w100'>
             <section className='hero-section-container'>
@@ -76,7 +102,7 @@ function MyWallet() {
                                                 </p>
                                             </div>
                                             <div className="col-md-4 fw-600 ">
-                                                <span className="fw-semibold  float-end">₹ 0</span>
+                                                <span className="fw-semibold  float-end">₹ {userWallet}</span>
                                             </div>
                                             <div className="col-md-12  ">
                                                 <button type="button" className=" btn bg_blue btn-primary  " onClick={openModal}>

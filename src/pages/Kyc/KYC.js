@@ -10,8 +10,8 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";
-// https://finpay-b2c-backend.onrender.com/api/auth/aadhar-verify
-const API_URL = "https://finpay-b2c-backend.onrender.com/api/auth/aadhar-verify";
+import axiosInstance from "../../components/services/AxiosInstance";
+
 
 export default function KYC() {
   const userId = localStorage.getItem("id");
@@ -35,12 +35,12 @@ export default function KYC() {
   const [bankData, setBankData] = useState("");
   const [color, setColor] = useState("#872d67");
   const [otp, setOtp] = useState("");
-  const [formData, setFormData] = useState({
-    aadharNumber: "",
-    otp: "",
-    bankAccount: "",
-    panCard: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   aadharNumber: "",
+  //   otp: "",
+  //   bankAccount: "",
+  //   panCard: "",
+  // });
 
   const [otpSent, setOtpSent] = useState(false);
 
@@ -87,10 +87,7 @@ export default function KYC() {
     setSendingOtp(true);
 
     try {
-      const response = await axios.post(API_URL, { aadharNumber });
-      console.log("responseeeeee", response);
-      console.log("data", response.data.data.data.client_id);
-
+      const response = await axiosInstance.post("/auth/aadhar-verify", { aadharNumber });
       setClientId(response.data.data.data.client_id);
       setMessage("OTP Send sucessfully");
     } catch (error) {
@@ -111,8 +108,7 @@ export default function KYC() {
     setVerifyingOtp(true);
 
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/submit-aadhar-otp",
+      const response = await axiosInstance.post("/auth/submit-aadhar-otp",
         { aadharNumber, otp, client_id: clientId, userId },
         {
           // headers: {
@@ -120,8 +116,6 @@ export default function KYC() {
           // },
         }
       );
-      console.log("responseeeeee", response);
-      console.log("data", response.data.data.data.client_id);
       setMessage("OTP Sucessfull submited");
       setData(response.data.data.data);
     } catch (error) {
@@ -134,18 +128,16 @@ export default function KYC() {
 
   const handleSubmitBankDetails = async () => {
     setLoading(false);
-
-    if (formData.bankAccount.length >= 9) {
+    if (bankAccount.length >= 9) {
       setShowBankDetails(true);
     }
     setLoading(true);
-
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/verifybank",
+      const response = await axiosInstance.post("/auth/verifybank",
         { id_number: bankAccount, ifsc, userId }
       );
-      setBankData(response);
+      console.log("response....",response)
+      setBankData(response.data);
       console.log(".....", response);
       Swal.fire({
         title: "! Sucessfully Verfiy your Bank",
@@ -164,17 +156,16 @@ export default function KYC() {
   };
 
   const handleSubmitPANCardDetails = async () => {
-    if (formData.panCard.length === 10) {
+    if (panCard.length === 10) {
       setShowPanDetails(true);
     }
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/verifyPAN",
+      const response = await axiosInstance.post("/auth/verifyPAN",
         { id_number: panCard, userId }
       );
       console.log(".....pan", response);
-      setpandata(response);
+      setpandata(response.data?.data?.data);
 
       Swal.fire({
         title: "! Sucessfully Verfiy your Pan",
@@ -196,8 +187,7 @@ export default function KYC() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/verifyUser",
+      const response = await axiosInstance.post("/auth/verifyUser",
         {
           userId: userId,
         }

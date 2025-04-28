@@ -46,6 +46,7 @@ import TrafficChallan from './pages/services/TrafficChallan/TrafficChallan.js';
 import HousingBillPayment from './pages/services/HousingBillPayment/HousingBillPayment.js';
 import LpgBooking from './pages/services/LpgBooking/LpgBooking.js';
 import DTHRecharge from './pages/services/DTH_Recharge/DTHRecharge.js';
+import UserData from './components/UserData/UserData.js';
 
 
 
@@ -89,7 +90,7 @@ function App() {
               element: <MobileRechargeUI />,
             },
             {
-              path: "dth",
+              path: "DTH",
               element: <DTHRecharge />,
             },
             {
@@ -238,9 +239,10 @@ function App() {
     },
   ]);
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <UserData>
+    {/* Router ko Provider ke andar wrap kiya */}
+    <RouterProvider router={router} />
+  </UserData>
   );
 }
 
