@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
-import { PaymentSuccessModal } from './PaymentSuccessModal'; 
+import { PaymentSuccessModal } from './PaymentSuccessModal';
 
 const Services = () => {
   const [searchParams] = useSearchParams();
@@ -35,14 +35,21 @@ const Services = () => {
   });
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
 
+  const getLastSegment = (path) => {
+    if (!path) return '';
+    const segments = path.split('/');
+    return segments[segments.length - 1] || '';
+  }
+
   useEffect(() => {
     const fetchBillers = async () => {
       try {
         setLoading((prev) => ({ ...prev, billers: true }));
         setError(null);
-
+        console.log('............ sachin', location)
+        const postAPIName = getLastSegment(location.pathname);
         const response = await axios.get(
-          `https://finpay-backend.onrender.com/api/biller${location.pathname}`
+          `https://finpay-backend.onrender.com/api/biller${'/' + postAPIName}`
         );
         setBillers(response.data);
       } catch (err) {
@@ -159,8 +166,8 @@ const Services = () => {
       );
 
       setFetchedBillData(response.data);
-      console.log("Fech fafa",response.data)
-      console.log("Fetch Bill Data:-",fetchedBillData)
+      console.log("Fech fafa", response.data)
+      console.log("Fetch Bill Data:-", fetchedBillData)
       setShowBill(true);
 
       // Update the amount with the bill amount from response
@@ -330,7 +337,7 @@ const Services = () => {
           "customerName": "BBPS",
           "dueDate": "2015-06-20",
           "amountOptions": {
-            "option" : [{
+            "option": [{
               "amountName": "Late Payment Fee",
               "amountValue": 40
             },
@@ -384,14 +391,13 @@ const Services = () => {
           ]
         }
       }
-      
+
       const response = await axios.post(
         "https://finpay-backend.onrender.com/api/biller/billpayment",
         paymentData
       );
 
       console.log("respose is", response)
-      
 
       if (response.status === 200) {
         // Open success modal only on successful payment
@@ -417,6 +423,8 @@ const Services = () => {
           className="btn btn-primary mt-3 w-100"
           onClick={fetchBill}
           disabled={loading.fetchingBill}
+          data-bs-target="#validationModal"
+          data-bs-toggle="modal"
         >
           {loading.fetchingBill ? (
             <>
@@ -440,6 +448,8 @@ const Services = () => {
           className="btn btn-primary mt-3 w-100"
           onClick={billValidation}
           disabled={loading.validatingBill}
+          data-bs-target="#validationModal"
+          data-bs-toggle="modal"
         >
           {loading.validatingBill ? (
             <>
@@ -491,7 +501,6 @@ const Services = () => {
       <div className="card">
         <div className="card-body">
           <h4 className="card-title text-primary mb-4 fw-bold">Details</h4>
-
           <div className="row mb-2">
             <div className="col-6 font-weight-bold fw-bold text-primary">Name</div>
             <div className="col-6">
@@ -575,6 +584,7 @@ const Services = () => {
             className="btn btn-primary w-100 py-2"
             onClick={handleBillPayment}
             disabled={loading.payment}
+            data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
           >
             {loading.payment ? (
               <>
@@ -598,7 +608,7 @@ const Services = () => {
     if (!billValidationData) return null;
 
     return (
-      <div className="alert alert-success mt-3">
+      <div className="alert alert-success">
         <h5>Validation Successful</h5>
         <p>Response Code: {billValidationData.responseCode}</p>
         <p>Response Reason: {billValidationData.responseReason}</p>
@@ -606,7 +616,7 @@ const Services = () => {
           <p>Compliance Code: {billValidationData.complianceCode}</p>
         )}
         {billValidationData.complianceReason && (
-          <p>Compliance Reason: {billValidationData.complianceReason}</p>
+          <p className="mb-0">Compliance Reason: {billValidationData.complianceReason}</p>
         )}
       </div>
     );
@@ -615,56 +625,61 @@ const Services = () => {
   const renderBillForm = () => {
     return (
       <div className="card mt-3">
-        <div className="card-body">
+        <div className="card-body ">
           <h5 className="card-title">Payment Details</h5>
+          <div className="row">
+            <div className="col-md-4">
+              <div className="form-group">
+                <label>Customer ID *</label>
+                <input
+                  type="text"
+                  name="customerId"
+                  className="form-control"
+                  placeholder="Enter customer ID"
+                  value={formData.customerId}
+                  onChange={handleFormInputChange}
+                  required
+                />
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="form-group">
+                <label>Amount *</label>
+                <input
+                  type="number"
+                  name="amount"
+                  className="form-control"
+                  placeholder="Enter amount"
+                  value={formData.amount}
+                  onChange={handleFormInputChange}
+                  required
+                  min="1"
+                />
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="form-group">
+                <label>Mobile Number</label>
+                <input
+                  type="tel"
+                  name="mobile"
+                  className="form-control"
+                  placeholder="Enter mobile number"
+                  value={formData.mobile}
+                  onChange={handleFormInputChange}
+                />
+              </div>
 
-          <div className="form-group">
-            <label>Customer ID *</label>
-            <input
-              type="text"
-              name="customerId"
-              className="form-control"
-              placeholder="Enter customer ID"
-              value={formData.customerId}
-              onChange={handleFormInputChange}
-              required
-            />
+            </div>
           </div>
-
-          <div className="form-group">
-            <label>Amount *</label>
-            <input
-              type="number"
-              name="amount"
-              className="form-control"
-              placeholder="Enter amount"
-              value={formData.amount}
-              onChange={handleFormInputChange}
-              required
-              min="1"
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Mobile Number</label>
-            <input
-              type="tel"
-              name="mobile"
-              className="form-control"
-              placeholder="Enter mobile number"
-              value={formData.mobile}
-              onChange={handleFormInputChange}
-            />
-          </div>
-
           {error && <div className="alert alert-danger">{error}</div>}
-
           <button
-            className="btn btn-primary w-100 mt-3"
+            className="btn btn-primary w-100"
             onClick={handlePayment}
             disabled={
               loading.payment || !formData.amount || !formData.customerId
             }
+          data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
           >
             {loading.payment ? (
               <>
@@ -683,14 +698,20 @@ const Services = () => {
       </div>
     );
   };
-
+  const successModal = document.getElementById('exampleModalToggle2');
+  if (successModal) {
+    successModal.addEventListener('shown.bs.modal', () => {
+      const audio = new Audio('/audio/BharatConnect.mp3');
+      audio.play().catch(err => console.error("Audio failed to play:", err));
+    });
+  }
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-12 mb-4">
           <div className="netBanking_Card w-100">
             <div className="card-header d-flex align-items-center justify-content-between">
-              <h5 className="card-title mb-0 font-weight-bold">
+              <h5 className="card-title mb-0 font-weight-bold" style={{ color: "#872D67", fontWeight: "bold" }}>
                 {category || serviceName || "Service"}
               </h5>
               <img
@@ -702,9 +723,9 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
+        <div className="col-md-12">
+          <div className="card border-0">
+            <div className="card-body p-0">
               <h5 className="card-title text-primary mb-4 fw-bold text-primary">
                 Select {alias || "Service Provider"}
               </h5>
@@ -712,9 +733,9 @@ const Services = () => {
               {loading.billers ? (
                 <div className="text-center py-4">
                   <div className="spinner-border text-primary" role="status">
-                    <span className="sr-only">Loading...</span>
+                    {/* <span className="sr-only">Loading...</span> */}
                   </div>
-                  <p>Loading service providers...</p>
+                  {/* <p>Loading service providers...</p> */}
                 </div>
               ) : error ? (
                 <div className="alert alert-danger">{error}</div>
@@ -743,7 +764,7 @@ const Services = () => {
                         className="spinner-border text-primary"
                         role="status"
                       >
-                        <span className="sr-only">Loading...</span>
+                        {/* <span className="sr-only">Loading...</span> */}
                       </div>
                       <p>Loading provider details...</p>
                     </div>
@@ -784,7 +805,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="col-md-6">
+        {/* <div className="col-md-6">
           {showBill ? (
             // Show bill details when viewing bill information
             renderBillDetails()
@@ -801,20 +822,81 @@ const Services = () => {
                 {selectedBiller
                   ? billerDetails?.billerFetchRequiremet === "NOT_SUPPORTED" &&
                     billerDetails?.billerSupportBillValidation ===
-                      "NOT_SUPPORTED"
+                    "NOT_SUPPORTED"
                     ? "Fill the form and click 'Quick Pay' to proceed"
                     : "Fill the form and click 'Validate Bill' to continue"
                   : "Select a service provider to continue"}
               </div>
             </div>
           )}
+        </div> */}
+      </div>
+
+      {/* Validation Modal */}
+      <div className="modal fade" id="validationModal" aria-hidden="true" aria-labelledby="validationModalLabel" tabIndex="-1">
+        <div className="modal-dialog modal-dialog-centered modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="validationModalLabel">Payment Details</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              {/* {renderValidationResult()}
+              {renderBillForm()} */}
+              {showBill ? (
+                // Show bill details when viewing bill information
+                renderBillDetails()
+              ) : billValidationData ? (
+                // Show validation result and payment form when validation is complete
+                <>
+                  {renderValidationResult()}
+                  {renderBillForm()}
+
+                </>
+              ) : (
+                // Default view when nothing is selected
+                <div className="card">
+                  <div className="card-body text-center text-muted py-5">
+                    {selectedBiller
+                      ? billerDetails?.billerFetchRequiremet === "NOT_SUPPORTED" &&
+                        billerDetails?.billerSupportBillValidation ===
+                        "NOT_SUPPORTED"
+                        ? "Fill the form and click 'Quick Pay' to proceed"
+                        : "Fill the form and click 'Validate Bill' to continue"
+                      : "Select a service provider to continue"}
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <PaymentSuccessModal 
-        openModal={openSuccessModal} 
-        onClose={() => setOpenSuccessModal(false)} 
-      />
+
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Payment Successful</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <div className="mb-4">
+                <img src="/images/bbps_assured.png" alt="assured" className="w-5 " style={{ width: "150px" }} />
+              </div>
+              <h3 className="text-2xl font-bold text-success mb-2 d-flex align-items-center justify-content-center">
+                ✅ Payment Successful
+              </h3>
+              <p className="text-muted">
+                Your payment has been successfully processed. Thank you for your purchase!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

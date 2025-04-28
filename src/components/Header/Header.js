@@ -1,27 +1,76 @@
-import React, {  useState } from "react";
+import React, {  useState , useEffect } from "react";
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import AddMoney from "./AddMoney";
 import { useDispatch } from "react-redux";
 import { logout } from "../../Features/Auth/authSlice";
+import axiosInstance from "../services/AxiosInstance";
+
 export default function Header({ onLoginClick }) {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+    const [getUserData,setgetuserData] = useState("")
+    console.log("getUser data is : ", getUserData);
     const handleMouseEnter = () => setIsDropdownOpen(true);
     const handleMouseLeave = () => setIsDropdownOpen(false);
-
     const [isOpen, setIsOpen] = useState(false);
-
     const openModal = () => setIsOpen(true);
-
+    const [userWallet, setuserWallet] = useState()
    const handlelogout =()=>{
     dispatch(logout())
     localStorage.removeItem("id")
     navigate("/")
-   }
+   }  
+   const userId = localStorage.getItem("id");
+   console.log(userId, "userId");
+   console.log(getUserData)
+   const getData = async () => {
+       if (!userId) {
+           console.error("User ID is missing.");
+           return;
+       }
+       try {
+           const response = await axiosInstance.get(`/auth/view/${userId}`);
+           setgetuserData(response.data);
+       } catch (error) {
+           if (error.response) {
+               console.error("Error Response:", error.response.data);
+               console.error("Status:", error.response.status);
+           } else if (error.request) {
+               console.error("No response received:", error.request);
+           } else {
+               console.error("Error message:", error.message);
+           }
+       }
+   };
+   useEffect(() => {
+       getData();
+   }, []);
 
+   const getuserWalletData = async () => {
+    try {
+        const response = await axiosInstance.get(`admin/userwallet/${userId}`);
+        setuserWallet(response.data?.data?.availableBalance)
+    } catch (error) {
+        if (error.response) {
+            // Server responded with a status code out of the 2xx range
+            console.error('Error Response:', error.response.data);
+            console.error('Status Code:', error.response.status);
+            console.error('Headers:', error.response.headers);
+        } else if (error.request) {
+            // Request was made but no response received
+            console.error('No response received:', error.request);
+        } else {
+            // Something happened setting up the request
+            console.error('Error Message:', error.message);
+        }
+        throw error; // Re-throw the error for handling at the calling function
+    }
+};
+useEffect(()=>{
+    getuserWalletData()
+},[])
 
     return (
         <>
@@ -245,7 +294,7 @@ export default function Header({ onLoginClick }) {
                                                 {/* Trigger Button */}
                                                 <Link to={'#'} className="nav-link balance_link" onClick={openModal}>
                                                     <p className="mb-0" style={{ fontSize: "12px" }}>Balance:</p>
-                                                    <p className="mb-0" style={{ fontWeight: "700", lineHeight: "6px", fontSize: "12px" }}>₹0 <i class="bi bi-plus" style={{ color: "#404040", fontSize: "14px" }}></i></p>
+                                                    <p className="mb-0" style={{ fontWeight: "700", lineHeight: "6px", fontSize: "12px" }}>₹ {userWallet} <i class="bi bi-plus" style={{ color: "#404040", fontSize: "14px" }}></i></p>
                                                 </Link>
 
                                             </li>
@@ -275,23 +324,22 @@ export default function Header({ onLoginClick }) {
                                                             <div className="float-end">
                                                                 <Link to={''} className="help_link p-0">Help?</Link>
                                                             </div>
-                                                            <h2 className="mb-1">Test User</h2>
-                                                            <p className="mb-0">testuser@gmail.com</p>
-                                                            <p>0123456789</p>
+                                                            <h2 className="mb-1">{getUserData.name}</h2>
+                                                            <p className="mb-0">{getUserData.email}</p>
+                                                            <p>{getUserData.mobileNumber}</p> 
 
 
                                                             <div className="d-flex align-items-baseline justify-content-between">
-                                                                <span>Available Balance: ₹0</span>
-                                                                <button className="btn btn-primary btn-sm mt-2">Add</button>
+                                                                <span>Available Balance: ₹ {userWallet}</span>
+                                                                <button className="btn btn-primary btn-sm mt-2" onClick={openModal}>Add</button>
                                                             </div>
                                                             {
-                                                                localStorage.getItem("USER")?<>
+                                                              getUserData?.isKycVerified == true ?<>
                                                                     <p>Your KYC is Completed</p>
                                                                 </>:
                                                             <Link to={'/kyc'} className="border-0 kycBtn btn-sm mt-2">Complete Your KYC</Link>
                                                             }
                                                         </div>
-
                                                         {/* List Items */}
                                                         <ul className="dropdown-list">
                                                             <li className="dropdown-item">
