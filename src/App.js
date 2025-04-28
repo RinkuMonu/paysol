@@ -47,6 +47,7 @@ import HousingBillPayment from './pages/services/HousingBillPayment/HousingBillP
 import LpgBooking from './pages/services/LpgBooking/LpgBooking.js';
 import DTHRecharge from './pages/services/DTH_Recharge/DTHRecharge.js';
 import UserData from './components/UserData/UserData.js';
+import EducationFee from './pages/services/Education Fees/EducationFee.js';
 
 
 
@@ -108,6 +109,10 @@ function App() {
             {
               path: "landline",
               element: <Landline />,
+            },
+            {
+              path:"Education Fees",
+              element:<EducationFee/>
             },
             {
               path: "broadband",
